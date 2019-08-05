@@ -1,0 +1,70 @@
+<itext>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <template if={props.field.multilang} each={lang in props.attr.langs}>
+        <button type="button" class="btn {btnLangColor(lang)} btn-sm ml-1" style="text-transform: capitalize;" idLang={lang} onclick={selectLang}>{langName(lang)} <span class="aaainputFeedback"></span></button>
+    </template>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+
+    <div each={lang in state.langs} class="input-group {lang==state.currentLang || !lang?'':'hide'}">
+        <jaddon field={props.field} placement='left'></jaddon>
+
+        <input if={props.field.type!='textarea' } { ...props.field } aaatabindex={props.index} type={state.type} class="form-control {props.field.class}" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} id={}>
+
+        <textarea if={props.field.type=='textarea' } { ...props.field } aaatabindex={props.index} class="form-control {props.field.class}" rows={props.field.rows || 8} defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} id={}>{props.field.value}</textarea>
+
+
+
+        <div if={props.field.multilang && props.attr.proposeTranslate && state.defaultLang !=lang } class="h-100 input-group-append">
+            <button type="button" class="btn btn-info" onclick={translate}><i class="fas fa-language"></i></button>
+        </div>
+
+
+        <jaddon field={props.field} placement='right'></jaddon>
+    </div>
+    <jhelp help={props.field.help}></jhelp>
+
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            },
+            onBeforeMount() {
+                this.state.currentLang = this.props.attr.langs[0]
+                this.state.defaultLang = this.props.attr.langs[0]
+                if (this.props.field.multilang) {
+                    this.state.langs = this.props.attr.langs
+                } else {
+                    this.state.langs = ['']
+                }
+                if (this.props.type == 'datetime') this.state.type = 'datetime-local'
+                else this.state.type = this.props.field.type
+            },
+            btnLangColor(lang) {
+                return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
+            },
+            buildId(lang) {
+                return this.props.field.multilang ? this.props.field.id + '.' + lang : this.props.field.id
+            },
+            defaultValue() {
+                if (this.state.currentLang == this.props.attr.langs[0]) return this.props.field.value
+                else return null
+            },
+            selectLang(ev) {
+                this.state.currentLang = ev.target.attributes.idLang.value
+                this.update()
+            }
+        }
+
+    </script>
+</itext>

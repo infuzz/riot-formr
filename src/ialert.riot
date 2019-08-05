@@ -1,0 +1,30 @@
+<ialert>
+    <div class="alert alert-{props.field.color||'info'} {props.field.class}" role="alert">
+        <div>
+            <jicon field={props.field}></jicon> {i18n(props.field.message)}
+            <jtooltip tip={props.field.tip}></jtooltip>
+        </div>
+        <jhelp help={props.field.help}></jhelp>
+    </div>
+    <style>
+        .alert div {
+            font-size: 2rem;
+        }
+    </style>
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            }
+        }
+    </script>
+</ialert>

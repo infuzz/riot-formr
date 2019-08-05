@@ -1,0 +1,37 @@
+<jtooltip>
+    <div if={props.tip} class="ftooltip">
+        <i class="far fa-question-circle mx-1"></i>
+        <div class="ftooltipText">{i18n(props.tip)}</div>
+    </div>
+
+    <style>
+        .ftooltip
+        {
+            position: relative;
+            display: inline-block;
+        }
+
+        .ftooltip .ftooltipText
+        {
+            font-size:1rem!important;
+            visibility: hidden;
+            width: 12rem;
+            background-color: #ffc107;
+            color: white;
+            text-align: center;
+            border: thin solid lightgray;
+            border-radius: 6px;
+            padding: 5px 0;
+            position: absolute;/* Position the tooltip text */
+            z-index: 10;
+            bottom: 125%;
+            left: 0%;
+            margin-left: -60px;
+        }
+
+        .ftooltip:hover .ftooltipText
+        {
+            visibility: visible;
+        }
+    </style>
+</jtooltip>

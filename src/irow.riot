@@ -1,0 +1,17 @@
+<irow>
+	<div class="row">
+        <template each={ (field, i) in props.field.desc } >
+            <div class="col form-group {field.class}" name="fgroup_{field.id || i}">
+                <div is={'i'+callType(field.type)} field={checkField(field,i)} attr={props.attr} index={i}></div>
+            </div>
+        </template>
+	</div>
+    <script>
+        export default {
+                checkField(field,i){
+                field.id = field.id || 'ffield'+i
+                return field
+            }
+        }
+    </script>
+</irow>

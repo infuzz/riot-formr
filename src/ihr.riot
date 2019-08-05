@@ -1,0 +1,36 @@
+<ihr>
+    <div name={props.field.id}>
+        <jicon field={props.field}></jicon>
+        <span class="fhrlabel {props.field.class}"> {i18n(props.field.label)}</span>
+        <jtooltip tip={props.field.tip}></jtooltip>
+        <hr>
+        <jhelp help={props.field.help}></jhelp>
+    </div>
+    <style>
+        .fhrlabel {
+            font-size: 1.3rem;
+        }
+
+        hr {
+            margin: 0;
+        }
+
+    </style>
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            }
+        }
+
+    </script>
+</ihr>

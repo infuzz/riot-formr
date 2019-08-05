@@ -1,0 +1,108 @@
+<icolorpicker>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+    <jhelp help={props.field.help}></jhelp>
+    <div name={props.attr.id +"_colorpicker_" + props.field.id}></div>
+    <input type="hidden" class="form-control" name={props.field.id} value={props.field.value}>
+
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            },
+            onMounted() {
+                let formId = this.props.attr.id
+                //https://github.com/Simonwep/pickr
+                const pickr = Pickr.create({
+                    el: '[name="' + formId + '_colorpicker_' + this.props.field.id + '"]',
+                    theme: 'nano', // or 'monolith', or 'nano'
+                    //default:'rgba(239, 1, 5, 1)',
+                    // default:'#16D92A',
+
+                    comparison: false,
+
+                    swatches: [
+                        'rgba(244, 67, 54, 1)',
+                        'rgba(233, 30, 99, 0.95)',
+                        'rgba(156, 39, 176, 0.9)',
+                        'rgba(103, 58, 183, 0.85)',
+                        'rgba(63, 81, 181, 0.8)',
+                        'rgba(33, 150, 243, 0.75)',
+                        'rgba(3, 169, 244, 0.7)',
+                        'rgba(0, 188, 212, 0.7)',
+                        'rgba(0, 150, 136, 0.75)',
+                        'rgba(76, 175, 80, 0.8)',
+                        'rgba(139, 195, 74, 0.85)',
+                        'rgba(205, 220, 57, 0.9)',
+                        'rgba(255, 235, 59, 0.95)',
+                        'rgba(255, 193, 7, 1)'
+                    ],
+
+                    components: {
+
+                        // Main components
+                        preview: true,
+                        opacity: true,
+                        hue: true,
+
+                        // Input / output Options
+                        interaction: {
+                            hex: true,
+                            rgba: true,
+                            hsla: false,
+                            hsva: false,
+                            cmyk: false,
+                            input: true,
+                            clear: false,
+                            save: true,
+                            cancel: true
+                        }
+                    },
+                    strings: {
+                        save: 'Select', // Default for save button
+                        clear: 'Clear', // Default for clear button
+                        cancel: 'Cancel' // Default for cancel button
+                    }
+                })
+
+                pickr.on('init', instance => {
+                    //console.log(instance)
+                    let setColor = instance._root.root.closest(".form-group").querySelector("[type='hidden']").value
+                    pickr.setColor(setColor, true)
+                })
+
+                pickr.on('save', (color, instance) => {
+                    let rgba = color.toRGBA().toString()
+                    instance._root.root.closest(".form-group").querySelector("[type='hidden']").value = rgba
+                }).on('cancel', () => {
+                    pickr.hide()
+                })
+
+                document.addEventListener(this.props.attr.id + '_setColor_' + this.props.field.id, function(ev) {
+                    pickr.setColor(ev.detail.color, true)
+                })
+            }
+        }
+
+    </script>
+    <style>
+        .pickr .pcr-button {
+            height: 4em;
+            width: 4em;
+        }
+
+        /* .pickr .pcr-color-palette{cursor:pointer!important;}*/
+
+    </style>
+</icolorpicker>

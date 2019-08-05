@@ -1,0 +1,237 @@
+<icheckbox>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <jhelp help={props.field.help}></jhelp>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+    <div class="aaad-inline">
+        <template each={ option in props.field.options }>
+            <div class="row">
+                <div if={option.uncheckedLabel} class="fucfirst col-auto mb-2">{i18n(option.uncheckedLabel)}</div>
+                <div class="col-auto">
+                    <label class="ucfirst {props.field.type=='switch' ?'fswitch':'fcheck'}">
+                        <span if={!option.checkedLabel} class="mr-1"> {i18n(option.label)}</span>
+                        <jtooltip if={!option.checkedLabel} tip={option.tip}></jtooltip>
+                        <jhelp if={!option.checkedLabel} help={option.help}></jhelp>
+                        <input { ...props.field } type={"checkbox"} class="form-control" checkedValue={option.checkedValue} unCheckedValue={option.uncheckedValue} checked={isChecked(option)} ctrlChecked={ctrlToString(option,'checked')} ctrlUnchecked={ctrlToString(option,'unchecked')} name={buildId(option)} id={}>
+                        <span class={props.field.type=='switch' ?'fswitchslider fswitchround':'fcheckmark'}></span>
+                    </label>
+                </div>
+                <div if={option.checkedLabel} class="fucfirst col-auto mb-2">
+                    {i18n(option.checkedLabel)}
+                </div>
+                <div class="fucfirst col-auto mb-2">
+                    <jtooltip if={option.checkedLabel} tip={option.tip}></jtooltip>
+                    <jhelp if={option.checkedLabel} help={option.help}></jhelp>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            },
+            isChecked(option) {
+                return (option.checked || option.value == option.checkedValue || option.value == true)
+            },
+            ctrlToString(option, which) {
+                if (option.ctrl && option.ctrl[which]) return option.ctrl[which].join()
+                else return false
+            },
+            buildId(option) {
+                if (option.id) return this.props.field.id + '.' + option.id
+                else return this.props.field.id
+            }
+        }
+
+    </script>
+    <style>
+        /* Customize the label (the fswitch) */
+        .fswitch {
+            display: block;
+            position: relative;
+
+            padding-left: 3.2rem;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .fswitch input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .fswitchslider {
+            position: absolute;
+            top: 3px;
+            left: 0;
+            height: 1.5rem;
+            width: 2.75rem;
+            background-color: #eee;
+            -webkit-transition: .4s;
+            transition: .4s;
+
+        }
+
+        /* On mouse-over, add a grey background color */
+        .fswitch:hover input~.fswitchslider {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .fswitch input:checked~.fswitchslider {
+            background-color: #2196F3;
+        }
+
+
+
+        .fswitchslider:before {
+            position: absolute;
+            content: "";
+            height: 1.35rem;
+            width: 1.35rem;
+            left: 0.1rem;
+            bottom: 0.1rem;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+
+        .fswitch input:checked~.fswitchslider {
+            background-color: blue;
+        }
+
+        .fswitch input:checked~.fswitchslider:before {
+            background-image: radial-gradient(#ffffff, rgb(210, 210, 210));
+        }
+
+
+        .fswitch input:focus~.fswitchslider {
+            --box-shadow: 0 0 1px var(--navBarBg-backgroundColor);
+            box-shadow: 0 0 4px blue;
+        }
+
+        .fswitch input:checked~.fswitchslider:before {
+            -webkit-transform: translateX(1.25rem);
+            -ms-transform: translateX(1.25rem);
+            transform: translateX(1.25rem);
+        }
+
+        .fswitch input[disabled]~.fswitchslider {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+        .fswitchround {
+            border-radius: 3.4rem;
+        }
+
+        .fswitchround:before {
+            border-radius: 50%;
+        }
+
+
+
+        /* Customize the label (the fcheck) */
+        .fcheck {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .fcheck input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .fcheckmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .fcheck:hover input~.fcheckmark {
+            background-color: #ccc;
+        }
+
+        /* When the checkbox is checked, add a blue background */
+        .fcheck input:checked~.fcheckmark {
+            background-color: #2196F3;
+        }
+
+        /* Create the fcheckmark/indicator (hidden when not checked) */
+        .fcheckmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the fcheckmark when checked */
+        .fcheck input:checked~.fcheckmark:after {
+            display: block;
+        }
+
+        /* Style the fcheckmark/indicator */
+        .fcheck .fcheckmark:after {
+            left: 9px;
+            top: 5px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+    </style>
+</icheckbox>
+
+
+<!--icheckbox>
+	<div class="form-check">
+        <jlabel field={props.field}></jlabel>
+        <jtooltip help={props.field.help}></jtooltip>
+        <input type="checkbox" class="form-check-input" name={props.field.id} value={props.field.value}>
+		<label class="form-check-label" for={props.field.id}>{props.field.label}</label>
+		<jtooltip help={props.field.help}></jtooltip>
+	</div>
+</icheckbox-->

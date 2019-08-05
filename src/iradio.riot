@@ -1,0 +1,118 @@
+<iradio>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+    <jhelp help={props.field.help}></jhelp>
+    <div class="aaad-inline">
+        <template each={ option in props.field.options }>
+            <label class="fradio">{i18n(option.label)}
+                <jtooltip tip={option.tip}></jtooltip>
+                <jhelp help={option.help}></jhelp>
+                <input { ...props.field } type="radio" class="form-control" checked={isChecked(option)} value={option.id} name={props.field.id} id={}>
+                <span class="fradiomark"></span>
+            </label>
+        </template>
+    </div>
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            },
+            isChecked(option) {
+                return (option.checked || option.id == this.props.field.value)
+            }
+        }
+
+    </script>
+    <style>
+        /* Customize the label (the fradio) */
+        .fradio {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default checkbox */
+        .fradio input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        /* Create a custom checkbox */
+        .fradiomark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .fradio:hover input~.fradiomark {
+            background-color: #ccc;
+        }
+
+        /* When the radio is checked, add a blue background */
+        .fradio input:checked~.fradiomark {
+            background-color: #2196F3;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .fradiomark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the fradiomark when checked */
+        .fradio input:checked~.fradiomark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .fradio .fradiomark:after {
+            top: 8px;
+            left: 8px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: white;
+        }
+
+    </style>
+</iradio>
+
+<!--iradio>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip help={props.field.help}></jtooltip>
+    <template each={ option in props.field.options }>
+        <div class="custom-control custom-radio">
+            <input type="radio" id={option.id} value={option.id} name={props.field.name} class="custom-control-input">
+            <label class="custom-control-label" for={option.id}>{i18n(option.label)}</label>
+            <jtoolTip help={option.help}></jtoolTip>
+        </div>
+    </template>
+</iradio-->

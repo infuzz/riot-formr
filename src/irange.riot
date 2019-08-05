@@ -1,0 +1,45 @@
+<irange>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+    <div class="input-group">
+        <input { ...props.field } type="range" class="form-control custom-range {props.field.class}" name={props.field.id} min={props.field.min} max={props.field.max} step={props.field.step} value={props.field.value} id={}>
+    </div>
+    <jhelp help={props.field.help}></jhelp>
+    <style>
+        /*-- range --*/
+        input[type=range]::-webkit-slider-thumb {
+            background: red;
+            /*-- background: var(--navBarBg-backgroundColor); --*/
+        }
+
+        input[type=range]::-moz-range-thumb {
+            background: red;
+            /*-- background: var(--navBarBg-backgroundColor); --*/
+        }
+
+        input[type=range]::-ms-thumb {
+            background: red;
+            /*-- background: var(--navBarBg-backgroundColor); --*/
+        }
+
+    </style>
+    <script>
+        import jaddon from './jaddon.riot'
+        import jhelp from './jhelp.riot'
+        import jicon from './jicon.riot'
+        import jlabel from './jlabel.riot'
+        import jtooltip from './jtooltip.riot'
+        export default {
+            components: {
+                jaddon,
+                jhelp,
+                jicon,
+                jlabel,
+                jtooltip
+            }
+        }
+
+    </script>
+</irange>

@@ -1,0 +1,177 @@
+<formr>
+    <form name={props.id} onchange={validate} oninput={validate} novalidate>
+        <button type="button" onclick={er}>Go</button>
+        <button type="button" onclick={seter}>set</button>
+        <div each={ (field, i) in state.desc }>
+            <div class="form-group" name="fgroup_{field.id || i}">
+                <div is={'i'+callType(field.type)} field={checkField(field,i)} attr={state.attr} index={i}></div>
+            </div>
+        </div>
+    </form>
+    <script>
+	
+		//import {getFormValues,setFormValues} from './formr.js'
+		import ialert from './ialert.riot'
+		import ibutton from './ibutton.riot'
+		import icheckbox from './icheckbox.riot'
+		import icolorpicker from './icolorpicker.riot'
+		import ihidden from './ihidden.riot'
+		import ihr from './ihr.riot'
+		import ipassword from './ipassword.riot'
+		import iradio from './iradio.riot'
+		import irange from './irange.riot'
+		import irow from './irow.riot'
+		import iselect from './iselect.riot'
+		import itext from './itext.riot'
+		import itexteditor from './itexteditor.riot'
+		import ititle from './ititle.riot'
+		import jaddon from './jaddon.riot'
+		import jhelp from './jhelp.riot'
+		import jicon from './jicon.riot'
+		import jlabel from './jlabel.riot'
+		import jtooltip from './jtooltip.riot'
+        export default {
+			components: {
+				ialert,ibutton,icheckbox,icolorpicker,ihidden,ihr,ipassword,iradio,irange,irow,iselect,itext,itexteditor,ititle,jaddon,jhelp,jicon,jlabel,jtooltip
+			  },
+            checkField(field, i) {
+                field.id = field.id || 'ffield' + i
+                return field
+            },
+            onBeforeMount() {
+			console.log(window)
+                this.state.desc = window.fields[this.props.id].desc
+                this.state.attr = window.fields[this.props.id].attr
+                this.state.attr.id = this.props.id
+            },
+            onMounted(){
+                this.ctrlRun(this.props.id)
+            },
+            callType(type) {
+                let types = ['textarea', 'date', 'color', 'datetime', 'datetime-local', 'email', 'month', 'number', 'tel', 'time', 'url', 'week']
+                if (types.indexOf(type) > -1) return 'text'
+                else return type
+            },
+            click() {
+                this.fields.push({
+                    type: 'text',
+                    size: 10,
+                    value: 'First item'
+                })
+                this.update()
+            },
+            validate(ev) {
+                let targetForm=ev.target.closest("form")
+                this.ctrlRun(targetForm.name)
+                let invalidFeedback = '<i class="text-danger fas fa-times fa-fw mx-2" aria-hidden="true"></i>'
+                let invalidFeedbackMsg = '<i class="text-danger fas fa-exclamation-triangle fa-fw mx-2" aria-hidden="true"></i>'
+                let validFeedback = '<i class="text-success fas fa-check fa-fw mx-2" aria-hidden="true"></i>'
+                let feedBackElt = ev.target.closest(".form-group").querySelector(".inputFeedback")
+                let feedBackMsgElt = ev.target.closest(".form-group").querySelector(".inputFeedbackMsg")
+                let field = ev.target
+                let validity = ev.target.validity
+                if (!validity) return
+                let isValid = validity.valid
+
+                let msgs = []
+                let msg = ''
+                if (field.disabled || field.type == 'file') return
+                if (validity.valueMissing) msgs.push('valueMissing')
+                if (validity.typeMismatch && field.type == 'email') msgs.push('invalid email')
+                if (validity.typeMismatch && field.type == 'url') msgs.push('invalid URL')
+                if (validity.tooShort) msgs.push('Lengthen this text to ' + field.minLength + ' characters or more. You are currently using ' + field.value.length + ' characters')
+                if (validity.tooLong) msgs.push('Shorten this text to no more than ' + field.maxLength + ' characters. You are currently using ' + field.value.length + ' characters')
+                if (validity.badInput) msgs.push('invalid number')
+                if (validity.stepMismatch) msgs.push('invalid step')
+                if (validity.rangeOverflow) msgs.push('Select a value that is no more than ' + field.max)
+                if (validity.rangeUnderflow) msgs.push('Select a value that is no less than ' + field.min)
+                if (validity.patternMismatch && field.getAttribute('patternInfo')) msgs.push(field.getAttribute('patternInfo')) // If pattern info is included, return custom error
+                if (validity.patternMismatch && !field.getAttribute('patternInfo')) msgs.push("Didn't the requested format")
+                let self = this
+                msgs.forEach(function(m) {
+                    msg += invalidFeedbackMsg + self.i18n(m) + '. '
+                })
+                // If all else fails, msg is a generic catchall error
+                if (!isValid && !msg) msg = 'The value you entered for this field is invalid. '
+                feedBackElt.innerHTML = (isValid ? validFeedback : invalidFeedback)
+                feedBackMsgElt.innerHTML = isValid ? '' : msg
+
+                //enable buttons with attributes 'waitValid' if all fields in the form is valid
+                let nbInvalidFields = targetForm.querySelectorAll('.form-control:invalid')
+                let nwaitValid = targetForm.querySelectorAll('[waitvalid]')
+                nwaitValid.forEach(function(e) {
+                    e.disabled = nbInvalidFields.length
+                })
+            },
+            ctrlRun(formName) {
+				let name , node 
+                document.getElementsByName(formName)[0].querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
+                    elt.getAttribute("ctrlChecked").split(',').forEach(function(name) {
+                        //node = '[name=fgroup_' + name+']'
+                        name = 'fgroup_' + name
+                        node = document.getElementsByName(name)[0]
+                        if (elt.checked) node.classList.remove('hide')
+                        else node.classList.add('hide')
+                    })
+                    elt.getAttribute("ctrlUnchecked").split(',').forEach(function(name) {
+                        name = 'fgroup_' + name
+                        node = document.getElementsByName(name)[0]
+                        if (elt.checked) node.classList.add('hide')
+                        else node.classList.remove('hide')
+                    })
+                })
+            },
+            er() {
+                console.log(getFormValues('form1'))
+            },
+            seter() {
+                console.log(setFormValues('form1',data))
+            }
+        }
+
+    </script>
+    <style>
+        .out {
+            -webkit-transition: height 1s;
+            -moz-transition: height 1s;
+            -ms-transition: height 1s;
+            -o-transition: height 1s;
+            transition: height 1s;
+            height: 0;
+        }
+
+        /*-- redefine some bootstrap style --*/
+        .hide,
+        .form-inline .hide {
+            display: none;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            /*bottom margin after each field*/
+        }
+
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        button:disabled {
+            cursor: not-allowed;
+        }
+
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: none !important;
+            border-color: #719ECE !important;
+            box-shadow: 0 0 10px #719ECE !important;
+        }
+
+        .fucfirst:first-letter {
+            text-transform: capitalize;
+        }
+
+    </style>
+</formr>
