@@ -22,19 +22,7 @@
     <jhelp help={props.field.help}></jhelp>
 
     <script>
-        import jaddon from './jaddon.riot'
-        import jhelp from './jhelp.riot'
-        import jicon from './jicon.riot'
-        import jlabel from './jlabel.riot'
-        import jtooltip from './jtooltip.riot'
         export default {
-            components: {
-                jaddon,
-                jhelp,
-                jicon,
-                jlabel,
-                jtooltip
-            },
             onBeforeMount() {
                 this.state.currentLang = this.props.attr.langs[0]
                 this.state.defaultLang = this.props.attr.langs[0]

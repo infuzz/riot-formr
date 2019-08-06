@@ -2227,3085 +2227,66 @@
     return PLUGINS_SET$1;
   }
 
-  var jicon = {
+  var App = {
     'css': null,
     'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<i expr106></i>', [{
-        'redundantAttribute': 'expr106',
-        'selector': '[expr106]',
-
-        'expressions': [{
-          'type': expressionTypes.ATTRIBUTE,
-          'name': 'class',
-
-          'evaluate': function(scope) {
-            return scope.selectIcon(scope.props.field);
-          }
-        }]
-      }]);
-    },
-
-    'name': 'jicon'
-  };
-
-  var jaddon = {
-    'css': null,
-
-    'exports': {
-      components: {
-          jicon
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<div expr76 class="h-100 input-group-prepend"></div><div expr78 class="h-100 input-group-append"></div>',
+        '<div class="container"><formr expr216 id="form1"></formr><formr expr217 id="form2"></formr></div>',
         [{
-          'type': bindingTypes.IF,
-
-          'evaluate': function(scope) {
-            return scope.props.placement=='left' && scope.props.field.icon!='none';
-          },
-
-          'redundantAttribute': 'expr76',
-          'selector': '[expr76]',
-
-          'template': template(
-            '<span class="input-group-text" id="basic-addon1"><jicon expr77></jicon></span>',
-            [{
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'jicon';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'field',
-
-                'evaluate': function(scope) {
-                  return scope.props.field;
-                }
-              }],
-
-              'redundantAttribute': 'expr77',
-              'selector': '[expr77]'
-            }]
-          )
-        }, {
-          'type': bindingTypes.IF,
-
-          'evaluate': function(scope) {
-            return scope.props.placement=='right' && scope.props.field.buttons;
-          },
-
-          'redundantAttribute': 'expr78',
-          'selector': '[expr78]',
-
-          'template': template('<ibutton expr79></ibutton>', [{
-            'type': bindingTypes.EACH,
-            'getKey': null,
-            'condition': null,
-
-            'template': template(null, [{
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'ibutton';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'field',
-
-                'evaluate': function(scope) {
-                  return scope.button;
-                }
-              }]
-            }]),
-
-            'redundantAttribute': 'expr79',
-            'selector': '[expr79]',
-            'itemName': 'button',
-            'indexName': null,
-
-            'evaluate': function(scope) {
-              return scope.props.field.buttons;
-            }
-          }])
-        }]
-      );
-    },
-
-    'name': 'jaddon'
-  };
-
-  var jhelp = {
-    'css': null,
-    'exports': null,
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<small expr61 class="text-muted mb-1 mr-1"></small>', [{
-        'type': bindingTypes.IF,
-
-        'evaluate': function(scope) {
-          return scope.props.help;
-        },
-
-        'redundantAttribute': 'expr61',
-        'selector': '[expr61]',
-
-        'template': template('<!---->', [{
-          'expressions': [{
-            'type': expressionTypes.TEXT,
-            'childNodeIndex': 0,
-
-            'evaluate': function(scope) {
-              return scope.i18n(scope.props.help);
-            }
-          }]
-        }])
-      }]);
-    },
-
-    'name': 'jhelp'
-  };
-
-  var jlabel = {
-    'css': `jlabel .label,[is="jlabel"] .label{ font-size:1.3rem; } jlabel .inputRequired,[is="jlabel"] .inputRequired{ color: red; }`,
-    'exports': null,
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<label expr94 class="label fucfirst"><!----></label><span expr95 class="inputRequired mx-1"></span>',
-        [{
-          'redundantAttribute': 'expr94',
-          'selector': '[expr94]',
-
-          'expressions': [{
-            'type': expressionTypes.TEXT,
-            'childNodeIndex': 0,
-
-            'evaluate': function(scope) {
-              return scope.i18n(scope.props.field.label);
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'for',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }]
-        }, {
-          'type': bindingTypes.IF,
-
-          'evaluate': function(scope) {
-            return scope.props.field.required;
-          },
-
-          'redundantAttribute': 'expr95',
-          'selector': '[expr95]',
-          'template': template('<i class="fas fa-asterisk fa-fw" aria-hidden="true"></i>', [])
-        }]
-      );
-    },
-
-    'name': 'jlabel'
-  };
-
-  var jtooltip = {
-    'css': `jtooltip .ftooltip,[is="jtooltip"] .ftooltip{ position: relative; display: inline-block; } jtooltip .ftooltip .ftooltipText,[is="jtooltip"] .ftooltip .ftooltipText{ font-size:1rem!important; visibility: hidden; width: 12rem; background-color: #ffc107; color: white; text-align: center; border: thin solid lightgray; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 10; bottom: 125%; left: 0%; margin-left: -60px; } jtooltip .ftooltip:hover .ftooltipText,[is="jtooltip"] .ftooltip:hover .ftooltipText{ visibility: visible; }`,
-    'exports': null,
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<div expr107 class="ftooltip"></div>', [{
-        'type': bindingTypes.IF,
-
-        'evaluate': function(scope) {
-          return scope.props.tip;
-        },
-
-        'redundantAttribute': 'expr107',
-        'selector': '[expr107]',
-
-        'template': template(
-          '<i class="far fa-question-circle mx-1"></i><div expr108 class="ftooltipText"><!----></div>',
-          [{
-            'redundantAttribute': 'expr108',
-            'selector': '[expr108]',
-
-            'expressions': [{
-              'type': expressionTypes.TEXT,
-              'childNodeIndex': 0,
-
-              'evaluate': function(scope) {
-                return scope.i18n(scope.props.tip);
-              }
-            }]
-          }]
-        )
-      }]);
-    },
-
-    'name': 'jtooltip'
-  };
-
-  var ialert = {
-    'css': `ialert .alert div,[is="ialert"] .alert div{ font-size: 2rem; }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<div expr13 role="alert"><div expr14><jicon expr15></jicon><!----><jtooltip expr16></jtooltip></div><jhelp expr17></jhelp></div>',
-        [{
-          'redundantAttribute': 'expr13',
-          'selector': '[expr13]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return [
-                'alert alert-',
-                scope.props.field.color||'info',
-                ' ',
-                scope.props.field.class
-              ].join('');
-            }
-          }]
-        }, {
-          'redundantAttribute': 'expr14',
-          'selector': '[expr14]',
-
-          'expressions': [{
-            'type': expressionTypes.TEXT,
-            'childNodeIndex': 1,
-
-            'evaluate': function(scope) {
-              return [' ', scope.i18n(scope.props.field.message), '\r\n            '].join('');
-            }
-          }]
-        }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
 
           'evaluate': function(scope) {
-            return 'jicon';
+            return 'formr';
           },
 
           'slots': [],
 
           'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr15',
-          'selector': '[expr15]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr16',
-          'selector': '[expr16]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr17',
-          'selector': '[expr17]'
-        }]
-      );
-    },
-
-    'name': 'ialert'
-  };
-
-  var ibutton = {
-    'css': null,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      click(ev) { //not used
-          action = ev.target.getAttribute('action');
-          param = ev.target.getAttribute('param');
-          console.log(action, param, this);
-          if (typeof action == "function") action(event, param);
-          if (typeof this[action] == "function") this[action](event, param);
-      },
-
-      dosomething(ev, param) //test action
-      {
-          alert('dosomething');
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<button expr9 type="button" style="text-transform: capitalize;"><jicon expr10></jicon><!----><jtooltip expr11></jtooltip></button><jhelp expr12></jhelp>',
-        [{
-          'redundantAttribute': 'expr9',
-          'selector': '[expr9]',
-
-          'expressions': [{
-            'type': expressionTypes.TEXT,
-            'childNodeIndex': 1,
-
-            'evaluate': function(scope) {
-              return [' ', scope.i18n(scope.props.field.title), '\r\n        '].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': null,
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return [
-                'btn btn-',
-                scope.props.field.color?scope.props.field.color:'outline-primary',
-                ' ',
-                scope.props.field.class
-              ].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }, {
-            'type': expressionTypes.EVENT,
-            'name': 'onclick',
-
-            'evaluate': function(scope) {
-              return scope[scope.props.field.onclick];
-            }
-          }, {
             'type': expressionTypes.ATTRIBUTE,
             'name': 'id',
 
-            'evaluate': function(scope) {
-              return [].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'disabled',
-
-            'evaluate': function(scope) {
-              return scope.props.field.waitValid || scope.props.field.disabled;
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jicon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr10',
-          'selector': '[expr10]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr11',
-          'selector': '[expr11]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr12',
-          'selector': '[expr12]'
-        }]
-      );
-    },
-
-    'name': 'ibutton'
-  };
-
-  var icheckbox = {
-    'css': `icheckbox .fswitch,[is="icheckbox"] .fswitch{ display: block; position: relative; padding-left: 3.2rem; margin-bottom: 12px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } icheckbox .fswitch input,[is="icheckbox"] .fswitch input{ position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } icheckbox .fswitchslider,[is="icheckbox"] .fswitchslider{ position: absolute; top: 3px; left: 0; height: 1.5rem; width: 2.75rem; background-color: #eee; -webkit-transition: .4s; transition: .4s; } icheckbox .fswitch:hover input~.fswitchslider,[is="icheckbox"] .fswitch:hover input~.fswitchslider{ background-color: #ccc; } icheckbox .fswitch input:checked~.fswitchslider,[is="icheckbox"] .fswitch input:checked~.fswitchslider{ background-color: #2196F3; } icheckbox .fswitchslider:before,[is="icheckbox"] .fswitchslider:before{ position: absolute; content: ""; height: 1.35rem; width: 1.35rem; left: 0.1rem; bottom: 0.1rem; background-color: white; -webkit-transition: .4s; transition: .4s; } icheckbox .fswitch input:checked~.fswitchslider,[is="icheckbox"] .fswitch input:checked~.fswitchslider{ background-color: blue; } icheckbox .fswitch input:checked~.fswitchslider:before,[is="icheckbox"] .fswitch input:checked~.fswitchslider:before{ background-image: radial-gradient(#ffffff, rgb(210, 210, 210)); } icheckbox .fswitch input:focus~.fswitchslider,[is="icheckbox"] .fswitch input:focus~.fswitchslider{ --box-shadow: 0 0 1px var(--navBarBg-backgroundColor); box-shadow: 0 0 4px blue; } icheckbox .fswitch input:checked~.fswitchslider:before,[is="icheckbox"] .fswitch input:checked~.fswitchslider:before{ -webkit-transform: translateX(1.25rem); -ms-transform: translateX(1.25rem); transform: translateX(1.25rem); } icheckbox .fswitch input[disabled]~.fswitchslider,[is="icheckbox"] .fswitch input[disabled]~.fswitchslider{ opacity: 0.5; cursor: not-allowed; } icheckbox .fswitchround,[is="icheckbox"] .fswitchround{ border-radius: 3.4rem; } icheckbox .fswitchround:before,[is="icheckbox"] .fswitchround:before{ border-radius: 50%; } icheckbox .fcheck,[is="icheckbox"] .fcheck{ display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } icheckbox .fcheck input,[is="icheckbox"] .fcheck input{ position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } icheckbox .fcheckmark,[is="icheckbox"] .fcheckmark{ position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #eee; -webkit-transition: .4s; transition: .4s; } icheckbox .fcheck:hover input~.fcheckmark,[is="icheckbox"] .fcheck:hover input~.fcheckmark{ background-color: #ccc; } icheckbox .fcheck input:checked~.fcheckmark,[is="icheckbox"] .fcheck input:checked~.fcheckmark{ background-color: #2196F3; } icheckbox .fcheckmark:after,[is="icheckbox"] .fcheckmark:after{ content: ""; position: absolute; display: none; } icheckbox .fcheck input:checked~.fcheckmark:after,[is="icheckbox"] .fcheck input:checked~.fcheckmark:after{ display: block; } icheckbox .fcheck .fcheckmark:after,[is="icheckbox"] .fcheck .fcheckmark:after{ left: 9px; top: 5px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      isChecked(option) {
-          return (option.checked || option.value == option.checkedValue || option.value == true)
-      },
-
-      ctrlToString(option, which) {
-          if (option.ctrl && option.ctrl[which]) return option.ctrl[which].join()
-          else return false
-      },
-
-      buildId(option) {
-          if (option.id) return this.props.field.id + '.' + option.id
-          else return this.props.field.id
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr62></jlabel><jtooltip expr63></jtooltip><jhelp expr64></jhelp><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="aaad-inline"><template expr65></template></div>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr62',
-          'selector': '[expr62]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr63',
-          'selector': '[expr63]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr64',
-          'selector': '[expr64]'
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-          'condition': null,
-
-          'template': template(
-            '<div class="row"><div expr66 class="fucfirst col-auto mb-2"></div><div class="col-auto"><label expr67><span expr68 class="mr-1"></span><jtooltip expr69></jtooltip><jhelp expr70></jhelp><input expr71 class="form-control"/><span expr72></span></label></div><div expr73 class="fucfirst col-auto mb-2"></div><div class="fucfirst col-auto mb-2"><jtooltip expr74></jtooltip><jhelp expr75></jhelp></div></div>',
-            [{
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.option.uncheckedLabel;
-              },
-
-              'redundantAttribute': 'expr66',
-              'selector': '[expr66]',
-
-              'template': template('<!---->', [{
-                'expressions': [{
-                  'type': expressionTypes.TEXT,
-                  'childNodeIndex': 0,
-
-                  'evaluate': function(scope) {
-                    return scope.i18n(scope.option.uncheckedLabel);
-                  }
-                }]
-              }])
-            }, {
-              'redundantAttribute': 'expr67',
-              'selector': '[expr67]',
-
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'class',
-
-                'evaluate': function(scope) {
-                  return ['ucfirst ', scope.props.field.type=='switch' ?'fswitch':'fcheck'].join('');
-                }
-              }]
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return !scope.option.checkedLabel;
-              },
-
-              'redundantAttribute': 'expr68',
-              'selector': '[expr68]',
-
-              'template': template('<!---->', [{
-                'expressions': [{
-                  'type': expressionTypes.TEXT,
-                  'childNodeIndex': 0,
-
-                  'evaluate': function(scope) {
-                    return [' ', scope.i18n(scope.option.label)].join('');
-                  }
-                }]
-              }])
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return !scope.option.checkedLabel;
-              },
-
-              'redundantAttribute': 'expr69',
-              'selector': '[expr69]',
-
-              'template': template(null, [{
-                'type': bindingTypes.TAG,
-                'getComponent': getComponent,
-
-                'evaluate': function(scope) {
-                  return 'jtooltip';
-                },
-
-                'slots': [],
-
-                'attributes': [{
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'tip',
-
-                  'evaluate': function(scope) {
-                    return scope.option.tip;
-                  }
-                }]
-              }])
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return !scope.option.checkedLabel;
-              },
-
-              'redundantAttribute': 'expr70',
-              'selector': '[expr70]',
-
-              'template': template(null, [{
-                'type': bindingTypes.TAG,
-                'getComponent': getComponent,
-
-                'evaluate': function(scope) {
-                  return 'jhelp';
-                },
-
-                'slots': [],
-
-                'attributes': [{
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'help',
-
-                  'evaluate': function(scope) {
-                    return scope.option.help;
-                  }
-                }]
-              }])
-            }, {
-              'redundantAttribute': 'expr71',
-              'selector': '[expr71]',
-
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': null,
-
-                'evaluate': function(scope) {
-                  return scope.props.field;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'type',
-
-                'evaluate': function(scope) {
-                  return "checkbox";
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'checkedValue',
-
-                'evaluate': function(scope) {
-                  return scope.option.checkedValue;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'unCheckedValue',
-
-                'evaluate': function(scope) {
-                  return scope.option.uncheckedValue;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'checked',
-
-                'evaluate': function(scope) {
-                  return scope.isChecked(scope.option);
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'ctrlChecked',
-
-                'evaluate': function(scope) {
-                  return scope.ctrlToString(scope.option,'checked');
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'ctrlUnchecked',
-
-                'evaluate': function(scope) {
-                  return scope.ctrlToString(scope.option,'unchecked');
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'name',
-
-                'evaluate': function(scope) {
-                  return scope.buildId(scope.option);
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'id',
-
-                'evaluate': function(scope) {
-                  return [].join('');
-                }
-              }]
-            }, {
-              'redundantAttribute': 'expr72',
-              'selector': '[expr72]',
-
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'class',
-
-                'evaluate': function(scope) {
-                  return scope.props.field.type=='switch' ?'fswitchslider fswitchround':'fcheckmark';
-                }
-              }]
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.option.checkedLabel;
-              },
-
-              'redundantAttribute': 'expr73',
-              'selector': '[expr73]',
-
-              'template': template('<!---->', [{
-                'expressions': [{
-                  'type': expressionTypes.TEXT,
-                  'childNodeIndex': 0,
-
-                  'evaluate': function(scope) {
-                    return [
-                      '\r\n                    ',
-                      scope.i18n(scope.option.checkedLabel),
-                      '\r\n                '
-                    ].join('');
-                  }
-                }]
-              }])
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.option.checkedLabel;
-              },
-
-              'redundantAttribute': 'expr74',
-              'selector': '[expr74]',
-
-              'template': template(null, [{
-                'type': bindingTypes.TAG,
-                'getComponent': getComponent,
-
-                'evaluate': function(scope) {
-                  return 'jtooltip';
-                },
-
-                'slots': [],
-
-                'attributes': [{
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'tip',
-
-                  'evaluate': function(scope) {
-                    return scope.option.tip;
-                  }
-                }]
-              }])
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.option.checkedLabel;
-              },
-
-              'redundantAttribute': 'expr75',
-              'selector': '[expr75]',
-
-              'template': template(null, [{
-                'type': bindingTypes.TAG,
-                'getComponent': getComponent,
-
-                'evaluate': function(scope) {
-                  return 'jhelp';
-                },
-
-                'slots': [],
-
-                'attributes': [{
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'help',
-
-                  'evaluate': function(scope) {
-                    return scope.option.help;
-                  }
-                }]
-              }])
-            }]
-          ),
-
-          'redundantAttribute': 'expr65',
-          'selector': '[expr65]',
-          'itemName': 'option',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.props.field.options;
-          }
-        }]
-      );
-    },
-
-    'name': 'icheckbox'
-  };
-
-  var icolorpicker = {
-    'css': `icolorpicker .pickr .pcr-button,[is="icolorpicker"] .pickr .pcr-button{ height: 4em; width: 4em; }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      onMounted() {
-          let formId = this.props.attr.id;
-          //https://github.com/Simonwep/pickr
-          const pickr = Pickr.create({
-              el: '[name="' + formId + '_colorpicker_' + this.props.field.id + '"]',
-              theme: 'nano', // or 'monolith', or 'nano'
-              //default:'rgba(239, 1, 5, 1)',
-              // default:'#16D92A',
-
-              comparison: false,
-
-              swatches: [
-                  'rgba(244, 67, 54, 1)',
-                  'rgba(233, 30, 99, 0.95)',
-                  'rgba(156, 39, 176, 0.9)',
-                  'rgba(103, 58, 183, 0.85)',
-                  'rgba(63, 81, 181, 0.8)',
-                  'rgba(33, 150, 243, 0.75)',
-                  'rgba(3, 169, 244, 0.7)',
-                  'rgba(0, 188, 212, 0.7)',
-                  'rgba(0, 150, 136, 0.75)',
-                  'rgba(76, 175, 80, 0.8)',
-                  'rgba(139, 195, 74, 0.85)',
-                  'rgba(205, 220, 57, 0.9)',
-                  'rgba(255, 235, 59, 0.95)',
-                  'rgba(255, 193, 7, 1)'
-              ],
-
-              components: {
-
-                  // Main components
-                  preview: true,
-                  opacity: true,
-                  hue: true,
-
-                  // Input / output Options
-                  interaction: {
-                      hex: true,
-                      rgba: true,
-                      hsla: false,
-                      hsva: false,
-                      cmyk: false,
-                      input: true,
-                      clear: false,
-                      save: true,
-                      cancel: true
-                  }
-              },
-              strings: {
-                  save: 'Select', // Default for save button
-                  clear: 'Clear', // Default for clear button
-                  cancel: 'Cancel' // Default for cancel button
-              }
-          });
-
-          pickr.on('init', instance => {
-              //console.log(instance)
-              let setColor = instance._root.root.closest(".form-group").querySelector("[type='hidden']").value;
-              pickr.setColor(setColor, true);
-          });
-
-          pickr.on('save', (color, instance) => {
-              let rgba = color.toRGBA().toString();
-              instance._root.root.closest(".form-group").querySelector("[type='hidden']").value = rgba;
-          }).on('cancel', () => {
-              pickr.hide();
-          });
-
-          document.addEventListener(this.props.attr.id + '_setColor_' + this.props.field.id, function(ev) {
-              pickr.setColor(ev.detail.color, true);
-          });
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr23></jlabel><jtooltip expr24></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr25></jhelp><div expr26></div><input expr27 type="hidden" class="form-control"/>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr23',
-          'selector': '[expr23]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr24',
-          'selector': '[expr24]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr25',
-          'selector': '[expr25]'
-        }, {
-          'redundantAttribute': 'expr26',
-          'selector': '[expr26]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.attr.id +"_colorpicker_" + scope.props.field.id;
-            }
-          }]
-        }, {
-          'redundantAttribute': 'expr27',
-          'selector': '[expr27]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }, {
-            'type': expressionTypes.VALUE,
-
-            'evaluate': function(scope) {
-              return scope.props.field.value;
-            }
-          }]
-        }]
-      );
-    },
-
-    'name': 'icolorpicker'
-  };
-
-  var ihidden = {
-    'css': null,
-    'exports': null,
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<input expr8 type="hidden"/>', [{
-        'redundantAttribute': 'expr8',
-        'selector': '[expr8]',
-
-        'expressions': [{
-          'type': expressionTypes.ATTRIBUTE,
-          'name': null,
-
-          'evaluate': function(scope) {
-            return scope.props.field;
-          }
-        }, {
-          'type': expressionTypes.ATTRIBUTE,
-          'name': 'class',
-
-          'evaluate': function(scope) {
-            return ['form-control ', scope.props.field.class].join('');
-          }
-        }, {
-          'type': expressionTypes.ATTRIBUTE,
-          'name': 'name',
-
-          'evaluate': function(scope) {
-            return scope.props.field.id;
-          }
-        }, {
-          'type': expressionTypes.VALUE,
-
-          'evaluate': function(scope) {
-            return scope.props.field.value;
-          }
-        }, {
-          'type': expressionTypes.ATTRIBUTE,
-          'name': 'id',
-
-          'evaluate': function(scope) {
-            return [].join('');
-          }
-        }]
-      }]);
-    },
-
-    'name': 'ihidden'
-  };
-
-  var ihr = {
-    'css': `ihr .fhrlabel,[is="ihr"] .fhrlabel{ font-size: 1.3rem; } ihr hr,[is="ihr"] hr{ margin: 0; }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<div expr18><jicon expr19></jicon><span expr20><!----></span><jtooltip expr21></jtooltip><hr/><jhelp expr22></jhelp></div>',
-        [{
-          'redundantAttribute': 'expr18',
-          'selector': '[expr18]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jicon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr19',
-          'selector': '[expr19]'
-        }, {
-          'redundantAttribute': 'expr20',
-          'selector': '[expr20]',
-
-          'expressions': [{
-            'type': expressionTypes.TEXT,
-            'childNodeIndex': 0,
-
-            'evaluate': function(scope) {
-              return [' ', scope.i18n(scope.props.field.label)].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return ['fhrlabel ', scope.props.field.class].join('');
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr21',
-          'selector': '[expr21]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr22',
-          'selector': '[expr22]'
-        }]
-      );
-    },
-
-    'name': 'ihr'
-  };
-
-  var ipassword = {
-    'css': null,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr35></jlabel><jtooltip expr36></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr37 placement="left"></jaddon><input expr38 type="password" placeholder="Password"/><jaddon expr39 placement="right"></jaddon></div><jhelp expr40></jhelp>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr35',
-          'selector': '[expr35]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr36',
-          'selector': '[expr36]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jaddon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'placement',
-
             'evaluate': function() {
-              return 'left';
+              return 'form1';
             }
           }],
 
-          'redundantAttribute': 'expr37',
-          'selector': '[expr37]'
+          'redundantAttribute': 'expr216',
+          'selector': '[expr216]'
         }, {
-          'redundantAttribute': 'expr38',
-          'selector': '[expr38]',
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
 
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': null,
+          'evaluate': function(scope) {
+            return 'formr';
+          },
 
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
+          'slots': [],
 
-            'evaluate': function(scope) {
-              return ['form-control ', scope.props.field.class].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }, {
-            'type': expressionTypes.VALUE,
-
-            'evaluate': function(scope) {
-              return scope.props.field.value;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'size',
-
-            'evaluate': function(scope) {
-              return scope.props.field.size;
-            }
-          }, {
+          'attributes': [{
             'type': expressionTypes.ATTRIBUTE,
             'name': 'id',
 
-            'evaluate': function(scope) {
-              return [].join('');
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jaddon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'placement',
-
             'evaluate': function() {
-              return 'right';
+              return 'form2';
             }
           }],
 
-          'redundantAttribute': 'expr39',
-          'selector': '[expr39]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr40',
-          'selector': '[expr40]'
+          'redundantAttribute': 'expr217',
+          'selector': '[expr217]'
         }]
       );
     },
 
-    'name': 'ipassword'
+    'name': 'app'
   };
 
-  var iradio = {
-    'css': `iradio .fradio,[is="iradio"] .fradio{ display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } iradio .fradio input,[is="iradio"] .fradio input{ position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } iradio .fradiomark,[is="iradio"] .fradiomark{ position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #eee; border-radius: 50%; -webkit-transition: .4s; transition: .4s; } iradio .fradio:hover input~.fradiomark,[is="iradio"] .fradio:hover input~.fradiomark{ background-color: #ccc; } iradio .fradio input:checked~.fradiomark,[is="iradio"] .fradio input:checked~.fradiomark{ background-color: #2196F3; } iradio .fradiomark:after,[is="iradio"] .fradiomark:after{ content: ""; position: absolute; display: none; } iradio .fradio input:checked~.fradiomark:after,[is="iradio"] .fradio input:checked~.fradiomark:after{ display: block; } iradio .fradio .fradiomark:after,[is="iradio"] .fradio .fradiomark:after{ top: 8px; left: 8px; width: 9px; height: 9px; border-radius: 50%; background: white; }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      isChecked(option) {
-          return (option.checked || option.id == this.props.field.value)
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr53></jlabel><jtooltip expr54></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr55></jhelp><div class="aaad-inline"><template expr56></template></div>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr53',
-          'selector': '[expr53]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr54',
-          'selector': '[expr54]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr55',
-          'selector': '[expr55]'
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-          'condition': null,
-
-          'template': template(
-            '<label expr57 class="fradio"><!----><jtooltip expr58></jtooltip><jhelp expr59></jhelp><input expr60 type="radio" class="form-control"/><span class="fradiomark"></span></label>',
-            [{
-              'redundantAttribute': 'expr57',
-              'selector': '[expr57]',
-
-              'expressions': [{
-                'type': expressionTypes.TEXT,
-                'childNodeIndex': 0,
-
-                'evaluate': function(scope) {
-                  return [scope.i18n(scope.option.label), '\r\n                '].join('');
-                }
-              }]
-            }, {
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'jtooltip';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'tip',
-
-                'evaluate': function(scope) {
-                  return scope.option.tip;
-                }
-              }],
-
-              'redundantAttribute': 'expr58',
-              'selector': '[expr58]'
-            }, {
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'jhelp';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'help',
-
-                'evaluate': function(scope) {
-                  return scope.option.help;
-                }
-              }],
-
-              'redundantAttribute': 'expr59',
-              'selector': '[expr59]'
-            }, {
-              'redundantAttribute': 'expr60',
-              'selector': '[expr60]',
-
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': null,
-
-                'evaluate': function(scope) {
-                  return scope.props.field;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'checked',
-
-                'evaluate': function(scope) {
-                  return scope.isChecked(scope.option);
-                }
-              }, {
-                'type': expressionTypes.VALUE,
-
-                'evaluate': function(scope) {
-                  return scope.option.id;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'name',
-
-                'evaluate': function(scope) {
-                  return scope.props.field.id;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'id',
-
-                'evaluate': function(scope) {
-                  return [].join('');
-                }
-              }]
-            }]
-          ),
-
-          'redundantAttribute': 'expr56',
-          'selector': '[expr56]',
-          'itemName': 'option',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.props.field.options;
-          }
-        }]
-      );
-    },
-
-    'name': 'iradio'
-  };
-
-  var irange = {
-    'css': `irange input[type=range]::-webkit-slider-thumb,[is="irange"] input[type=range]::-webkit-slider-thumb{ background: red; } irange input[type=range]::-moz-range-thumb,[is="irange"] input[type=range]::-moz-range-thumb{ background: red; } irange input[type=range]::-ms-thumb,[is="irange"] input[type=range]::-ms-thumb{ background: red; }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr31></jlabel><jtooltip expr32></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><input expr33 type="range"/></div><jhelp expr34></jhelp>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr31',
-          'selector': '[expr31]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr32',
-          'selector': '[expr32]'
-        }, {
-          'redundantAttribute': 'expr33',
-          'selector': '[expr33]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': null,
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return ['form-control custom-range ', scope.props.field.class].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'min',
-
-            'evaluate': function(scope) {
-              return scope.props.field.min;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'max',
-
-            'evaluate': function(scope) {
-              return scope.props.field.max;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'step',
-
-            'evaluate': function(scope) {
-              return scope.props.field.step;
-            }
-          }, {
-            'type': expressionTypes.VALUE,
-
-            'evaluate': function(scope) {
-              return scope.props.field.value;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'id',
-
-            'evaluate': function(scope) {
-              return [].join('');
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr34',
-          'selector': '[expr34]'
-        }]
-      );
-    },
-
-    'name': 'irange'
-  };
-
-  var irow = {
-    'css': null,
-
-    'exports': {
-      checkField(field,i){
-      field.id = field.id || 'ffield'+i;
-      return field
-  }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<div class="row"><template expr28></template></div>', [{
-        'type': bindingTypes.EACH,
-        'getKey': null,
-        'condition': null,
-
-        'template': template('<div expr29><div expr30></div></div>', [{
-          'redundantAttribute': 'expr29',
-          'selector': '[expr29]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return ['col form-group ', scope.field.class].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return ['fgroup_', scope.field.id || scope.i].join('');
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'i'+scope.callType(scope.field.type);
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.checkField(scope.field,scope.i);
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'attr',
-
-            'evaluate': function(scope) {
-              return scope.props.attr;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'index',
-
-            'evaluate': function(scope) {
-              return scope.i;
-            }
-          }],
-
-          'redundantAttribute': 'expr30',
-          'selector': '[expr30]'
-        }]),
-
-        'redundantAttribute': 'expr28',
-        'selector': '[expr28]',
-        'itemName': 'field',
-        'indexName': 'i',
-
-        'evaluate': function(scope) {
-          return scope.props.field.desc;
-        }
-      }]);
-    },
-
-    'name': 'irow'
-  };
-
-  var iselect = {
-    'css': null,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      onMounted() {
-          let formId = this.props.attr.id;
-          if (this.props.field.multiple) {
-              const choices = new Choices('[name="' + this.props.field.id + '"]', {
-                  silent: true,
-                  aaitems: [],
-                  aachoices: [],
-                  renderChoiceLimit: -1,
-                  maxItemCount: -1,
-                  addItems: true,
-                  addItemFilterFn: null,
-                  removeItems: true,
-                  removeItemButton: true,
-                  editItems: false,
-                  duplicateItemsAllowed: false,
-                  aaadelimiter: ',',
-                  paste: true,
-                  aaaasearchEnabled: true,
-                  aaaaasearchChoices: true,
-                  searchFloor: 1,
-                  searchResultLimit: 4,
-                  searchFields: ['label', 'value'],
-                  position: 'auto',
-                  resetScrollPosition: true,
-                  shouldSort: false,
-                  shouldSortItems: false,
-                  sortFn: () => {},
-                  placeholder: true,
-                  placeholderValue: this.props.field.placeholder,
-                  searchPlaceholderValue: null,
-                  prependValue: null,
-                  appendValue: null,
-                  renderSelectedChoices: 'auto',
-                  loadingText: 'Loading...',
-                  noResultsText: 'No results found',
-                  noChoicesText: 'No choices to choose from',
-                  itemSelectText: 'Press to select',
-                  addItemText: (value) => {
-                      return `Press Enter to add <b>"${value}"</b>`;
-                  },
-                  maxItemText: (maxItemCount) => {
-                      return `Only ${maxItemCount} values can be added`;
-                  },
-                  itemComparer: (choice, item) => {
-                      return choice === item;
-                  },
-                  classNames: {
-                      containerOuter: 'choices',
-                      containerInner: 'choices__inner',
-                      input: 'choices__input',
-                      inputCloned: 'choices__input--cloned',
-                      list: 'choices__list',
-                      listItems: 'choices__list--multiple',
-                      listSingle: 'choices__list--single',
-                      listDropdown: 'choices__list--dropdown',
-                      item: 'choices__item',
-                      itemSelectable: 'choices__item--selectable',
-                      itemDisabled: 'choices__item--disabled',
-                      itemChoice: 'choices__item--choice',
-                      placeholder: 'choices__placeholder',
-                      group: 'choices__group',
-                      groupHeading: 'choices__heading',
-                      button: 'choices__button',
-                      activeState: 'is-active',
-                      focusState: 'is-focused',
-                      openState: 'is-open',
-                      disabledState: 'is-disabled',
-                      highlightedState: 'is-highlighted',
-                      hiddenState: 'is-hidden',
-                      flippedState: 'is-flipped',
-                      loadingState: 'is-loading',
-                      noResults: 'has-no-results',
-                      noChoices: 'has-no-choices'
-                  },
-                  // Choices uses the great Fuse library for searching. You
-                  // can find more options here: https://github.com/krisk/Fuse#options
-                  fuseOptions: {
-                      include: 'score'
-                  },
-                  callbackOnInit: null,
-                  callbackOnCreateTemplates: null
-              });
-          }
-      },
-
-      isSelected(option) {
-          //console.log(option)
-          return (option.selected || option.value == this.props.field.value || (Array.isArray(this.props.field.value) && this.props.field.value.indexOf(option.value) > -1))
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr96></jlabel><jtooltip expr97></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr98></div><div expr99></div><div class="input-group mb-3"><jaddon expr100 placement="left"></jaddon><select expr101><template expr102></template></select><jaddon expr104 placement="right"></jaddon></div><jhelp expr105></jhelp>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr96',
-          'selector': '[expr96]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr97',
-          'selector': '[expr97]'
-        }, {
-          'redundantAttribute': 'expr98',
-          'selector': '[expr98]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return "colorpicker_" + scope.props.field.id;
-            }
-          }]
-        }, {
-          'redundantAttribute': 'expr99',
-          'selector': '[expr99]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.attr.id +"_select_" + scope.props.field.id;
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jaddon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'placement',
-
-            'evaluate': function() {
-              return 'left';
-            }
-          }],
-
-          'redundantAttribute': 'expr100',
-          'selector': '[expr100]'
-        }, {
-          'redundantAttribute': 'expr101',
-          'selector': '[expr101]',
-
-          'expressions': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': null,
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'multiple',
-
-            'evaluate': function(scope) {
-              return scope.props.field.multiple;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return ['form-control ', scope.props.field.class].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'name',
-
-            'evaluate': function(scope) {
-              return scope.props.field.id;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'id',
-
-            'evaluate': function(scope) {
-              return [].join('');
-            }
-          }]
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-          'condition': null,
-
-          'template': template('<option expr103><!----></option>', [{
-            'redundantAttribute': 'expr103',
-            'selector': '[expr103]',
-
-            'expressions': [{
-              'type': expressionTypes.TEXT,
-              'childNodeIndex': 0,
-
-              'evaluate': function(scope) {
-                return [
-                  '\r\n                    ',
-                  scope.i18n(scope.option.label),
-                  '\r\n                '
-                ].join('');
-              }
-            }, {
-              'type': expressionTypes.VALUE,
-
-              'evaluate': function(scope) {
-                return scope.option.value;
-              }
-            }, {
-              'type': expressionTypes.ATTRIBUTE,
-              'name': 'selected',
-
-              'evaluate': function(scope) {
-                return scope.isSelected(scope.option);
-              }
-            }]
-          }]),
-
-          'redundantAttribute': 'expr102',
-          'selector': '[expr102]',
-          'itemName': 'option',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.props.field.options;
-          }
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jaddon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'placement',
-
-            'evaluate': function() {
-              return 'right';
-            }
-          }],
-
-          'redundantAttribute': 'expr104',
-          'selector': '[expr104]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr105',
-          'selector': '[expr105]'
-        }]
-      );
-    },
-
-    'name': 'iselect'
-  };
-
-  var itext = {
-    'css': null,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      onBeforeMount() {
-          this.state.currentLang = this.props.attr.langs[0];
-          this.state.defaultLang = this.props.attr.langs[0];
-          if (this.props.field.multilang) {
-              this.state.langs = this.props.attr.langs;
-          } else {
-              this.state.langs = [''];
-          }
-          if (this.props.type == 'datetime') this.state.type = 'datetime-local';
-          else this.state.type = this.props.field.type;
-      },
-
-      btnLangColor(lang) {
-          return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
-      },
-
-      buildId(lang) {
-          return this.props.field.multilang ? this.props.field.id + '.' + lang : this.props.field.id
-      },
-
-      defaultValue() {
-          if (this.state.currentLang == this.props.attr.langs[0]) return this.props.field.value
-          else return null
-      },
-
-      selectLang(ev) {
-          this.state.currentLang = ev.target.attributes.idLang.value;
-          this.update();
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr41></jlabel><jtooltip expr42></jtooltip><template expr43></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr45></div><jhelp expr52></jhelp>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr41',
-          'selector': '[expr41]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr42',
-          'selector': '[expr42]'
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-
-          'condition': function(scope) {
-            return scope.props.field.multilang;
-          },
-
-          'template': template(
-            '<button expr44 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
-            [{
-              'redundantAttribute': 'expr44',
-              'selector': '[expr44]',
-
-              'expressions': [{
-                'type': expressionTypes.TEXT,
-                'childNodeIndex': 0,
-
-                'evaluate': function(scope) {
-                  return [scope.langName(scope.lang), ' '].join('');
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'class',
-
-                'evaluate': function(scope) {
-                  return ['btn ', scope.btnLangColor(scope.lang), ' btn-sm ml-1'].join('');
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'idLang',
-
-                'evaluate': function(scope) {
-                  return scope.lang;
-                }
-              }, {
-                'type': expressionTypes.EVENT,
-                'name': 'onclick',
-
-                'evaluate': function(scope) {
-                  return scope.selectLang;
-                }
-              }]
-            }]
-          ),
-
-          'redundantAttribute': 'expr43',
-          'selector': '[expr43]',
-          'itemName': 'lang',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.props.attr.langs;
-          }
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-          'condition': null,
-
-          'template': template(
-            '<jaddon expr46 placement="left"></jaddon><input expr47/><textarea expr48></textarea><div expr49 class="h-100 input-group-append"></div><jaddon expr51 placement="right"></jaddon>',
-            [{
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'class',
-
-                'evaluate': function(scope) {
-                  return [
-                    'input-group ',
-                    scope.lang==scope.state.currentLang || !scope.lang?'':'hide'
-                  ].join('');
-                }
-              }]
-            }, {
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'jaddon';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'field',
-
-                'evaluate': function(scope) {
-                  return scope.props.field;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'placement',
-
-                'evaluate': function() {
-                  return 'left';
-                }
-              }],
-
-              'redundantAttribute': 'expr46',
-              'selector': '[expr46]'
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.props.field.type!='textarea';
-              },
-
-              'redundantAttribute': 'expr47',
-              'selector': '[expr47]',
-
-              'template': template(null, [{
-                'expressions': [{
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': null,
-
-                  'evaluate': function(scope) {
-                    return scope.props.field;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'aaatabindex',
-
-                  'evaluate': function(scope) {
-                    return scope.props.index;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'type',
-
-                  'evaluate': function(scope) {
-                    return scope.state.type;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'class',
-
-                  'evaluate': function(scope) {
-                    return ['form-control ', scope.props.field.class].join('');
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'defaultLang',
-
-                  'evaluate': function(scope) {
-                    return scope.state.defaultLang;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'lang',
-
-                  'evaluate': function(scope) {
-                    return scope.lang;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'baseId',
-
-                  'evaluate': function(scope) {
-                    return scope.props.field.id;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'name',
-
-                  'evaluate': function(scope) {
-                    return scope.buildId(scope.lang);
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'value',
-
-                  'evaluate': function(scope) {
-                    return scope.props.field.value;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'id',
-
-                  'evaluate': function(scope) {
-                    return [].join('');
-                  }
-                }]
-              }])
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.props.field.type=='textarea';
-              },
-
-              'redundantAttribute': 'expr48',
-              'selector': '[expr48]',
-
-              'template': template('<!---->', [{
-                'expressions': [{
-                  'type': expressionTypes.TEXT,
-                  'childNodeIndex': 0,
-
-                  'evaluate': function(scope) {
-                    return scope.props.field.value;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': null,
-
-                  'evaluate': function(scope) {
-                    return scope.props.field;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'aaatabindex',
-
-                  'evaluate': function(scope) {
-                    return scope.props.index;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'class',
-
-                  'evaluate': function(scope) {
-                    return ['form-control ', scope.props.field.class].join('');
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'rows',
-
-                  'evaluate': function(scope) {
-                    return scope.props.field.rows || 8;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'defaultLang',
-
-                  'evaluate': function(scope) {
-                    return scope.state.defaultLang;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'lang',
-
-                  'evaluate': function(scope) {
-                    return scope.lang;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'baseId',
-
-                  'evaluate': function(scope) {
-                    return scope.props.field.id;
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'name',
-
-                  'evaluate': function(scope) {
-                    return scope.buildId(scope.lang);
-                  }
-                }, {
-                  'type': expressionTypes.ATTRIBUTE,
-                  'name': 'id',
-
-                  'evaluate': function(scope) {
-                    return [].join('');
-                  }
-                }]
-              }])
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
-              },
-
-              'redundantAttribute': 'expr49',
-              'selector': '[expr49]',
-
-              'template': template(
-                '<button expr50 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
-                [{
-                  'redundantAttribute': 'expr50',
-                  'selector': '[expr50]',
-
-                  'expressions': [{
-                    'type': expressionTypes.EVENT,
-                    'name': 'onclick',
-
-                    'evaluate': function(scope) {
-                      return scope.translate;
-                    }
-                  }]
-                }]
-              )
-            }, {
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'jaddon';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'field',
-
-                'evaluate': function(scope) {
-                  return scope.props.field;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'placement',
-
-                'evaluate': function() {
-                  return 'right';
-                }
-              }],
-
-              'redundantAttribute': 'expr51',
-              'selector': '[expr51]'
-            }]
-          ),
-
-          'redundantAttribute': 'expr45',
-          'selector': '[expr45]',
-          'itemName': 'lang',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.state.langs;
-          }
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr52',
-          'selector': '[expr52]'
-        }]
-      );
-    },
-
-    'name': 'itext'
-  };
-
-  var itexteditor = {
-    'css': null,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      },
-
-      onBeforeMount() {
-          this.state.currentLang = this.props.attr.langs[0];
-          this.state.defaultLang = this.props.attr.langs[0];
-          if (this.props.field.multilang) {
-              this.state.langs = this.props.attr.langs;
-          } else {
-              this.state.langs = [''];
-          }
-          if (this.props.type == 'datetime') this.state.type = 'datetime-local';
-          else this.state.type = this.props.field.type;
-      },
-
-      onMounted() {
-              //https://quilljs.com/
-
-              var container = '.texteditor';
-              var editor = new Quill(container, {
-                  modules: {
-                      toolbar: [
-                          [{
-                              header: [1, 2, false]
-                          }],
-                          ['bold', 'italic', 'underline'],
-                          ['image', 'code-block']
-                      ]
-                  },
-                  theme: 'snow'
-              });
-          },
-
-      btnLangColor(lang) {
-          return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
-      },
-
-      buildId(lang) {
-          return this.props.field.multilang ? this.props.field.id + '.' + lang : this.props.field.id
-      },
-
-      defaultValue() {
-          if (this.state.currentLang == this.props.attr.langs[0]) return this.props.field.value
-          else return null
-      },
-
-      selectLang(ev) {
-          this.state.currentLang = ev.target.attributes.idLang.value;
-          this.update();
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<jlabel expr80></jlabel><jtooltip expr81></jtooltip><template expr82></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr84></div><jhelp expr89></jhelp>',
-        [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jlabel';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr80',
-          'selector': '[expr80]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr81',
-          'selector': '[expr81]'
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-
-          'condition': function(scope) {
-            return scope.props.field.multilang;
-          },
-
-          'template': template(
-            '<button expr83 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
-            [{
-              'redundantAttribute': 'expr83',
-              'selector': '[expr83]',
-
-              'expressions': [{
-                'type': expressionTypes.TEXT,
-                'childNodeIndex': 0,
-
-                'evaluate': function(scope) {
-                  return [scope.langName(scope.lang), ' '].join('');
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'class',
-
-                'evaluate': function(scope) {
-                  return ['btn ', scope.btnLangColor(scope.lang), ' btn-sm ml-1'].join('');
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'idLang',
-
-                'evaluate': function(scope) {
-                  return scope.lang;
-                }
-              }, {
-                'type': expressionTypes.EVENT,
-                'name': 'onclick',
-
-                'evaluate': function(scope) {
-                  return scope.selectLang;
-                }
-              }]
-            }]
-          ),
-
-          'redundantAttribute': 'expr82',
-          'selector': '[expr82]',
-          'itemName': 'lang',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.props.attr.langs;
-          }
-        }, {
-          'type': bindingTypes.EACH,
-          'getKey': null,
-          'condition': null,
-
-          'template': template(
-            '<div class="texteditor"></div><input expr85 type="hidden" class="form-control"/><input id="x" value="Editor content goes here" type="hidden" name="content"/><trix-editor expr86 input="x"></trix-editor><div expr87 class="h-100 input-group-append"></div>',
-            [{
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'class',
-
-                'evaluate': function(scope) {
-                  return [
-                    'ianput-group ',
-                    scope.lang==scope.state.currentLang || !scope.lang?'':'hide'
-                  ].join('');
-                }
-              }]
-            }, {
-              'redundantAttribute': 'expr85',
-              'selector': '[expr85]',
-
-              'expressions': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'defaultLang',
-
-                'evaluate': function(scope) {
-                  return scope.state.defaultLang;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'lang',
-
-                'evaluate': function(scope) {
-                  return scope.lang;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'baseId',
-
-                'evaluate': function(scope) {
-                  return scope.props.field.id;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'name',
-
-                'evaluate': function(scope) {
-                  return scope.buildId(scope.lang);
-                }
-              }, {
-                'type': expressionTypes.VALUE,
-
-                'evaluate': function(scope) {
-                  return scope.props.field.value;
-                }
-              }]
-            }, {
-              'type': bindingTypes.TAG,
-              'getComponent': getComponent,
-
-              'evaluate': function(scope) {
-                return 'trix-editor';
-              },
-
-              'slots': [],
-
-              'attributes': [{
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'input',
-
-                'evaluate': function() {
-                  return 'x';
-                }
-              }],
-
-              'redundantAttribute': 'expr86',
-              'selector': '[expr86]'
-            }, {
-              'type': bindingTypes.IF,
-
-              'evaluate': function(scope) {
-                return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
-              },
-
-              'redundantAttribute': 'expr87',
-              'selector': '[expr87]',
-
-              'template': template(
-                '<button expr88 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
-                [{
-                  'redundantAttribute': 'expr88',
-                  'selector': '[expr88]',
-
-                  'expressions': [{
-                    'type': expressionTypes.EVENT,
-                    'name': 'onclick',
-
-                    'evaluate': function(scope) {
-                      return scope.translate;
-                    }
-                  }]
-                }]
-              )
-            }]
-          ),
-
-          'redundantAttribute': 'expr84',
-          'selector': '[expr84]',
-          'itemName': 'lang',
-          'indexName': null,
-
-          'evaluate': function(scope) {
-            return scope.state.langs;
-          }
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr89',
-          'selector': '[expr89]'
-        }]
-      );
-    },
-
-    'name': 'itexteditor'
-  };
-
-  var ititle = {
-    'css': `ititle .ftitle,[is="ititle"] .ftitle{ font-size:3rem; }`,
-
-    'exports': {
-      components: {
-          jaddon,
-          jhelp,
-          jicon,
-          jlabel,
-          jtooltip
-      }
-    },
-
-    'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template(
-        '<div expr90><jicon expr91></jicon><!----><small><jtooltip expr92></jtooltip></small></div><jhelp expr93></jhelp>',
-        [{
-          'redundantAttribute': 'expr90',
-          'selector': '[expr90]',
-
-          'expressions': [{
-            'type': expressionTypes.TEXT,
-            'childNodeIndex': 1,
-
-            'evaluate': function(scope) {
-              return ['\r\n        ', scope.i18n(scope.props.field.title), '\r\n        '].join('');
-            }
-          }, {
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'class',
-
-            'evaluate': function(scope) {
-              return ['ftitle ', scope.props.field.class].join('');
-            }
-          }]
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jicon';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'field',
-
-            'evaluate': function(scope) {
-              return scope.props.field;
-            }
-          }],
-
-          'redundantAttribute': 'expr91',
-          'selector': '[expr91]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jtooltip';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'tip',
-
-            'evaluate': function(scope) {
-              return scope.props.field.tip;
-            }
-          }],
-
-          'redundantAttribute': 'expr92',
-          'selector': '[expr92]'
-        }, {
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
-
-          'evaluate': function(scope) {
-            return 'jhelp';
-          },
-
-          'slots': [],
-
-          'attributes': [{
-            'type': expressionTypes.ATTRIBUTE,
-            'name': 'help',
-
-            'evaluate': function(scope) {
-              return scope.props.field.help;
-            }
-          }],
-
-          'redundantAttribute': 'expr93',
-          'selector': '[expr93]'
-        }]
-      );
-    },
-
-    'name': 'ititle'
-  };
-
-  //import {getFormValues,setFormValues} from './formr.js'
-
-  var Formr = {
+  var formr = {
     'css': `formr .out,[is="formr"] .out{ -webkit-transition: height 1s; -moz-transition: height 1s; -ms-transition: height 1s; -o-transition: height 1s; transition: height 1s; height: 0; } formr .hide,[is="formr"] .hide,formr .form-inline .hide,[is="formr"] .form-inline .hide{ display: none; } formr .form-group,[is="formr"] .form-group{ margin-bottom: 1.5rem; } formr label,[is="formr"] label{ font-size: 1.1rem; font-weight: 500; } formr button:disabled,[is="formr"] button:disabled{ cursor: not-allowed; } formr button:focus,[is="formr"] button:focus,formr input:focus,[is="formr"] input:focus,formr textarea:focus,[is="formr"] textarea:focus{ outline: none !important; border-color: #719ECE !important; box-shadow: 0 0 10px #719ECE !important; } formr .fucfirst:first-letter,[is="formr"] .fucfirst:first-letter{ text-transform: capitalize; }`,
 
     'exports': {
-      components: {
-  				ialert,ibutton,icheckbox,icolorpicker,ihidden,ihr,ipassword,iradio,irange,irow,iselect,itext,itexteditor,ititle,jaddon,jhelp,jicon,jlabel,jtooltip
-        },
-
       checkField(field, i) {
           field.id = field.id || 'ffield' + i;
           return field
@@ -5411,10 +2392,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<form expr2 novalidate><button expr3 type="button">Go</button><button expr4 type="button">set</button><div expr5></div></form>',
+        '<form expr218 novalidate><button expr219 type="button">Go</button><button expr220 type="button">set</button><div expr221></div></form>',
         [{
-          'redundantAttribute': 'expr2',
-          'selector': '[expr2]',
+          'redundantAttribute': 'expr218',
+          'selector': '[expr218]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -5439,8 +2420,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr3',
-          'selector': '[expr3]',
+          'redundantAttribute': 'expr219',
+          'selector': '[expr219]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -5451,8 +2432,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr4',
-          'selector': '[expr4]',
+          'redundantAttribute': 'expr220',
+          'selector': '[expr220]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -5467,9 +2448,9 @@
           'getKey': null,
           'condition': null,
 
-          'template': template('<div expr6 class="form-group"><div expr7></div></div>', [{
-            'redundantAttribute': 'expr6',
-            'selector': '[expr6]',
+          'template': template('<div expr222 class="form-group"><div expr223></div></div>', [{
+            'redundantAttribute': 'expr222',
+            'selector': '[expr222]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -5512,12 +2493,12 @@
               }
             }],
 
-            'redundantAttribute': 'expr7',
-            'selector': '[expr7]'
+            'redundantAttribute': 'expr223',
+            'selector': '[expr223]'
           }]),
 
-          'redundantAttribute': 'expr5',
-          'selector': '[expr5]',
+          'redundantAttribute': 'expr221',
+          'selector': '[expr221]',
           'itemName': 'field',
           'indexName': 'i',
 
@@ -5531,65 +2512,2871 @@
     'name': 'formr'
   };
 
-  var App = {
-    'css': null,
-
-    'exports': {
-      components: {
-          Formr
-      }
-    },
+  var ialert = {
+    'css': `ialert .alert div,[is="ialert"] .alert div{ font-size: 2rem; }`,
+    'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<div class="container"><formr expr0 id="form1"></formr><formr expr1 id="form2"></formr></div>',
+        '<div expr224 role="alert"><div expr225><jicon expr226></jicon><!----><jtooltip expr227></jtooltip></div><jhelp expr228></jhelp></div>',
         [{
-          'type': bindingTypes.TAG,
-          'getComponent': getComponent,
+          'redundantAttribute': 'expr224',
+          'selector': '[expr224]',
 
-          'evaluate': function(scope) {
-            return 'formr';
-          },
-
-          'slots': [],
-
-          'attributes': [{
+          'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
-            'name': 'id',
+            'name': 'class',
 
-            'evaluate': function() {
-              return 'form1';
+            'evaluate': function(scope) {
+              return [
+                'alert alert-',
+                scope.props.field.color||'info',
+                ' ',
+                scope.props.field.class
+              ].join('');
             }
-          }],
+          }]
+        }, {
+          'redundantAttribute': 'expr225',
+          'selector': '[expr225]',
 
-          'redundantAttribute': 'expr0',
-          'selector': '[expr0]'
+          'expressions': [{
+            'type': expressionTypes.TEXT,
+            'childNodeIndex': 1,
+
+            'evaluate': function(scope) {
+              return [' ', scope.i18n(scope.props.field.message), '\r\n            '].join('');
+            }
+          }]
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
 
           'evaluate': function(scope) {
-            return 'formr';
+            return 'jicon';
           },
 
           'slots': [],
 
           'attributes': [{
             'type': expressionTypes.ATTRIBUTE,
-            'name': 'id',
+            'name': 'field',
 
-            'evaluate': function() {
-              return 'form2';
+            'evaluate': function(scope) {
+              return scope.props.field;
             }
           }],
 
-          'redundantAttribute': 'expr1',
-          'selector': '[expr1]'
+          'redundantAttribute': 'expr226',
+          'selector': '[expr226]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr227',
+          'selector': '[expr227]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr228',
+          'selector': '[expr228]'
         }]
       );
     },
 
-    'name': 'app'
+    'name': 'ialert'
+  };
+
+  var ibutton = {
+    'css': null,
+
+    'exports': {
+      click(ev) { //not used
+          action = ev.target.getAttribute('action');
+          param = ev.target.getAttribute('param');
+          console.log(action, param, this);
+          if (typeof action == "function") action(event, param);
+          if (typeof this[action] == "function") this[action](event, param);
+      },
+
+      dosomething(ev, param) //test action
+      {
+          alert('dosomething');
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<button expr229 type="button" style="text-transform: capitalize;"><jicon expr230></jicon><!----><jtooltip expr231></jtooltip></button><jhelp expr232></jhelp>',
+        [{
+          'redundantAttribute': 'expr229',
+          'selector': '[expr229]',
+
+          'expressions': [{
+            'type': expressionTypes.TEXT,
+            'childNodeIndex': 1,
+
+            'evaluate': function(scope) {
+              return [' ', scope.i18n(scope.props.field.title), '\r\n        '].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': null,
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'class',
+
+            'evaluate': function(scope) {
+              return [
+                'btn btn-',
+                scope.props.field.color?scope.props.field.color:'outline-primary',
+                ' ',
+                scope.props.field.class
+              ].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }, {
+            'type': expressionTypes.EVENT,
+            'name': 'onclick',
+
+            'evaluate': function(scope) {
+              return scope[scope.props.field.onclick];
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'id',
+
+            'evaluate': function(scope) {
+              return [].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'disabled',
+
+            'evaluate': function(scope) {
+              return scope.props.field.waitValid || scope.props.field.disabled;
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jicon';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr230',
+          'selector': '[expr230]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr231',
+          'selector': '[expr231]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr232',
+          'selector': '[expr232]'
+        }]
+      );
+    },
+
+    'name': 'ibutton'
+  };
+
+  var icheckbox = {
+    'css': `icheckbox .fswitch,[is="icheckbox"] .fswitch{ display: block; position: relative; padding-left: 3.2rem; margin-bottom: 12px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } icheckbox .fswitch input,[is="icheckbox"] .fswitch input{ position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } icheckbox .fswitchslider,[is="icheckbox"] .fswitchslider{ position: absolute; top: 3px; left: 0; height: 1.5rem; width: 2.75rem; background-color: #eee; -webkit-transition: .4s; transition: .4s; } icheckbox .fswitch:hover input~.fswitchslider,[is="icheckbox"] .fswitch:hover input~.fswitchslider{ background-color: #ccc; } icheckbox .fswitch input:checked~.fswitchslider,[is="icheckbox"] .fswitch input:checked~.fswitchslider{ background-color: #2196F3; } icheckbox .fswitchslider:before,[is="icheckbox"] .fswitchslider:before{ position: absolute; content: ""; height: 1.35rem; width: 1.35rem; left: 0.1rem; bottom: 0.1rem; background-color: white; -webkit-transition: .4s; transition: .4s; } icheckbox .fswitch input:checked~.fswitchslider,[is="icheckbox"] .fswitch input:checked~.fswitchslider{ background-color: blue; } icheckbox .fswitch input:checked~.fswitchslider:before,[is="icheckbox"] .fswitch input:checked~.fswitchslider:before{ background-image: radial-gradient(#ffffff, rgb(210, 210, 210)); } icheckbox .fswitch input:focus~.fswitchslider,[is="icheckbox"] .fswitch input:focus~.fswitchslider{ --box-shadow: 0 0 1px var(--navBarBg-backgroundColor); box-shadow: 0 0 4px blue; } icheckbox .fswitch input:checked~.fswitchslider:before,[is="icheckbox"] .fswitch input:checked~.fswitchslider:before{ -webkit-transform: translateX(1.25rem); -ms-transform: translateX(1.25rem); transform: translateX(1.25rem); } icheckbox .fswitch input[disabled]~.fswitchslider,[is="icheckbox"] .fswitch input[disabled]~.fswitchslider{ opacity: 0.5; cursor: not-allowed; } icheckbox .fswitchround,[is="icheckbox"] .fswitchround{ border-radius: 3.4rem; } icheckbox .fswitchround:before,[is="icheckbox"] .fswitchround:before{ border-radius: 50%; } icheckbox .fcheck,[is="icheckbox"] .fcheck{ display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } icheckbox .fcheck input,[is="icheckbox"] .fcheck input{ position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } icheckbox .fcheckmark,[is="icheckbox"] .fcheckmark{ position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #eee; -webkit-transition: .4s; transition: .4s; } icheckbox .fcheck:hover input~.fcheckmark,[is="icheckbox"] .fcheck:hover input~.fcheckmark{ background-color: #ccc; } icheckbox .fcheck input:checked~.fcheckmark,[is="icheckbox"] .fcheck input:checked~.fcheckmark{ background-color: #2196F3; } icheckbox .fcheckmark:after,[is="icheckbox"] .fcheckmark:after{ content: ""; position: absolute; display: none; } icheckbox .fcheck input:checked~.fcheckmark:after,[is="icheckbox"] .fcheck input:checked~.fcheckmark:after{ display: block; } icheckbox .fcheck .fcheckmark:after,[is="icheckbox"] .fcheck .fcheckmark:after{ left: 9px; top: 5px; width: 6px; height: 12px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }`,
+
+    'exports': {
+      isChecked(option) {
+          return (option.checked || option.value == option.checkedValue || option.value == true)
+      },
+
+      ctrlToString(option, which) {
+          if (option.ctrl && option.ctrl[which]) return option.ctrl[which].join()
+          else return false
+      },
+
+      buildId(option) {
+          if (option.id) return this.props.field.id + '.' + option.id
+          else return this.props.field.id
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr233></jlabel><jtooltip expr234></jtooltip><jhelp expr235></jhelp><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="aaad-inline"><template expr236></template></div>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr233',
+          'selector': '[expr233]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr234',
+          'selector': '[expr234]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr235',
+          'selector': '[expr235]'
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+          'condition': null,
+
+          'template': template(
+            '<div class="row"><div expr237 class="fucfirst col-auto mb-2"></div><div class="col-auto"><label expr238><span expr239 class="mr-1"></span><jtooltip expr240></jtooltip><jhelp expr241></jhelp><input expr242 class="form-control"/><span expr243></span></label></div><div expr244 class="fucfirst col-auto mb-2"></div><div class="fucfirst col-auto mb-2"><jtooltip expr245></jtooltip><jhelp expr246></jhelp></div></div>',
+            [{
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.option.uncheckedLabel;
+              },
+
+              'redundantAttribute': 'expr237',
+              'selector': '[expr237]',
+
+              'template': template('<!---->', [{
+                'expressions': [{
+                  'type': expressionTypes.TEXT,
+                  'childNodeIndex': 0,
+
+                  'evaluate': function(scope) {
+                    return scope.i18n(scope.option.uncheckedLabel);
+                  }
+                }]
+              }])
+            }, {
+              'redundantAttribute': 'expr238',
+              'selector': '[expr238]',
+
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'class',
+
+                'evaluate': function(scope) {
+                  return ['ucfirst ', scope.props.field.type=='switch' ?'fswitch':'fcheck'].join('');
+                }
+              }]
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return !scope.option.checkedLabel;
+              },
+
+              'redundantAttribute': 'expr239',
+              'selector': '[expr239]',
+
+              'template': template('<!---->', [{
+                'expressions': [{
+                  'type': expressionTypes.TEXT,
+                  'childNodeIndex': 0,
+
+                  'evaluate': function(scope) {
+                    return [' ', scope.i18n(scope.option.label)].join('');
+                  }
+                }]
+              }])
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return !scope.option.checkedLabel;
+              },
+
+              'redundantAttribute': 'expr240',
+              'selector': '[expr240]',
+
+              'template': template(null, [{
+                'type': bindingTypes.TAG,
+                'getComponent': getComponent,
+
+                'evaluate': function(scope) {
+                  return 'jtooltip';
+                },
+
+                'slots': [],
+
+                'attributes': [{
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'tip',
+
+                  'evaluate': function(scope) {
+                    return scope.option.tip;
+                  }
+                }]
+              }])
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return !scope.option.checkedLabel;
+              },
+
+              'redundantAttribute': 'expr241',
+              'selector': '[expr241]',
+
+              'template': template(null, [{
+                'type': bindingTypes.TAG,
+                'getComponent': getComponent,
+
+                'evaluate': function(scope) {
+                  return 'jhelp';
+                },
+
+                'slots': [],
+
+                'attributes': [{
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'help',
+
+                  'evaluate': function(scope) {
+                    return scope.option.help;
+                  }
+                }]
+              }])
+            }, {
+              'redundantAttribute': 'expr242',
+              'selector': '[expr242]',
+
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': null,
+
+                'evaluate': function(scope) {
+                  return scope.props.field;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'type',
+
+                'evaluate': function(scope) {
+                  return "checkbox";
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'checkedValue',
+
+                'evaluate': function(scope) {
+                  return scope.option.checkedValue;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'unCheckedValue',
+
+                'evaluate': function(scope) {
+                  return scope.option.uncheckedValue;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'checked',
+
+                'evaluate': function(scope) {
+                  return scope.isChecked(scope.option);
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'ctrlChecked',
+
+                'evaluate': function(scope) {
+                  return scope.ctrlToString(scope.option,'checked');
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'ctrlUnchecked',
+
+                'evaluate': function(scope) {
+                  return scope.ctrlToString(scope.option,'unchecked');
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'name',
+
+                'evaluate': function(scope) {
+                  return scope.buildId(scope.option);
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'id',
+
+                'evaluate': function(scope) {
+                  return [].join('');
+                }
+              }]
+            }, {
+              'redundantAttribute': 'expr243',
+              'selector': '[expr243]',
+
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'class',
+
+                'evaluate': function(scope) {
+                  return scope.props.field.type=='switch' ?'fswitchslider fswitchround':'fcheckmark';
+                }
+              }]
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.option.checkedLabel;
+              },
+
+              'redundantAttribute': 'expr244',
+              'selector': '[expr244]',
+
+              'template': template('<!---->', [{
+                'expressions': [{
+                  'type': expressionTypes.TEXT,
+                  'childNodeIndex': 0,
+
+                  'evaluate': function(scope) {
+                    return [
+                      '\r\n                    ',
+                      scope.i18n(scope.option.checkedLabel),
+                      '\r\n                '
+                    ].join('');
+                  }
+                }]
+              }])
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.option.checkedLabel;
+              },
+
+              'redundantAttribute': 'expr245',
+              'selector': '[expr245]',
+
+              'template': template(null, [{
+                'type': bindingTypes.TAG,
+                'getComponent': getComponent,
+
+                'evaluate': function(scope) {
+                  return 'jtooltip';
+                },
+
+                'slots': [],
+
+                'attributes': [{
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'tip',
+
+                  'evaluate': function(scope) {
+                    return scope.option.tip;
+                  }
+                }]
+              }])
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.option.checkedLabel;
+              },
+
+              'redundantAttribute': 'expr246',
+              'selector': '[expr246]',
+
+              'template': template(null, [{
+                'type': bindingTypes.TAG,
+                'getComponent': getComponent,
+
+                'evaluate': function(scope) {
+                  return 'jhelp';
+                },
+
+                'slots': [],
+
+                'attributes': [{
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'help',
+
+                  'evaluate': function(scope) {
+                    return scope.option.help;
+                  }
+                }]
+              }])
+            }]
+          ),
+
+          'redundantAttribute': 'expr236',
+          'selector': '[expr236]',
+          'itemName': 'option',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.props.field.options;
+          }
+        }]
+      );
+    },
+
+    'name': 'icheckbox'
+  };
+
+  var icolorpicker = {
+    'css': `icolorpicker .pickr .pcr-button,[is="icolorpicker"] .pickr .pcr-button{ height: 4em; width: 4em; }`,
+
+    'exports': {
+      onMounted() {
+          let formId = this.props.attr.id;
+          //https://github.com/Simonwep/pickr
+          const pickr = Pickr.create({
+              el: '[name="' + formId + '_colorpicker_' + this.props.field.id + '"]',
+              theme: 'nano', // or 'monolith', or 'nano'
+              //default:'rgba(239, 1, 5, 1)',
+              // default:'#16D92A',
+
+              comparison: false,
+
+              swatches: [
+                  'rgba(244, 67, 54, 1)',
+                  'rgba(233, 30, 99, 0.95)',
+                  'rgba(156, 39, 176, 0.9)',
+                  'rgba(103, 58, 183, 0.85)',
+                  'rgba(63, 81, 181, 0.8)',
+                  'rgba(33, 150, 243, 0.75)',
+                  'rgba(3, 169, 244, 0.7)',
+                  'rgba(0, 188, 212, 0.7)',
+                  'rgba(0, 150, 136, 0.75)',
+                  'rgba(76, 175, 80, 0.8)',
+                  'rgba(139, 195, 74, 0.85)',
+                  'rgba(205, 220, 57, 0.9)',
+                  'rgba(255, 235, 59, 0.95)',
+                  'rgba(255, 193, 7, 1)'
+              ],
+
+              components: {
+
+                  // Main components
+                  preview: true,
+                  opacity: true,
+                  hue: true,
+
+                  // Input / output Options
+                  interaction: {
+                      hex: true,
+                      rgba: true,
+                      hsla: false,
+                      hsva: false,
+                      cmyk: false,
+                      input: true,
+                      clear: false,
+                      save: true,
+                      cancel: true
+                  }
+              },
+              strings: {
+                  save: 'Select', // Default for save button
+                  clear: 'Clear', // Default for clear button
+                  cancel: 'Cancel' // Default for cancel button
+              }
+          });
+
+          pickr.on('init', instance => {
+              //console.log(instance)
+              let setColor = instance._root.root.closest(".form-group").querySelector("[type='hidden']").value;
+              pickr.setColor(setColor, true);
+          });
+
+          pickr.on('save', (color, instance) => {
+              let rgba = color.toRGBA().toString();
+              instance._root.root.closest(".form-group").querySelector("[type='hidden']").value = rgba;
+          }).on('cancel', () => {
+              pickr.hide();
+          });
+
+          document.addEventListener(this.props.attr.id + '_setColor_' + this.props.field.id, function(ev) {
+              pickr.setColor(ev.detail.color, true);
+          });
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr247></jlabel><jtooltip expr248></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr249></jhelp><div expr250></div><input expr251 type="hidden" class="form-control"/>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr247',
+          'selector': '[expr247]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr248',
+          'selector': '[expr248]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr249',
+          'selector': '[expr249]'
+        }, {
+          'redundantAttribute': 'expr250',
+          'selector': '[expr250]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.attr.id +"_colorpicker_" + scope.props.field.id;
+            }
+          }]
+        }, {
+          'redundantAttribute': 'expr251',
+          'selector': '[expr251]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }, {
+            'type': expressionTypes.VALUE,
+
+            'evaluate': function(scope) {
+              return scope.props.field.value;
+            }
+          }]
+        }]
+      );
+    },
+
+    'name': 'icolorpicker'
+  };
+
+  var ihidden = {
+    'css': null,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template('<input expr119 type="hidden"/>', [{
+        'redundantAttribute': 'expr119',
+        'selector': '[expr119]',
+
+        'expressions': [{
+          'type': expressionTypes.ATTRIBUTE,
+          'name': null,
+
+          'evaluate': function(scope) {
+            return scope.props.field;
+          }
+        }, {
+          'type': expressionTypes.ATTRIBUTE,
+          'name': 'class',
+
+          'evaluate': function(scope) {
+            return ['form-control ', scope.props.field.class].join('');
+          }
+        }, {
+          'type': expressionTypes.ATTRIBUTE,
+          'name': 'name',
+
+          'evaluate': function(scope) {
+            return scope.props.field.id;
+          }
+        }, {
+          'type': expressionTypes.VALUE,
+
+          'evaluate': function(scope) {
+            return scope.props.field.value;
+          }
+        }, {
+          'type': expressionTypes.ATTRIBUTE,
+          'name': 'id',
+
+          'evaluate': function(scope) {
+            return [].join('');
+          }
+        }]
+      }]);
+    },
+
+    'name': 'ihidden'
+  };
+
+  var ihr = {
+    'css': `ihr .fhrlabel,[is="ihr"] .fhrlabel{ font-size: 1.3rem; } ihr hr,[is="ihr"] hr{ margin: 0; }`,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<div expr252><jicon expr253></jicon><span expr254><!----></span><jtooltip expr255></jtooltip><hr/><jhelp expr256></jhelp></div>',
+        [{
+          'redundantAttribute': 'expr252',
+          'selector': '[expr252]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jicon';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr253',
+          'selector': '[expr253]'
+        }, {
+          'redundantAttribute': 'expr254',
+          'selector': '[expr254]',
+
+          'expressions': [{
+            'type': expressionTypes.TEXT,
+            'childNodeIndex': 0,
+
+            'evaluate': function(scope) {
+              return [' ', scope.i18n(scope.props.field.label)].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'class',
+
+            'evaluate': function(scope) {
+              return ['fhrlabel ', scope.props.field.class].join('');
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr255',
+          'selector': '[expr255]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr256',
+          'selector': '[expr256]'
+        }]
+      );
+    },
+
+    'name': 'ihr'
+  };
+
+  var ipassword = {
+    'css': null,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr257></jlabel><jtooltip expr258></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr259 placement="left"></jaddon><input expr260 type="password" placeholder="Password"/><jaddon expr261 placement="right"></jaddon></div><jhelp expr262></jhelp>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr257',
+          'selector': '[expr257]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr258',
+          'selector': '[expr258]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jaddon';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'placement',
+
+            'evaluate': function() {
+              return 'left';
+            }
+          }],
+
+          'redundantAttribute': 'expr259',
+          'selector': '[expr259]'
+        }, {
+          'redundantAttribute': 'expr260',
+          'selector': '[expr260]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': null,
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'class',
+
+            'evaluate': function(scope) {
+              return ['form-control ', scope.props.field.class].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }, {
+            'type': expressionTypes.VALUE,
+
+            'evaluate': function(scope) {
+              return scope.props.field.value;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'size',
+
+            'evaluate': function(scope) {
+              return scope.props.field.size;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'id',
+
+            'evaluate': function(scope) {
+              return [].join('');
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jaddon';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'placement',
+
+            'evaluate': function() {
+              return 'right';
+            }
+          }],
+
+          'redundantAttribute': 'expr261',
+          'selector': '[expr261]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr262',
+          'selector': '[expr262]'
+        }]
+      );
+    },
+
+    'name': 'ipassword'
+  };
+
+  var iradio = {
+    'css': `iradio .fradio,[is="iradio"] .fradio{ display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; } iradio .fradio input,[is="iradio"] .fradio input{ position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; } iradio .fradiomark,[is="iradio"] .fradiomark{ position: absolute; top: 0; left: 0; height: 25px; width: 25px; background-color: #eee; border-radius: 50%; -webkit-transition: .4s; transition: .4s; } iradio .fradio:hover input~.fradiomark,[is="iradio"] .fradio:hover input~.fradiomark{ background-color: #ccc; } iradio .fradio input:checked~.fradiomark,[is="iradio"] .fradio input:checked~.fradiomark{ background-color: #2196F3; } iradio .fradiomark:after,[is="iradio"] .fradiomark:after{ content: ""; position: absolute; display: none; } iradio .fradio input:checked~.fradiomark:after,[is="iradio"] .fradio input:checked~.fradiomark:after{ display: block; } iradio .fradio .fradiomark:after,[is="iradio"] .fradio .fradiomark:after{ top: 8px; left: 8px; width: 9px; height: 9px; border-radius: 50%; background: white; }`,
+
+    'exports': {
+      isChecked(option) {
+          return (option.checked || option.id == this.props.field.value)
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr263></jlabel><jtooltip expr264></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr265></jhelp><div class="aaad-inline"><template expr266></template></div>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr263',
+          'selector': '[expr263]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr264',
+          'selector': '[expr264]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr265',
+          'selector': '[expr265]'
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+          'condition': null,
+
+          'template': template(
+            '<label expr267 class="fradio"><!----><jtooltip expr268></jtooltip><jhelp expr269></jhelp><input expr270 type="radio" class="form-control"/><span class="fradiomark"></span></label>',
+            [{
+              'redundantAttribute': 'expr267',
+              'selector': '[expr267]',
+
+              'expressions': [{
+                'type': expressionTypes.TEXT,
+                'childNodeIndex': 0,
+
+                'evaluate': function(scope) {
+                  return [scope.i18n(scope.option.label), '\r\n                '].join('');
+                }
+              }]
+            }, {
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'jtooltip';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'tip',
+
+                'evaluate': function(scope) {
+                  return scope.option.tip;
+                }
+              }],
+
+              'redundantAttribute': 'expr268',
+              'selector': '[expr268]'
+            }, {
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'jhelp';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'help',
+
+                'evaluate': function(scope) {
+                  return scope.option.help;
+                }
+              }],
+
+              'redundantAttribute': 'expr269',
+              'selector': '[expr269]'
+            }, {
+              'redundantAttribute': 'expr270',
+              'selector': '[expr270]',
+
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': null,
+
+                'evaluate': function(scope) {
+                  return scope.props.field;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'checked',
+
+                'evaluate': function(scope) {
+                  return scope.isChecked(scope.option);
+                }
+              }, {
+                'type': expressionTypes.VALUE,
+
+                'evaluate': function(scope) {
+                  return scope.option.id;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'name',
+
+                'evaluate': function(scope) {
+                  return scope.props.field.id;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'id',
+
+                'evaluate': function(scope) {
+                  return [].join('');
+                }
+              }]
+            }]
+          ),
+
+          'redundantAttribute': 'expr266',
+          'selector': '[expr266]',
+          'itemName': 'option',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.props.field.options;
+          }
+        }]
+      );
+    },
+
+    'name': 'iradio'
+  };
+
+  var irange = {
+    'css': `irange input[type=range]::-webkit-slider-thumb,[is="irange"] input[type=range]::-webkit-slider-thumb{ background: red; } irange input[type=range]::-moz-range-thumb,[is="irange"] input[type=range]::-moz-range-thumb{ background: red; } irange input[type=range]::-ms-thumb,[is="irange"] input[type=range]::-ms-thumb{ background: red; }`,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr271></jlabel><jtooltip expr272></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><input expr273 type="range"/></div><jhelp expr274></jhelp>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr271',
+          'selector': '[expr271]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr272',
+          'selector': '[expr272]'
+        }, {
+          'redundantAttribute': 'expr273',
+          'selector': '[expr273]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': null,
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'class',
+
+            'evaluate': function(scope) {
+              return ['form-control custom-range ', scope.props.field.class].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'min',
+
+            'evaluate': function(scope) {
+              return scope.props.field.min;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'max',
+
+            'evaluate': function(scope) {
+              return scope.props.field.max;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'step',
+
+            'evaluate': function(scope) {
+              return scope.props.field.step;
+            }
+          }, {
+            'type': expressionTypes.VALUE,
+
+            'evaluate': function(scope) {
+              return scope.props.field.value;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'id',
+
+            'evaluate': function(scope) {
+              return [].join('');
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr274',
+          'selector': '[expr274]'
+        }]
+      );
+    },
+
+    'name': 'irange'
+  };
+
+  var irow = {
+    'css': null,
+
+    'exports': {
+      checkField(field,i){
+      field.id = field.id || 'ffield'+i;
+      return field
+  }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template('<div class="row"><template expr172></template></div>', [{
+        'type': bindingTypes.EACH,
+        'getKey': null,
+        'condition': null,
+
+        'template': template('<div expr173><div expr174></div></div>', [{
+          'redundantAttribute': 'expr173',
+          'selector': '[expr173]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'class',
+
+            'evaluate': function(scope) {
+              return ['col form-group ', scope.field.class].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return ['fgroup_', scope.field.id || scope.i].join('');
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'i'+scope.callType(scope.field.type);
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.checkField(scope.field,scope.i);
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'attr',
+
+            'evaluate': function(scope) {
+              return scope.props.attr;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'index',
+
+            'evaluate': function(scope) {
+              return scope.i;
+            }
+          }],
+
+          'redundantAttribute': 'expr174',
+          'selector': '[expr174]'
+        }]),
+
+        'redundantAttribute': 'expr172',
+        'selector': '[expr172]',
+        'itemName': 'field',
+        'indexName': 'i',
+
+        'evaluate': function(scope) {
+          return scope.props.field.desc;
+        }
+      }]);
+    },
+
+    'name': 'irow'
+  };
+
+  var iselect = {
+    'css': null,
+
+    'exports': {
+      onMounted() {
+          let formId = this.props.attr.id;
+          if (this.props.field.multiple) {
+              const choices = new Choices('[name="' + this.props.field.id + '"]', {
+                  silent: true,
+                  aaitems: [],
+                  aachoices: [],
+                  renderChoiceLimit: -1,
+                  maxItemCount: -1,
+                  addItems: true,
+                  addItemFilterFn: null,
+                  removeItems: true,
+                  removeItemButton: true,
+                  editItems: false,
+                  duplicateItemsAllowed: false,
+                  aaadelimiter: ',',
+                  paste: true,
+                  aaaasearchEnabled: true,
+                  aaaaasearchChoices: true,
+                  searchFloor: 1,
+                  searchResultLimit: 4,
+                  searchFields: ['label', 'value'],
+                  position: 'auto',
+                  resetScrollPosition: true,
+                  shouldSort: false,
+                  shouldSortItems: false,
+                  sortFn: () => {},
+                  placeholder: true,
+                  placeholderValue: this.props.field.placeholder,
+                  searchPlaceholderValue: null,
+                  prependValue: null,
+                  appendValue: null,
+                  renderSelectedChoices: 'auto',
+                  loadingText: 'Loading...',
+                  noResultsText: 'No results found',
+                  noChoicesText: 'No choices to choose from',
+                  itemSelectText: 'Press to select',
+                  addItemText: (value) => {
+                      return `Press Enter to add <b>"${value}"</b>`;
+                  },
+                  maxItemText: (maxItemCount) => {
+                      return `Only ${maxItemCount} values can be added`;
+                  },
+                  itemComparer: (choice, item) => {
+                      return choice === item;
+                  },
+                  classNames: {
+                      containerOuter: 'choices',
+                      containerInner: 'choices__inner',
+                      input: 'choices__input',
+                      inputCloned: 'choices__input--cloned',
+                      list: 'choices__list',
+                      listItems: 'choices__list--multiple',
+                      listSingle: 'choices__list--single',
+                      listDropdown: 'choices__list--dropdown',
+                      item: 'choices__item',
+                      itemSelectable: 'choices__item--selectable',
+                      itemDisabled: 'choices__item--disabled',
+                      itemChoice: 'choices__item--choice',
+                      placeholder: 'choices__placeholder',
+                      group: 'choices__group',
+                      groupHeading: 'choices__heading',
+                      button: 'choices__button',
+                      activeState: 'is-active',
+                      focusState: 'is-focused',
+                      openState: 'is-open',
+                      disabledState: 'is-disabled',
+                      highlightedState: 'is-highlighted',
+                      hiddenState: 'is-hidden',
+                      flippedState: 'is-flipped',
+                      loadingState: 'is-loading',
+                      noResults: 'has-no-results',
+                      noChoices: 'has-no-choices'
+                  },
+                  // Choices uses the great Fuse library for searching. You
+                  // can find more options here: https://github.com/krisk/Fuse#options
+                  fuseOptions: {
+                      include: 'score'
+                  },
+                  callbackOnInit: null,
+                  callbackOnCreateTemplates: null
+              });
+          }
+      },
+
+      isSelected(option) {
+          //console.log(option)
+          return (option.selected || option.value == this.props.field.value || (Array.isArray(this.props.field.value) && this.props.field.value.indexOf(option.value) > -1))
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr275></jlabel><jtooltip expr276></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr277></div><div expr278></div><div class="input-group mb-3"><jaddon expr279 placement="left"></jaddon><select expr280><template expr281></template></select><jaddon expr283 placement="right"></jaddon></div><jhelp expr284></jhelp>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr275',
+          'selector': '[expr275]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr276',
+          'selector': '[expr276]'
+        }, {
+          'redundantAttribute': 'expr277',
+          'selector': '[expr277]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return "colorpicker_" + scope.props.field.id;
+            }
+          }]
+        }, {
+          'redundantAttribute': 'expr278',
+          'selector': '[expr278]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.attr.id +"_select_" + scope.props.field.id;
+            }
+          }]
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jaddon';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'placement',
+
+            'evaluate': function() {
+              return 'left';
+            }
+          }],
+
+          'redundantAttribute': 'expr279',
+          'selector': '[expr279]'
+        }, {
+          'redundantAttribute': 'expr280',
+          'selector': '[expr280]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': null,
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'multiple',
+
+            'evaluate': function(scope) {
+              return scope.props.field.multiple;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'class',
+
+            'evaluate': function(scope) {
+              return ['form-control ', scope.props.field.class].join('');
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'id',
+
+            'evaluate': function(scope) {
+              return [].join('');
+            }
+          }]
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+          'condition': null,
+
+          'template': template('<option expr282><!----></option>', [{
+            'redundantAttribute': 'expr282',
+            'selector': '[expr282]',
+
+            'expressions': [{
+              'type': expressionTypes.TEXT,
+              'childNodeIndex': 0,
+
+              'evaluate': function(scope) {
+                return [
+                  '\r\n                    ',
+                  scope.i18n(scope.option.label),
+                  '\r\n                '
+                ].join('');
+              }
+            }, {
+              'type': expressionTypes.VALUE,
+
+              'evaluate': function(scope) {
+                return scope.option.value;
+              }
+            }, {
+              'type': expressionTypes.ATTRIBUTE,
+              'name': 'selected',
+
+              'evaluate': function(scope) {
+                return scope.isSelected(scope.option);
+              }
+            }]
+          }]),
+
+          'redundantAttribute': 'expr281',
+          'selector': '[expr281]',
+          'itemName': 'option',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.props.field.options;
+          }
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jaddon';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'placement',
+
+            'evaluate': function() {
+              return 'right';
+            }
+          }],
+
+          'redundantAttribute': 'expr283',
+          'selector': '[expr283]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr284',
+          'selector': '[expr284]'
+        }]
+      );
+    },
+
+    'name': 'iselect'
+  };
+
+  var itext = {
+    'css': null,
+
+    'exports': {
+      onBeforeMount() {
+          this.state.currentLang = this.props.attr.langs[0];
+          this.state.defaultLang = this.props.attr.langs[0];
+          if (this.props.field.multilang) {
+              this.state.langs = this.props.attr.langs;
+          } else {
+              this.state.langs = [''];
+          }
+          if (this.props.type == 'datetime') this.state.type = 'datetime-local';
+          else this.state.type = this.props.field.type;
+      },
+
+      btnLangColor(lang) {
+          return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
+      },
+
+      buildId(lang) {
+          return this.props.field.multilang ? this.props.field.id + '.' + lang : this.props.field.id
+      },
+
+      defaultValue() {
+          if (this.state.currentLang == this.props.attr.langs[0]) return this.props.field.value
+          else return null
+      },
+
+      selectLang(ev) {
+          this.state.currentLang = ev.target.attributes.idLang.value;
+          this.update();
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr285></jlabel><jtooltip expr286></jtooltip><template expr287></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr289></div><jhelp expr296></jhelp>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr285',
+          'selector': '[expr285]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr286',
+          'selector': '[expr286]'
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+
+          'condition': function(scope) {
+            return scope.props.field.multilang;
+          },
+
+          'template': template(
+            '<button expr288 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+            [{
+              'redundantAttribute': 'expr288',
+              'selector': '[expr288]',
+
+              'expressions': [{
+                'type': expressionTypes.TEXT,
+                'childNodeIndex': 0,
+
+                'evaluate': function(scope) {
+                  return [scope.langName(scope.lang), ' '].join('');
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'class',
+
+                'evaluate': function(scope) {
+                  return ['btn ', scope.btnLangColor(scope.lang), ' btn-sm ml-1'].join('');
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'idLang',
+
+                'evaluate': function(scope) {
+                  return scope.lang;
+                }
+              }, {
+                'type': expressionTypes.EVENT,
+                'name': 'onclick',
+
+                'evaluate': function(scope) {
+                  return scope.selectLang;
+                }
+              }]
+            }]
+          ),
+
+          'redundantAttribute': 'expr287',
+          'selector': '[expr287]',
+          'itemName': 'lang',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.props.attr.langs;
+          }
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+          'condition': null,
+
+          'template': template(
+            '<jaddon expr290 placement="left"></jaddon><input expr291/><textarea expr292></textarea><div expr293 class="h-100 input-group-append"></div><jaddon expr295 placement="right"></jaddon>',
+            [{
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'class',
+
+                'evaluate': function(scope) {
+                  return [
+                    'input-group ',
+                    scope.lang==scope.state.currentLang || !scope.lang?'':'hide'
+                  ].join('');
+                }
+              }]
+            }, {
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'jaddon';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'field',
+
+                'evaluate': function(scope) {
+                  return scope.props.field;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'placement',
+
+                'evaluate': function() {
+                  return 'left';
+                }
+              }],
+
+              'redundantAttribute': 'expr290',
+              'selector': '[expr290]'
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.props.field.type!='textarea';
+              },
+
+              'redundantAttribute': 'expr291',
+              'selector': '[expr291]',
+
+              'template': template(null, [{
+                'expressions': [{
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': null,
+
+                  'evaluate': function(scope) {
+                    return scope.props.field;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'aaatabindex',
+
+                  'evaluate': function(scope) {
+                    return scope.props.index;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'type',
+
+                  'evaluate': function(scope) {
+                    return scope.state.type;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'class',
+
+                  'evaluate': function(scope) {
+                    return ['form-control ', scope.props.field.class].join('');
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'defaultLang',
+
+                  'evaluate': function(scope) {
+                    return scope.state.defaultLang;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'lang',
+
+                  'evaluate': function(scope) {
+                    return scope.lang;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'baseId',
+
+                  'evaluate': function(scope) {
+                    return scope.props.field.id;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'name',
+
+                  'evaluate': function(scope) {
+                    return scope.buildId(scope.lang);
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'value',
+
+                  'evaluate': function(scope) {
+                    return scope.props.field.value;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'id',
+
+                  'evaluate': function(scope) {
+                    return [].join('');
+                  }
+                }]
+              }])
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.props.field.type=='textarea';
+              },
+
+              'redundantAttribute': 'expr292',
+              'selector': '[expr292]',
+
+              'template': template('<!---->', [{
+                'expressions': [{
+                  'type': expressionTypes.TEXT,
+                  'childNodeIndex': 0,
+
+                  'evaluate': function(scope) {
+                    return scope.props.field.value;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': null,
+
+                  'evaluate': function(scope) {
+                    return scope.props.field;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'aaatabindex',
+
+                  'evaluate': function(scope) {
+                    return scope.props.index;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'class',
+
+                  'evaluate': function(scope) {
+                    return ['form-control ', scope.props.field.class].join('');
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'rows',
+
+                  'evaluate': function(scope) {
+                    return scope.props.field.rows || 8;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'defaultLang',
+
+                  'evaluate': function(scope) {
+                    return scope.state.defaultLang;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'lang',
+
+                  'evaluate': function(scope) {
+                    return scope.lang;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'baseId',
+
+                  'evaluate': function(scope) {
+                    return scope.props.field.id;
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'name',
+
+                  'evaluate': function(scope) {
+                    return scope.buildId(scope.lang);
+                  }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'id',
+
+                  'evaluate': function(scope) {
+                    return [].join('');
+                  }
+                }]
+              }])
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
+              },
+
+              'redundantAttribute': 'expr293',
+              'selector': '[expr293]',
+
+              'template': template(
+                '<button expr294 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                [{
+                  'redundantAttribute': 'expr294',
+                  'selector': '[expr294]',
+
+                  'expressions': [{
+                    'type': expressionTypes.EVENT,
+                    'name': 'onclick',
+
+                    'evaluate': function(scope) {
+                      return scope.translate;
+                    }
+                  }]
+                }]
+              )
+            }, {
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'jaddon';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'field',
+
+                'evaluate': function(scope) {
+                  return scope.props.field;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'placement',
+
+                'evaluate': function() {
+                  return 'right';
+                }
+              }],
+
+              'redundantAttribute': 'expr295',
+              'selector': '[expr295]'
+            }]
+          ),
+
+          'redundantAttribute': 'expr289',
+          'selector': '[expr289]',
+          'itemName': 'lang',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.state.langs;
+          }
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr296',
+          'selector': '[expr296]'
+        }]
+      );
+    },
+
+    'name': 'itext'
+  };
+
+  var itexteditor = {
+    'css': null,
+
+    'exports': {
+      onBeforeMount() {
+          this.state.currentLang = this.props.attr.langs[0];
+          this.state.defaultLang = this.props.attr.langs[0];
+          if (this.props.field.multilang) {
+              this.state.langs = this.props.attr.langs;
+          } else {
+              this.state.langs = [''];
+          }
+          if (this.props.type == 'datetime') this.state.type = 'datetime-local';
+          else this.state.type = this.props.field.type;
+      },
+
+      onMounted() {
+              //https://quilljs.com/
+
+              var container = '.texteditor';
+              var editor = new Quill(container, {
+                  modules: {
+                      toolbar: [
+                          [{
+                              header: [1, 2, false]
+                          }],
+                          ['bold', 'italic', 'underline'],
+                          ['image', 'code-block']
+                      ]
+                  },
+                  theme: 'snow'
+              });
+          },
+
+      btnLangColor(lang) {
+          return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
+      },
+
+      buildId(lang) {
+          return this.props.field.multilang ? this.props.field.id + '.' + lang : this.props.field.id
+      },
+
+      defaultValue() {
+          if (this.state.currentLang == this.props.attr.langs[0]) return this.props.field.value
+          else return null
+      },
+
+      selectLang(ev) {
+          this.state.currentLang = ev.target.attributes.idLang.value;
+          this.update();
+      }
+    },
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr297></jlabel><jtooltip expr298></jtooltip><template expr299></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr301></div><jhelp expr306></jhelp>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr297',
+          'selector': '[expr297]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr298',
+          'selector': '[expr298]'
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+
+          'condition': function(scope) {
+            return scope.props.field.multilang;
+          },
+
+          'template': template(
+            '<button expr300 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+            [{
+              'redundantAttribute': 'expr300',
+              'selector': '[expr300]',
+
+              'expressions': [{
+                'type': expressionTypes.TEXT,
+                'childNodeIndex': 0,
+
+                'evaluate': function(scope) {
+                  return [scope.langName(scope.lang), ' '].join('');
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'class',
+
+                'evaluate': function(scope) {
+                  return ['btn ', scope.btnLangColor(scope.lang), ' btn-sm ml-1'].join('');
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'idLang',
+
+                'evaluate': function(scope) {
+                  return scope.lang;
+                }
+              }, {
+                'type': expressionTypes.EVENT,
+                'name': 'onclick',
+
+                'evaluate': function(scope) {
+                  return scope.selectLang;
+                }
+              }]
+            }]
+          ),
+
+          'redundantAttribute': 'expr299',
+          'selector': '[expr299]',
+          'itemName': 'lang',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.props.attr.langs;
+          }
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+          'condition': null,
+
+          'template': template(
+            '<div class="texteditor"></div><input expr302 type="hidden" class="form-control"/><input id="x" value="Editor content goes here" type="hidden" name="content"/><trix-editor expr303 input="x"></trix-editor><div expr304 class="h-100 input-group-append"></div>',
+            [{
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'class',
+
+                'evaluate': function(scope) {
+                  return [
+                    'ianput-group ',
+                    scope.lang==scope.state.currentLang || !scope.lang?'':'hide'
+                  ].join('');
+                }
+              }]
+            }, {
+              'redundantAttribute': 'expr302',
+              'selector': '[expr302]',
+
+              'expressions': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'defaultLang',
+
+                'evaluate': function(scope) {
+                  return scope.state.defaultLang;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'lang',
+
+                'evaluate': function(scope) {
+                  return scope.lang;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'baseId',
+
+                'evaluate': function(scope) {
+                  return scope.props.field.id;
+                }
+              }, {
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'name',
+
+                'evaluate': function(scope) {
+                  return scope.buildId(scope.lang);
+                }
+              }, {
+                'type': expressionTypes.VALUE,
+
+                'evaluate': function(scope) {
+                  return scope.props.field.value;
+                }
+              }]
+            }, {
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'trix-editor';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'input',
+
+                'evaluate': function() {
+                  return 'x';
+                }
+              }],
+
+              'redundantAttribute': 'expr303',
+              'selector': '[expr303]'
+            }, {
+              'type': bindingTypes.IF,
+
+              'evaluate': function(scope) {
+                return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
+              },
+
+              'redundantAttribute': 'expr304',
+              'selector': '[expr304]',
+
+              'template': template(
+                '<button expr305 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                [{
+                  'redundantAttribute': 'expr305',
+                  'selector': '[expr305]',
+
+                  'expressions': [{
+                    'type': expressionTypes.EVENT,
+                    'name': 'onclick',
+
+                    'evaluate': function(scope) {
+                      return scope.translate;
+                    }
+                  }]
+                }]
+              )
+            }]
+          ),
+
+          'redundantAttribute': 'expr301',
+          'selector': '[expr301]',
+          'itemName': 'lang',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.state.langs;
+          }
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jhelp';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'help',
+
+            'evaluate': function(scope) {
+              return scope.props.field.help;
+            }
+          }],
+
+          'redundantAttribute': 'expr306',
+          'selector': '[expr306]'
+        }]
+      );
+    },
+
+    'name': 'itexteditor'
+  };
+
+  var jaddon = {
+    'css': null,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<div expr311 class="h-100 input-group-prepend"></div><div expr313 class="h-100 input-group-append"></div>',
+        [{
+          'type': bindingTypes.IF,
+
+          'evaluate': function(scope) {
+            return scope.props.placement=='left' && scope.props.field.icon!='none';
+          },
+
+          'redundantAttribute': 'expr311',
+          'selector': '[expr311]',
+
+          'template': template(
+            '<span class="input-group-text" id="basic-addon1"><jicon expr312></jicon></span>',
+            [{
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'jicon';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'field',
+
+                'evaluate': function(scope) {
+                  return scope.props.field;
+                }
+              }],
+
+              'redundantAttribute': 'expr312',
+              'selector': '[expr312]'
+            }]
+          )
+        }, {
+          'type': bindingTypes.IF,
+
+          'evaluate': function(scope) {
+            return scope.props.placement=='right' && scope.props.field.buttons;
+          },
+
+          'redundantAttribute': 'expr313',
+          'selector': '[expr313]',
+
+          'template': template('<ibutton expr314></ibutton>', [{
+            'type': bindingTypes.EACH,
+            'getKey': null,
+            'condition': null,
+
+            'template': template(null, [{
+              'type': bindingTypes.TAG,
+              'getComponent': getComponent,
+
+              'evaluate': function(scope) {
+                return 'ibutton';
+              },
+
+              'slots': [],
+
+              'attributes': [{
+                'type': expressionTypes.ATTRIBUTE,
+                'name': 'field',
+
+                'evaluate': function(scope) {
+                  return scope.button;
+                }
+              }]
+            }]),
+
+            'redundantAttribute': 'expr314',
+            'selector': '[expr314]',
+            'itemName': 'button',
+            'indexName': null,
+
+            'evaluate': function(scope) {
+              return scope.props.field.buttons;
+            }
+          }])
+        }]
+      );
+    },
+
+    'name': 'jaddon'
+  };
+
+  var jhelp = {
+    'css': null,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template('<small expr204 class="text-muted mb-1 mr-1"></small>', [{
+        'type': bindingTypes.IF,
+
+        'evaluate': function(scope) {
+          return scope.props.help;
+        },
+
+        'redundantAttribute': 'expr204',
+        'selector': '[expr204]',
+
+        'template': template('<!---->', [{
+          'expressions': [{
+            'type': expressionTypes.TEXT,
+            'childNodeIndex': 0,
+
+            'evaluate': function(scope) {
+              return scope.i18n(scope.props.help);
+            }
+          }]
+        }])
+      }]);
+    },
+
+    'name': 'jhelp'
+  };
+
+  var jicon = {
+    'css': null,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template('<i expr199></i>', [{
+        'redundantAttribute': 'expr199',
+        'selector': '[expr199]',
+
+        'expressions': [{
+          'type': expressionTypes.ATTRIBUTE,
+          'name': 'class',
+
+          'evaluate': function(scope) {
+            return scope.selectIcon(scope.props.field);
+          }
+        }]
+      }]);
+    },
+
+    'name': 'jicon'
+  };
+
+  var jlabel = {
+    'css': `jlabel .label,[is="jlabel"] .label{ font-size:1.3rem; } jlabel .inputRequired,[is="jlabel"] .inputRequired{ color: red; }`,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<label expr197 class="label fucfirst"><!----></label><span expr198 class="inputRequired mx-1"></span>',
+        [{
+          'redundantAttribute': 'expr197',
+          'selector': '[expr197]',
+
+          'expressions': [{
+            'type': expressionTypes.TEXT,
+            'childNodeIndex': 0,
+
+            'evaluate': function(scope) {
+              return scope.i18n(scope.props.field.label);
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'for',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }]
+        }, {
+          'type': bindingTypes.IF,
+
+          'evaluate': function(scope) {
+            return scope.props.field.required;
+          },
+
+          'redundantAttribute': 'expr198',
+          'selector': '[expr198]',
+          'template': template('<i class="fas fa-asterisk fa-fw" aria-hidden="true"></i>', [])
+        }]
+      );
+    },
+
+    'name': 'jlabel'
+  };
+
+  var jtooltip = {
+    'css': `jtooltip .ftooltip,[is="jtooltip"] .ftooltip{ position: relative; display: inline-block; } jtooltip .ftooltip .ftooltipText,[is="jtooltip"] .ftooltip .ftooltipText{ font-size:1rem!important; visibility: hidden; width: 12rem; background-color: #ffc107; color: white; text-align: center; border: thin solid lightgray; border-radius: 6px; padding: 5px 0; position: absolute; z-index: 10; bottom: 125%; left: 0%; margin-left: -60px; } jtooltip .ftooltip:hover .ftooltipText,[is="jtooltip"] .ftooltip:hover .ftooltipText{ visibility: visible; }`,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template('<div expr209 class="ftooltip"></div>', [{
+        'type': bindingTypes.IF,
+
+        'evaluate': function(scope) {
+          return scope.props.tip;
+        },
+
+        'redundantAttribute': 'expr209',
+        'selector': '[expr209]',
+
+        'template': template(
+          '<i class="far fa-question-circle mx-1"></i><div expr210 class="ftooltipText"><!----></div>',
+          [{
+            'redundantAttribute': 'expr210',
+            'selector': '[expr210]',
+
+            'expressions': [{
+              'type': expressionTypes.TEXT,
+              'childNodeIndex': 0,
+
+              'evaluate': function(scope) {
+                return scope.i18n(scope.props.tip);
+              }
+            }]
+          }]
+        )
+      }]);
+    },
+
+    'name': 'jtooltip'
   };
 
   install(function (component) {
@@ -5745,6 +5532,26 @@
           }
       }
   }
+
+  register('formr', formr);
+  register('ialert', ialert);
+  register('ibutton', ibutton);
+  register('icheckbox', icheckbox);
+  register('icolorpicker', icolorpicker);
+  register('ihidden', ihidden);
+  register('ihr', ihr);
+  register('ipassword', ipassword);
+  register('iradio', iradio);
+  register('irange', irange);
+  register('irow', irow);
+  register('iselect', iselect);
+  register('itext', itext);
+  register('itexteditor', itexteditor);
+  register('jaddon', jaddon);
+  register('jhelp', jhelp);
+  register('jicon', jicon);
+  register('jlabel', jlabel);
+  register('jtooltip', jtooltip);
 
   var exports$1 = /*#__PURE__*/Object.freeze({
     getFormValues: getFormValues$1,

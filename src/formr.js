@@ -1,5 +1,5 @@
 import {
-    install
+    install,register
 } from 'riot'
 
 install(function (component) {
@@ -156,3 +156,44 @@ export function field(obj, fieldPath, value) {
         }
     }
 }
+
+import formr from './formr.riot'
+import ialert from './ialert.riot'
+import ibutton from './ibutton.riot'
+import icheckbox from './icheckbox.riot'
+import icolorpicker from './icolorpicker.riot'
+import ihidden from './ihidden.riot'
+import ihr from './ihr.riot'
+import ipassword from './ipassword.riot'
+import iradio from './iradio.riot'
+import irange from './irange.riot'
+import irow from './irow.riot'
+import iselect from './iselect.riot'
+import itext from './itext.riot'
+import itexteditor from './itexteditor.riot'
+import ititle from './ititle.riot'
+import jaddon from './jaddon.riot'
+import jhelp from './jhelp.riot'
+import jicon from './jicon.riot'
+import jlabel from './jlabel.riot'
+import jtooltip from './jtooltip.riot'
+
+register('formr', formr)
+register('ialert', ialert)
+register('ibutton', ibutton)
+register('icheckbox', icheckbox)
+register('icolorpicker', icolorpicker)
+register('ihidden', ihidden)
+register('ihr', ihr)
+register('ipassword', ipassword)
+register('iradio', iradio)
+register('irange', irange)
+register('irow', irow)
+register('iselect', iselect)
+register('itext', itext)
+register('itexteditor', itexteditor)
+register('jaddon', jaddon)
+register('jhelp', jhelp)
+register('jicon', jicon)
+register('jlabel', jlabel)
+register('jtooltip', jtooltip)

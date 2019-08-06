@@ -28,19 +28,7 @@
         </template>
     </div>
     <script>
-        import jaddon from './jaddon.riot'
-        import jhelp from './jhelp.riot'
-        import jicon from './jicon.riot'
-        import jlabel from './jlabel.riot'
-        import jtooltip from './jtooltip.riot'
         export default {
-            components: {
-                jaddon,
-                jhelp,
-                jicon,
-                jlabel,
-                jtooltip
-            },
             isChecked(option) {
                 return (option.checked || option.value == option.checkedValue || option.value == true)
             },
