@@ -40,6 +40,7 @@
                 this.update()
             },
             validate(ev) {
+                console.log('validation',ev)
                 let targetForm=ev.target.closest("form")
                 this.ctrlRun(targetForm.name)
                 let invalidFeedback = '<i class="text-danger fas fa-times fa-fw mx-2" aria-hidden="true"></i>'
@@ -83,18 +84,18 @@
                 })
             },
             ctrlRun(formName) {
-				let name , node 
-                document.getElementsByName(formName)[0].querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
+				let formElt, selector , node 
+                formElt=document.getElementsByName(formName)[0]
+                 formElt.querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
                     elt.getAttribute("ctrlChecked").split(',').forEach(function(name) {
-                        //node = '[name=fgroup_' + name+']'
-                        name = 'fgroup_' + name
-                        node = document.getElementsByName(name)[0]
+                        selector = '[name=fgroup_' + name+']'
+                        node = formElt.querySelector(selector)
                         if (elt.checked) node.classList.remove('hide')
                         else node.classList.add('hide')
                     })
                     elt.getAttribute("ctrlUnchecked").split(',').forEach(function(name) {
-                        name = 'fgroup_' + name
-                        node = document.getElementsByName(name)[0]
+                        selector = '[name=fgroup_' + name+']'
+                        node = formElt.querySelector(selector)
                         if (elt.checked) node.classList.add('hide')
                         else node.classList.remove('hide')
                     })

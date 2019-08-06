@@ -1,4 +1,4 @@
-import {register,mount,install} from 'riot'
+import {register,mount} from 'riot'
 import App from './app.riot'
 
 import * as exports from './formr.js'
