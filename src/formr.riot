@@ -1,5 +1,5 @@
 <formr>
-    <form name={props.id} onchange={validate} oninput={validate} novalidate>
+    <form name={props.id} onchange={validate} oninput={validate} novalidate autocomplete=off>
         <button type="button" onclick={er}>Go</button>
         <button type="button" onclick={seter}>set</button>
         <div each={ (field, i) in state.desc }>

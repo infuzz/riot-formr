@@ -2393,10 +2393,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<form expr133 novalidate><button expr134 type="button">Go</button><button expr135 type="button">set</button><div expr136></div></form>',
+        '<form expr139 novalidate autocomplete="off"><button expr140 type="button">Go</button><button expr141 type="button">set</button><div expr142></div></form>',
         [{
-          'redundantAttribute': 'expr133',
-          'selector': '[expr133]',
+          'redundantAttribute': 'expr139',
+          'selector': '[expr139]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -2421,8 +2421,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr134',
-          'selector': '[expr134]',
+          'redundantAttribute': 'expr140',
+          'selector': '[expr140]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -2433,8 +2433,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr135',
-          'selector': '[expr135]',
+          'redundantAttribute': 'expr141',
+          'selector': '[expr141]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -2449,9 +2449,9 @@
           'getKey': null,
           'condition': null,
 
-          'template': template('<div expr137 class="form-group"><div expr138></div></div>', [{
-            'redundantAttribute': 'expr137',
-            'selector': '[expr137]',
+          'template': template('<div expr143 class="form-group"><div expr144></div></div>', [{
+            'redundantAttribute': 'expr143',
+            'selector': '[expr143]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -2494,12 +2494,12 @@
               }
             }],
 
-            'redundantAttribute': 'expr138',
-            'selector': '[expr138]'
+            'redundantAttribute': 'expr144',
+            'selector': '[expr144]'
           }]),
 
-          'redundantAttribute': 'expr136',
-          'selector': '[expr136]',
+          'redundantAttribute': 'expr142',
+          'selector': '[expr142]',
           'itemName': 'field',
           'indexName': 'i',
 
