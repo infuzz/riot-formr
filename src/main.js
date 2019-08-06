@@ -1,4 +1,4 @@
-import {register,mount} from 'riot'
+import * as riot from 'riot'
 import App from './app.riot'
 
 import * as exports from './formr.js'
@@ -421,5 +421,5 @@ Object.entries(exports).forEach(([name, exported]) => window[name] = exported)
             }
         }
 
-    register('app',App)
-    mount('app')
+    riot.register('app',App)
+    riot.mount('app')
