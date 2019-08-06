@@ -1,5 +1,5 @@
 <formr>
-    <form name={props.id} onchange={validate} oninput={validate} novalidate autocomplete=off>
+    <form name={props.id} onchange={validate} oninput={validate} novalidate>
         <button type="button" onclick={er}>Go</button>
         <button type="button" onclick={seter}>set</button>
         <div each={ (field, i) in state.desc }>
@@ -37,7 +37,7 @@
                 this.update()
             },
             validate(ev) {
-                console.log('validation', ev)
+                //console.log('validation', ev)
                 let targetForm = ev.target.closest("form")
                 this.ctrlRun(targetForm.name)
                 let invalidFeedback = '<i class="text-danger fas fa-times fa-fw mx-2" aria-hidden="true"></i>'

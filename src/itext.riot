@@ -10,7 +10,7 @@
     <div each={lang in state.langs} class="input-group {lang==state.currentLang || !lang?'':'hide'}">
         <jaddon field={props.field} placement='left'></jaddon>
 
-        <input if={props.field.type!='textarea' } { ...props.field } aaatabindex={props.index} type={state.type} class="form-control {props.field.class}" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} id={}>
+        <input if={props.field.type!='textarea' } { ...props.field } aaatabindex={props.index} type={state.type} class="form-control {props.field.class}" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} autocomplete="on" id={}>
 
         <textarea if={props.field.type=='textarea' } { ...props.field } aaatabindex={props.index} class="form-control {props.field.class}" rows={props.field.rows || 8} defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} id={}>{props.field.value}</textarea>
 
