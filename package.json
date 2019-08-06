@@ -1,7 +1,7 @@
 {
-  "name": "riot-rollup-example",
+  "name": "formr",
   "version": "1.1.0",
-  "description": "Riot with Rollup",
+  "description": "Formr with riot 4",
   "private": true,
   "scripts": {
     "dev": "(start npm run watch && start npm run server) || (npm run watch & npm run server)",

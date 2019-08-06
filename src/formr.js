@@ -3,6 +3,12 @@ import {
 } from 'riot'
 
 install(function (component) {
+    window.addEventListener('updateAll', () => {
+        component.update()
+    })
+    component.updateAll = function () {
+        window.dispatchEvent(new Event('updateAll'))
+    }
     component.i18n = function (id) {
         return id
     }

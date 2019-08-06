@@ -1,5 +1,4 @@
-//import {component} from 'riot'
-import {component} from 'riot'
+import {register,mount,install} from 'riot'
 import App from './app.riot'
 
 import * as exports from './formr.js'
@@ -422,4 +421,5 @@ Object.entries(exports).forEach(([name, exported]) => window[name] = exported)
             }
         }
 
-        component(App)(document.getElementById('root'))
+    register('app',App)
+    mount('app')
