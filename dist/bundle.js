@@ -2293,13 +2293,13 @@
       },
 
       onBeforeMount() {
-      console.log(window);
+          //console.log(window)
           this.state.desc = window.fields[this.props.id].desc;
           this.state.attr = window.fields[this.props.id].attr;
           this.state.attr.id = this.props.id;
       },
 
-      onMounted(){
+      onMounted() {
           this.ctrlRun(this.props.id);
       },
 
@@ -2319,8 +2319,8 @@
       },
 
       validate(ev) {
-          console.log('validation',ev);
-          let targetForm=ev.target.closest("form");
+          console.log('validation', ev);
+          let targetForm = ev.target.closest("form");
           this.ctrlRun(targetForm.name);
           let invalidFeedback = '<i class="text-danger fas fa-times fa-fw mx-2" aria-hidden="true"></i>';
           let invalidFeedbackMsg = '<i class="text-danger fas fa-exclamation-triangle fa-fw mx-2" aria-hidden="true"></i>';
@@ -2364,17 +2364,17 @@
       },
 
       ctrlRun(formName) {
-  				let formElt, selector , node; 
-          formElt=document.getElementsByName(formName)[0];
-           formElt.querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
+          let formElt, selector, node;
+          formElt = document.getElementsByName(formName)[0];
+          formElt.querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
               elt.getAttribute("ctrlChecked").split(',').forEach(function(name) {
-                  selector = '[name=fgroup_' + name+']';
+                  selector = '[name=fgroup_' + name + ']';
                   node = formElt.querySelector(selector);
                   if (elt.checked) node.classList.remove('hide');
                   else node.classList.add('hide');
               });
               elt.getAttribute("ctrlUnchecked").split(',').forEach(function(name) {
-                  selector = '[name=fgroup_' + name+']';
+                  selector = '[name=fgroup_' + name + ']';
                   node = formElt.querySelector(selector);
                   if (elt.checked) node.classList.add('hide');
                   else node.classList.remove('hide');
@@ -2387,16 +2387,16 @@
       },
 
       seter() {
-          console.log(setFormValues('form1',data));
+          console.log(setFormValues('form1', data));
       }
     },
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<form expr127 novalidate><button expr128 type="button">Go</button><button expr129 type="button">set</button><div expr130></div></form>',
+        '<form expr133 novalidate><button expr134 type="button">Go</button><button expr135 type="button">set</button><div expr136></div></form>',
         [{
-          'redundantAttribute': 'expr127',
-          'selector': '[expr127]',
+          'redundantAttribute': 'expr133',
+          'selector': '[expr133]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -2421,8 +2421,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr128',
-          'selector': '[expr128]',
+          'redundantAttribute': 'expr134',
+          'selector': '[expr134]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -2433,8 +2433,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr129',
-          'selector': '[expr129]',
+          'redundantAttribute': 'expr135',
+          'selector': '[expr135]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -2449,9 +2449,9 @@
           'getKey': null,
           'condition': null,
 
-          'template': template('<div expr131 class="form-group"><div expr132></div></div>', [{
-            'redundantAttribute': 'expr131',
-            'selector': '[expr131]',
+          'template': template('<div expr137 class="form-group"><div expr138></div></div>', [{
+            'redundantAttribute': 'expr137',
+            'selector': '[expr137]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -2494,12 +2494,12 @@
               }
             }],
 
-            'redundantAttribute': 'expr132',
-            'selector': '[expr132]'
+            'redundantAttribute': 'expr138',
+            'selector': '[expr138]'
           }]),
 
-          'redundantAttribute': 'expr130',
-          'selector': '[expr130]',
+          'redundantAttribute': 'expr136',
+          'selector': '[expr136]',
           'itemName': 'field',
           'indexName': 'i',
 

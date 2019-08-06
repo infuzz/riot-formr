@@ -9,21 +9,18 @@
         </div>
     </form>
     <script>
-	
-		//import {getFormValues,setFormValues} from './formr.js'
-
         export default {
             checkField(field, i) {
                 field.id = field.id || 'ffield' + i
                 return field
             },
             onBeforeMount() {
-			console.log(window)
+                //console.log(window)
                 this.state.desc = window.fields[this.props.id].desc
                 this.state.attr = window.fields[this.props.id].attr
                 this.state.attr.id = this.props.id
             },
-            onMounted(){
+            onMounted() {
                 this.ctrlRun(this.props.id)
             },
             callType(type) {
@@ -40,8 +37,8 @@
                 this.update()
             },
             validate(ev) {
-                console.log('validation',ev)
-                let targetForm=ev.target.closest("form")
+                console.log('validation', ev)
+                let targetForm = ev.target.closest("form")
                 this.ctrlRun(targetForm.name)
                 let invalidFeedback = '<i class="text-danger fas fa-times fa-fw mx-2" aria-hidden="true"></i>'
                 let invalidFeedbackMsg = '<i class="text-danger fas fa-exclamation-triangle fa-fw mx-2" aria-hidden="true"></i>'
@@ -84,17 +81,17 @@
                 })
             },
             ctrlRun(formName) {
-				let formElt, selector , node 
-                formElt=document.getElementsByName(formName)[0]
-                 formElt.querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
+                let formElt, selector, node
+                formElt = document.getElementsByName(formName)[0]
+                formElt.querySelectorAll("input[ctrlChecked][ctrlUnchecked]").forEach(function(elt) {
                     elt.getAttribute("ctrlChecked").split(',').forEach(function(name) {
-                        selector = '[name=fgroup_' + name+']'
+                        selector = '[name=fgroup_' + name + ']'
                         node = formElt.querySelector(selector)
                         if (elt.checked) node.classList.remove('hide')
                         else node.classList.add('hide')
                     })
                     elt.getAttribute("ctrlUnchecked").split(',').forEach(function(name) {
-                        selector = '[name=fgroup_' + name+']'
+                        selector = '[name=fgroup_' + name + ']'
                         node = formElt.querySelector(selector)
                         if (elt.checked) node.classList.add('hide')
                         else node.classList.remove('hide')
@@ -105,7 +102,7 @@
                 console.log(getFormValues('form1'))
             },
             seter() {
-                console.log(setFormValues('form1',data))
+                console.log(setFormValues('form1', data))
             }
         }
 
