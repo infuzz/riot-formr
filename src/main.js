@@ -1,3 +1,4 @@
+
 import {
     register,
     mount
@@ -424,5 +425,6 @@ window.fields = {
     }
 }
 
-register('app', App)
-mount('app')
+
+    riot.register('app',App)
+    riot.mount('app')

@@ -1,8 +1,6 @@
-import {
-    install,register
-} from 'riot'
+import * as riot from 'riot'
 
-install(function (component) {
+riot.install(function (component) {
     window.addEventListener('updateAll', () => {
         component.update()
     })
@@ -178,6 +176,7 @@ import jhelp from './jhelp.riot'
 import jicon from './jicon.riot'
 import jlabel from './jlabel.riot'
 import jtooltip from './jtooltip.riot'
+
 
 register('formr', formr)
 register('ialert', ialert)
