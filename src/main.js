@@ -94,6 +94,8 @@ Object.entries(exports).forEach(([name, exported]) => window[name] = exported)
                         id: 'music',
                         type: 'select',
                         multiple: true,
+                        tag:true,
+                        userAddOption:true,
                         label: 'Musique',
                         required: true,
                         value: ['guitar'],
