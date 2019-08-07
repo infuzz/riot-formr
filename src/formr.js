@@ -167,6 +167,7 @@ import icheckbox from './icheckbox.riot'
 import icolorpicker from './icolorpicker.riot'
 import ihidden from './ihidden.riot'
 import ihr from './ihr.riot'
+import imultiselect from './imultiselect.riot'
 import ipassword from './ipassword.riot'
 import iradio from './iradio.riot'
 import irange from './irange.riot'
@@ -181,22 +182,24 @@ import jicon from './jicon.riot'
 import jlabel from './jlabel.riot'
 import jtooltip from './jtooltip.riot'
 
-riot.register('formr', formr)
-riot.register('ialert', ialert)
-riot.register('ibutton', ibutton)
-riot.register('icheckbox', icheckbox)
-riot.register('icolorpicker', icolorpicker)
-riot.register('ihidden', ihidden)
-riot.register('ihr', ihr)
-riot.register('ipassword', ipassword)
-riot.register('iradio', iradio)
-riot.register('irange', irange)
-riot.register('irow', irow)
-riot.register('iselect', iselect)
-riot.register('itext', itext)
-riot.register('itexteditor', itexteditor)
-riot.register('jaddon', jaddon)
-riot.register('jhelp', jhelp)
-riot.register('jicon', jicon)
-riot.register('jlabel', jlabel)
-riot.register('jtooltip', jtooltip)
+
+register('formr', formr)
+register('ialert', ialert)
+register('ibutton', ibutton)
+register('icheckbox', icheckbox)
+register('icolorpicker', icolorpicker)
+register('ihidden', ihidden)
+register('ihr', ihr)
+register('ipassword', ipassword)
+register('iradio', iradio)
+register('irange', irange)
+register('irow', irow)
+register('imultiselect',imultiselect)
+register('iselect', iselect)
+register('itext', itext)
+register('itexteditor', itexteditor)
+register('jaddon', jaddon)
+register('jhelp', jhelp)
+register('jicon', jicon)
+register('jlabel', jlabel)
+register('jtooltip', jtooltip)
