@@ -8,11 +8,9 @@
     <small class="inputFeedbackMsg"></small>
 
     <div each={lang in state.langs} class="ianput-group {lang==state.currentLang || !lang?'':'hide'}">
-        <div id={buildId2(lang)}></div>
+        <div id={buildId(lang,'_')}></div>
         <input type="hidden" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} class="form-control">
-        <input id="x" value="Editor content goes here" type="hidden" name="content">
-        <trix-editor input="x"></trix-editor>
-
+        
 
 
         <div if={props.field.multilang && props.attr.proposeTranslate && state.defaultLang !=lang } class="h-100 input-group-append">
@@ -38,7 +36,7 @@
                 //https://quilljs.com/
                 const self=this
                 this.state.langs.forEach(function(lang) {
-                    var container = '#'+ self.buildId2(lang)
+                    var container = '#'+ self.buildId(lang,'_')
                     var editor = new Quill(container, {
                         modules: {
                             toolbar: [
@@ -56,11 +54,8 @@
             btnLangColor(lang) {
                 return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
             },
-            buildId(lang) {
-                return this.props.field.multilang ? this.props.field.id + '.' + lang : this.props.field.id
-            },
-                        buildId2(lang) {
-                return this.props.field.multilang ? this.props.field.id + '_' + lang : this.props.field.id
+            buildId(lang,separator) {
+                return this.props.field.multilang ? this.props.field.id + (separator || '.') + lang : this.props.field.id
             },
             defaultValue() {
                 if (this.state.currentLang == this.props.attr.langs[0]) return this.props.field.value
