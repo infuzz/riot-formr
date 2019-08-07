@@ -164,6 +164,7 @@ import icheckbox from './icheckbox.riot'
 import icolorpicker from './icolorpicker.riot'
 import ihidden from './ihidden.riot'
 import ihr from './ihr.riot'
+import imultiselect from './imultiselect.riot'
 import ipassword from './ipassword.riot'
 import iradio from './iradio.riot'
 import irange from './irange.riot'
@@ -189,6 +190,7 @@ register('ipassword', ipassword)
 register('iradio', iradio)
 register('irange', irange)
 register('irow', irow)
+register('imultiselect',imultiselect)
 register('iselect', iselect)
 register('itext', itext)
 register('itexteditor', itexteditor)

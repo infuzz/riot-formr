@@ -1,0 +1,14 @@
+<imultiselect>
+    <select { ...props.field } multiple name={props.field.id} class='hide' id={}>
+        <template each={option in props.field.options}>
+                <option value={option.value} selected={isSelected(option)}>
+                    {i18n(option.label)}
+                </option>
+            </template>
+    </select>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+
+</imultiselect>

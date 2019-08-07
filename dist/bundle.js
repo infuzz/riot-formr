@@ -2393,10 +2393,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<form expr187 novalidate><button expr188 type="button">Go</button><button expr189 type="button">set</button><div expr190></div></form>',
+        '<form expr2 novalidate><button expr3 type="button">Go</button><button expr4 type="button">set</button><div expr5></div></form>',
         [{
-          'redundantAttribute': 'expr187',
-          'selector': '[expr187]',
+          'redundantAttribute': 'expr2',
+          'selector': '[expr2]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -2421,8 +2421,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr188',
-          'selector': '[expr188]',
+          'redundantAttribute': 'expr3',
+          'selector': '[expr3]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -2433,8 +2433,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr189',
-          'selector': '[expr189]',
+          'redundantAttribute': 'expr4',
+          'selector': '[expr4]',
 
           'expressions': [{
             'type': expressionTypes.EVENT,
@@ -2449,9 +2449,9 @@
           'getKey': null,
           'condition': null,
 
-          'template': template('<div expr191 class="form-group"><div expr192></div></div>', [{
-            'redundantAttribute': 'expr191',
-            'selector': '[expr191]',
+          'template': template('<div expr6 class="form-group"><div expr7></div></div>', [{
+            'redundantAttribute': 'expr6',
+            'selector': '[expr6]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -2494,12 +2494,12 @@
               }
             }],
 
-            'redundantAttribute': 'expr192',
-            'selector': '[expr192]'
+            'redundantAttribute': 'expr7',
+            'selector': '[expr7]'
           }]),
 
-          'redundantAttribute': 'expr190',
-          'selector': '[expr190]',
+          'redundantAttribute': 'expr5',
+          'selector': '[expr5]',
           'itemName': 'field',
           'indexName': 'i',
 
@@ -2519,10 +2519,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<div expr2 role="alert"><div expr3><jicon expr4></jicon><!----><jtooltip expr5></jtooltip></div><jhelp expr6></jhelp></div>',
+        '<div expr8 role="alert"><div expr9><jicon expr10></jicon><!----><jtooltip expr11></jtooltip></div><jhelp expr12></jhelp></div>',
         [{
-          'redundantAttribute': 'expr2',
-          'selector': '[expr2]',
+          'redundantAttribute': 'expr8',
+          'selector': '[expr8]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -2538,8 +2538,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr3',
-          'selector': '[expr3]',
+          'redundantAttribute': 'expr9',
+          'selector': '[expr9]',
 
           'expressions': [{
             'type': expressionTypes.TEXT,
@@ -2568,8 +2568,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr4',
-          'selector': '[expr4]'
+          'redundantAttribute': 'expr10',
+          'selector': '[expr10]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2589,8 +2589,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr5',
-          'selector': '[expr5]'
+          'redundantAttribute': 'expr11',
+          'selector': '[expr11]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2610,8 +2610,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr6',
-          'selector': '[expr6]'
+          'redundantAttribute': 'expr12',
+          'selector': '[expr12]'
         }]
       );
     },
@@ -2639,10 +2639,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<button expr13 type="button" style="text-transform: capitalize;"><jicon expr14></jicon><!----><jtooltip expr15></jtooltip></button><jhelp expr16></jhelp>',
+        '<button expr18 type="button" style="text-transform: capitalize;"><jicon expr19></jicon><!----><jtooltip expr20></jtooltip></button><jhelp expr21></jhelp>',
         [{
-          'redundantAttribute': 'expr13',
-          'selector': '[expr13]',
+          'redundantAttribute': 'expr18',
+          'selector': '[expr18]',
 
           'expressions': [{
             'type': expressionTypes.TEXT,
@@ -2718,8 +2718,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr14',
-          'selector': '[expr14]'
+          'redundantAttribute': 'expr19',
+          'selector': '[expr19]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2739,8 +2739,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr15',
-          'selector': '[expr15]'
+          'redundantAttribute': 'expr20',
+          'selector': '[expr20]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2760,8 +2760,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr16',
-          'selector': '[expr16]'
+          'redundantAttribute': 'expr21',
+          'selector': '[expr21]'
         }]
       );
     },
@@ -2790,7 +2790,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr17></jlabel><jtooltip expr18></jtooltip><jhelp expr19></jhelp><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="aaad-inline"><template expr20></template></div>',
+        '<jlabel expr22></jlabel><jtooltip expr23></jtooltip><jhelp expr24></jhelp><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="aaad-inline"><template expr25></template></div>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2810,8 +2810,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr17',
-          'selector': '[expr17]'
+          'redundantAttribute': 'expr22',
+          'selector': '[expr22]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2831,8 +2831,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr18',
-          'selector': '[expr18]'
+          'redundantAttribute': 'expr23',
+          'selector': '[expr23]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -2852,15 +2852,15 @@
             }
           }],
 
-          'redundantAttribute': 'expr19',
-          'selector': '[expr19]'
+          'redundantAttribute': 'expr24',
+          'selector': '[expr24]'
         }, {
           'type': bindingTypes.EACH,
           'getKey': null,
           'condition': null,
 
           'template': template(
-            '<div class="row"><div expr21 class="fucfirst col-auto mb-2"></div><div class="col-auto"><label expr22><span expr23 class="mr-1"></span><jtooltip expr24></jtooltip><jhelp expr25></jhelp><input expr26 class="form-control"/><span expr27></span></label></div><div expr28 class="fucfirst col-auto mb-2"></div><div class="fucfirst col-auto mb-2"><jtooltip expr29></jtooltip><jhelp expr30></jhelp></div></div>',
+            '<div class="row"><div expr26 class="fucfirst col-auto mb-2"></div><div class="col-auto"><label expr27><span expr28 class="mr-1"></span><jtooltip expr29></jtooltip><jhelp expr30></jhelp><input expr31 class="form-control"/><span expr32></span></label></div><div expr33 class="fucfirst col-auto mb-2"></div><div class="fucfirst col-auto mb-2"><jtooltip expr34></jtooltip><jhelp expr35></jhelp></div></div>',
             [{
               'type': bindingTypes.IF,
 
@@ -2868,8 +2868,8 @@
                 return scope.option.uncheckedLabel;
               },
 
-              'redundantAttribute': 'expr21',
-              'selector': '[expr21]',
+              'redundantAttribute': 'expr26',
+              'selector': '[expr26]',
 
               'template': template('<!---->', [{
                 'expressions': [{
@@ -2882,8 +2882,8 @@
                 }]
               }])
             }, {
-              'redundantAttribute': 'expr22',
-              'selector': '[expr22]',
+              'redundantAttribute': 'expr27',
+              'selector': '[expr27]',
 
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -2900,8 +2900,8 @@
                 return !scope.option.checkedLabel;
               },
 
-              'redundantAttribute': 'expr23',
-              'selector': '[expr23]',
+              'redundantAttribute': 'expr28',
+              'selector': '[expr28]',
 
               'template': template('<!---->', [{
                 'expressions': [{
@@ -2920,8 +2920,8 @@
                 return !scope.option.checkedLabel;
               },
 
-              'redundantAttribute': 'expr24',
-              'selector': '[expr24]',
+              'redundantAttribute': 'expr29',
+              'selector': '[expr29]',
 
               'template': template(null, [{
                 'type': bindingTypes.TAG,
@@ -2949,8 +2949,8 @@
                 return !scope.option.checkedLabel;
               },
 
-              'redundantAttribute': 'expr25',
-              'selector': '[expr25]',
+              'redundantAttribute': 'expr30',
+              'selector': '[expr30]',
 
               'template': template(null, [{
                 'type': bindingTypes.TAG,
@@ -2972,8 +2972,8 @@
                 }]
               }])
             }, {
-              'redundantAttribute': 'expr26',
-              'selector': '[expr26]',
+              'redundantAttribute': 'expr31',
+              'selector': '[expr31]',
 
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -3040,8 +3040,8 @@
                 }
               }]
             }, {
-              'redundantAttribute': 'expr27',
-              'selector': '[expr27]',
+              'redundantAttribute': 'expr32',
+              'selector': '[expr32]',
 
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -3058,8 +3058,8 @@
                 return scope.option.checkedLabel;
               },
 
-              'redundantAttribute': 'expr28',
-              'selector': '[expr28]',
+              'redundantAttribute': 'expr33',
+              'selector': '[expr33]',
 
               'template': template('<!---->', [{
                 'expressions': [{
@@ -3082,8 +3082,8 @@
                 return scope.option.checkedLabel;
               },
 
-              'redundantAttribute': 'expr29',
-              'selector': '[expr29]',
+              'redundantAttribute': 'expr34',
+              'selector': '[expr34]',
 
               'template': template(null, [{
                 'type': bindingTypes.TAG,
@@ -3111,8 +3111,8 @@
                 return scope.option.checkedLabel;
               },
 
-              'redundantAttribute': 'expr30',
-              'selector': '[expr30]',
+              'redundantAttribute': 'expr35',
+              'selector': '[expr35]',
 
               'template': template(null, [{
                 'type': bindingTypes.TAG,
@@ -3136,8 +3136,8 @@
             }]
           ),
 
-          'redundantAttribute': 'expr20',
-          'selector': '[expr20]',
+          'redundantAttribute': 'expr25',
+          'selector': '[expr25]',
           'itemName': 'option',
           'indexName': null,
 
@@ -3231,7 +3231,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr31></jlabel><jtooltip expr32></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr33></jhelp><div expr34></div><input expr35 type="hidden" class="form-control"/>',
+        '<jlabel expr13></jlabel><jtooltip expr14></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr15></jhelp><div expr16></div><input expr17 type="hidden" class="form-control"/>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3251,8 +3251,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr31',
-          'selector': '[expr31]'
+          'redundantAttribute': 'expr13',
+          'selector': '[expr13]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3272,8 +3272,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr32',
-          'selector': '[expr32]'
+          'redundantAttribute': 'expr14',
+          'selector': '[expr14]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3293,11 +3293,11 @@
             }
           }],
 
-          'redundantAttribute': 'expr33',
-          'selector': '[expr33]'
+          'redundantAttribute': 'expr15',
+          'selector': '[expr15]'
         }, {
-          'redundantAttribute': 'expr34',
-          'selector': '[expr34]',
+          'redundantAttribute': 'expr16',
+          'selector': '[expr16]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -3308,8 +3308,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr35',
-          'selector': '[expr35]',
+          'redundantAttribute': 'expr17',
+          'selector': '[expr17]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -3337,9 +3337,9 @@
     'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<input expr36 type="hidden"/>', [{
-        'redundantAttribute': 'expr36',
-        'selector': '[expr36]',
+      return template('<input expr48 type="hidden"/>', [{
+        'redundantAttribute': 'expr48',
+        'selector': '[expr48]',
 
         'expressions': [{
           'type': expressionTypes.ATTRIBUTE,
@@ -3388,10 +3388,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<div expr37><jicon expr38></jicon><span expr39><!----></span><jtooltip expr40></jtooltip><hr/><jhelp expr41></jhelp></div>',
+        '<div expr49><jicon expr50></jicon><span expr51><!----></span><jtooltip expr52></jtooltip><hr/><jhelp expr53></jhelp></div>',
         [{
-          'redundantAttribute': 'expr37',
-          'selector': '[expr37]',
+          'redundantAttribute': 'expr49',
+          'selector': '[expr49]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -3420,11 +3420,11 @@
             }
           }],
 
-          'redundantAttribute': 'expr38',
-          'selector': '[expr38]'
+          'redundantAttribute': 'expr50',
+          'selector': '[expr50]'
         }, {
-          'redundantAttribute': 'expr39',
-          'selector': '[expr39]',
+          'redundantAttribute': 'expr51',
+          'selector': '[expr51]',
 
           'expressions': [{
             'type': expressionTypes.TEXT,
@@ -3460,8 +3460,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr40',
-          'selector': '[expr40]'
+          'redundantAttribute': 'expr52',
+          'selector': '[expr52]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3481,8 +3481,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr41',
-          'selector': '[expr41]'
+          'redundantAttribute': 'expr53',
+          'selector': '[expr53]'
         }]
       );
     },
@@ -3490,14 +3490,84 @@
     'name': 'ihr'
   };
 
-  var ipassword = {
+  var imultiselect = {
     'css': null,
     'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr169></jlabel><jtooltip expr170></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr171 placement="left"></jaddon><input expr172 type="password" autocomplete="on"/><jaddon expr173 placement="right"></jaddon></div><jhelp expr174></jhelp>',
+        '<select expr128 multiple class="hide"><template expr129></template></select><jlabel expr131></jlabel><jtooltip expr132></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small>',
         [{
+          'redundantAttribute': 'expr128',
+          'selector': '[expr128]',
+
+          'expressions': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': null,
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'name',
+
+            'evaluate': function(scope) {
+              return scope.props.field.id;
+            }
+          }, {
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'id',
+
+            'evaluate': function(scope) {
+              return [].join('');
+            }
+          }]
+        }, {
+          'type': bindingTypes.EACH,
+          'getKey': null,
+          'condition': null,
+
+          'template': template('<option expr130><!----></option>', [{
+            'redundantAttribute': 'expr130',
+            'selector': '[expr130]',
+
+            'expressions': [{
+              'type': expressionTypes.TEXT,
+              'childNodeIndex': 0,
+
+              'evaluate': function(scope) {
+                return [
+                  '\r\n                    ',
+                  scope.i18n(scope.option.label),
+                  '\r\n                '
+                ].join('');
+              }
+            }, {
+              'type': expressionTypes.VALUE,
+
+              'evaluate': function(scope) {
+                return scope.option.value;
+              }
+            }, {
+              'type': expressionTypes.ATTRIBUTE,
+              'name': 'selected',
+
+              'evaluate': function(scope) {
+                return scope.isSelected(scope.option);
+              }
+            }]
+          }]),
+
+          'redundantAttribute': 'expr129',
+          'selector': '[expr129]',
+          'itemName': 'option',
+          'indexName': null,
+
+          'evaluate': function(scope) {
+            return scope.props.field.options;
+          }
+        }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
 
@@ -3516,8 +3586,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr169',
-          'selector': '[expr169]'
+          'redundantAttribute': 'expr131',
+          'selector': '[expr131]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3537,8 +3607,64 @@
             }
           }],
 
-          'redundantAttribute': 'expr170',
-          'selector': '[expr170]'
+          'redundantAttribute': 'expr132',
+          'selector': '[expr132]'
+        }]
+      );
+    },
+
+    'name': 'imultiselect'
+  };
+
+  var ipassword = {
+    'css': null,
+    'exports': null,
+
+    'template': function(template, expressionTypes, bindingTypes, getComponent) {
+      return template(
+        '<jlabel expr54></jlabel><jtooltip expr55></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr56 placement="left"></jaddon><input expr57 type="password" autocomplete="on"/><jaddon expr58 placement="right"></jaddon></div><jhelp expr59></jhelp>',
+        [{
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jlabel';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'field',
+
+            'evaluate': function(scope) {
+              return scope.props.field;
+            }
+          }],
+
+          'redundantAttribute': 'expr54',
+          'selector': '[expr54]'
+        }, {
+          'type': bindingTypes.TAG,
+          'getComponent': getComponent,
+
+          'evaluate': function(scope) {
+            return 'jtooltip';
+          },
+
+          'slots': [],
+
+          'attributes': [{
+            'type': expressionTypes.ATTRIBUTE,
+            'name': 'tip',
+
+            'evaluate': function(scope) {
+              return scope.props.field.tip;
+            }
+          }],
+
+          'redundantAttribute': 'expr55',
+          'selector': '[expr55]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3565,11 +3691,11 @@
             }
           }],
 
-          'redundantAttribute': 'expr171',
-          'selector': '[expr171]'
+          'redundantAttribute': 'expr56',
+          'selector': '[expr56]'
         }, {
-          'redundantAttribute': 'expr172',
-          'selector': '[expr172]',
+          'redundantAttribute': 'expr57',
+          'selector': '[expr57]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -3632,8 +3758,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr173',
-          'selector': '[expr173]'
+          'redundantAttribute': 'expr58',
+          'selector': '[expr58]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3653,8 +3779,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr174',
-          'selector': '[expr174]'
+          'redundantAttribute': 'expr59',
+          'selector': '[expr59]'
         }]
       );
     },
@@ -3673,7 +3799,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr48></jlabel><jtooltip expr49></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr50></jhelp><div class="aaad-inline"><template expr51></template></div>',
+        '<jlabel expr71></jlabel><jtooltip expr72></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr73></jhelp><div class="aaad-inline"><template expr74></template></div>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3693,8 +3819,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr48',
-          'selector': '[expr48]'
+          'redundantAttribute': 'expr71',
+          'selector': '[expr71]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3714,8 +3840,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr49',
-          'selector': '[expr49]'
+          'redundantAttribute': 'expr72',
+          'selector': '[expr72]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3735,18 +3861,18 @@
             }
           }],
 
-          'redundantAttribute': 'expr50',
-          'selector': '[expr50]'
+          'redundantAttribute': 'expr73',
+          'selector': '[expr73]'
         }, {
           'type': bindingTypes.EACH,
           'getKey': null,
           'condition': null,
 
           'template': template(
-            '<label expr52 class="fradio"><!----><jtooltip expr53></jtooltip><jhelp expr54></jhelp><input expr55 type="radio" class="form-control"/><span class="fradiomark"></span></label>',
+            '<label expr75 class="fradio"><!----><jtooltip expr76></jtooltip><jhelp expr77></jhelp><input expr78 type="radio" class="form-control"/><span class="fradiomark"></span></label>',
             [{
-              'redundantAttribute': 'expr52',
-              'selector': '[expr52]',
+              'redundantAttribute': 'expr75',
+              'selector': '[expr75]',
 
               'expressions': [{
                 'type': expressionTypes.TEXT,
@@ -3775,8 +3901,8 @@
                 }
               }],
 
-              'redundantAttribute': 'expr53',
-              'selector': '[expr53]'
+              'redundantAttribute': 'expr76',
+              'selector': '[expr76]'
             }, {
               'type': bindingTypes.TAG,
               'getComponent': getComponent,
@@ -3796,11 +3922,11 @@
                 }
               }],
 
-              'redundantAttribute': 'expr54',
-              'selector': '[expr54]'
+              'redundantAttribute': 'expr77',
+              'selector': '[expr77]'
             }, {
-              'redundantAttribute': 'expr55',
-              'selector': '[expr55]',
+              'redundantAttribute': 'expr78',
+              'selector': '[expr78]',
 
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -3840,8 +3966,8 @@
             }]
           ),
 
-          'redundantAttribute': 'expr51',
-          'selector': '[expr51]',
+          'redundantAttribute': 'expr74',
+          'selector': '[expr74]',
           'itemName': 'option',
           'indexName': null,
 
@@ -3861,7 +3987,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr56></jlabel><jtooltip expr57></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><input expr58 type="range"/></div><jhelp expr59></jhelp>',
+        '<jlabel expr60></jlabel><jtooltip expr61></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><input expr62 type="range"/></div><jhelp expr63></jhelp>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3881,8 +4007,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr56',
-          'selector': '[expr56]'
+          'redundantAttribute': 'expr60',
+          'selector': '[expr60]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -3902,11 +4028,11 @@
             }
           }],
 
-          'redundantAttribute': 'expr57',
-          'selector': '[expr57]'
+          'redundantAttribute': 'expr61',
+          'selector': '[expr61]'
         }, {
-          'redundantAttribute': 'expr58',
-          'selector': '[expr58]',
+          'redundantAttribute': 'expr62',
+          'selector': '[expr62]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -3983,8 +4109,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr59',
-          'selector': '[expr59]'
+          'redundantAttribute': 'expr63',
+          'selector': '[expr63]'
         }]
       );
     },
@@ -4003,14 +4129,14 @@
     },
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<div class="row"><template expr60></template></div>', [{
+      return template('<div class="row"><template expr64></template></div>', [{
         'type': bindingTypes.EACH,
         'getKey': null,
         'condition': null,
 
-        'template': template('<div expr61><div expr62></div></div>', [{
-          'redundantAttribute': 'expr61',
-          'selector': '[expr61]',
+        'template': template('<div expr65><div expr66></div></div>', [{
+          'redundantAttribute': 'expr65',
+          'selector': '[expr65]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -4060,12 +4186,12 @@
             }
           }],
 
-          'redundantAttribute': 'expr62',
-          'selector': '[expr62]'
+          'redundantAttribute': 'expr66',
+          'selector': '[expr66]'
         }]),
 
-        'redundantAttribute': 'expr60',
-        'selector': '[expr60]',
+        'redundantAttribute': 'expr64',
+        'selector': '[expr64]',
         'itemName': 'field',
         'indexName': 'i',
 
@@ -4085,84 +4211,9 @@
       onMounted() {
           let formId = this.props.attr.id;
           if (this.props.field.multiple) {
-              const choices = new Choices('[name="' + this.props.field.id + '"]', {
-                  silent: true,
-                  aaitems: [],
-                  aachoices: [],
-                  renderChoiceLimit: -1,
-                  maxItemCount: -1,
-                  addItems: true,
-                  addItemFilterFn: null,
-                  removeItems: true,
-                  removeItemButton: true,
-                  editItems: false,
-                  duplicateItemsAllowed: false,
-                  aaadelimiter: ',',
-                  paste: true,
-                  aaaasearchEnabled: true,
-                  aaaaasearchChoices: true,
-                  searchFloor: 1,
-                  searchResultLimit: 4,
-                  searchFields: ['label', 'value'],
-                  position: 'auto',
-                  resetScrollPosition: true,
-                  shouldSort: false,
-                  shouldSortItems: false,
-                  sortFn: () => {},
-                  placeholder: true,
-                  placeholderValue: this.props.field.placeholder,
-                  searchPlaceholderValue: null,
-                  prependValue: null,
-                  appendValue: null,
-                  renderSelectedChoices: 'auto',
-                  loadingText: 'Loading...',
-                  noResultsText: 'No results found',
-                  noChoicesText: 'No choices to choose from',
-                  itemSelectText: 'Press to select',
-                  addItemText: (value) => {
-                      return `Press Enter to add <b>"${value}"</b>`;
-                  },
-                  maxItemText: (maxItemCount) => {
-                      return `Only ${maxItemCount} values can be added`;
-                  },
-                  itemComparer: (choice, item) => {
-                      return choice === item;
-                  },
-                  classNames: {
-                      containerOuter: 'choices',
-                      containerInner: 'choices__inner',
-                      input: 'choices__input',
-                      inputCloned: 'choices__input--cloned',
-                      list: 'choices__list',
-                      listItems: 'choices__list--multiple',
-                      listSingle: 'choices__list--single',
-                      listDropdown: 'choices__list--dropdown',
-                      item: 'choices__item',
-                      itemSelectable: 'choices__item--selectable',
-                      itemDisabled: 'choices__item--disabled',
-                      itemChoice: 'choices__item--choice',
-                      placeholder: 'choices__placeholder',
-                      group: 'choices__group',
-                      groupHeading: 'choices__heading',
-                      button: 'choices__button',
-                      activeState: 'is-active',
-                      focusState: 'is-focused',
-                      openState: 'is-open',
-                      disabledState: 'is-disabled',
-                      highlightedState: 'is-highlighted',
-                      hiddenState: 'is-hidden',
-                      flippedState: 'is-flipped',
-                      loadingState: 'is-loading',
-                      noResults: 'has-no-results',
-                      noChoices: 'has-no-choices'
-                  },
-                  // Choices uses the great Fuse library for searching. You
-                  // can find more options here: https://github.com/krisk/Fuse#options
-                  fuseOptions: {
-                      include: 'score'
-                  },
-                  callbackOnInit: null,
-                  callbackOnCreateTemplates: null
+              const choices = new Selectr('[name="' + this.props.field.id + '"]', {
+                  taggable: true
+                  
               });
           }
       },
@@ -4175,7 +4226,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr63></jlabel><jtooltip expr64></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr65></div><div expr66></div><div class="input-group mb-3"><jaddon expr67 placement="left"></jaddon><select expr68><template expr69></template></select><jaddon expr71 placement="right"></jaddon></div><jhelp expr72></jhelp>',
+        '<jlabel expr153></jlabel><jtooltip expr154></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr155></div><div expr156></div><div class="input-group mb-3"><jaddon expr157 placement="left"></jaddon><select expr158><template expr159></template></select><jaddon expr161 placement="right"></jaddon></div><jhelp expr162></jhelp>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4195,8 +4246,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr63',
-          'selector': '[expr63]'
+          'redundantAttribute': 'expr153',
+          'selector': '[expr153]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4216,11 +4267,11 @@
             }
           }],
 
-          'redundantAttribute': 'expr64',
-          'selector': '[expr64]'
+          'redundantAttribute': 'expr154',
+          'selector': '[expr154]'
         }, {
-          'redundantAttribute': 'expr65',
-          'selector': '[expr65]',
+          'redundantAttribute': 'expr155',
+          'selector': '[expr155]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -4231,8 +4282,8 @@
             }
           }]
         }, {
-          'redundantAttribute': 'expr66',
-          'selector': '[expr66]',
+          'redundantAttribute': 'expr156',
+          'selector': '[expr156]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -4268,11 +4319,11 @@
             }
           }],
 
-          'redundantAttribute': 'expr67',
-          'selector': '[expr67]'
+          'redundantAttribute': 'expr157',
+          'selector': '[expr157]'
         }, {
-          'redundantAttribute': 'expr68',
-          'selector': '[expr68]',
+          'redundantAttribute': 'expr158',
+          'selector': '[expr158]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -4315,9 +4366,9 @@
           'getKey': null,
           'condition': null,
 
-          'template': template('<option expr70><!----></option>', [{
-            'redundantAttribute': 'expr70',
-            'selector': '[expr70]',
+          'template': template('<option expr160><!----></option>', [{
+            'redundantAttribute': 'expr160',
+            'selector': '[expr160]',
 
             'expressions': [{
               'type': expressionTypes.TEXT,
@@ -4346,8 +4397,8 @@
             }]
           }]),
 
-          'redundantAttribute': 'expr69',
-          'selector': '[expr69]',
+          'redundantAttribute': 'expr159',
+          'selector': '[expr159]',
           'itemName': 'option',
           'indexName': null,
 
@@ -4380,8 +4431,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr71',
-          'selector': '[expr71]'
+          'redundantAttribute': 'expr161',
+          'selector': '[expr161]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4401,8 +4452,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr72',
-          'selector': '[expr72]'
+          'redundantAttribute': 'expr162',
+          'selector': '[expr162]'
         }]
       );
     },
@@ -4447,7 +4498,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr175></jlabel><jtooltip expr176></jtooltip><template expr177></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr179></div><jhelp expr186></jhelp>',
+        '<jlabel expr104></jlabel><jtooltip expr105></jtooltip><template expr106></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr108></div><jhelp expr115></jhelp>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4467,8 +4518,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr175',
-          'selector': '[expr175]'
+          'redundantAttribute': 'expr104',
+          'selector': '[expr104]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4488,8 +4539,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr176',
-          'selector': '[expr176]'
+          'redundantAttribute': 'expr105',
+          'selector': '[expr105]'
         }, {
           'type': bindingTypes.EACH,
           'getKey': null,
@@ -4499,10 +4550,10 @@
           },
 
           'template': template(
-            '<button expr178 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+            '<button expr107 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
             [{
-              'redundantAttribute': 'expr178',
-              'selector': '[expr178]',
+              'redundantAttribute': 'expr107',
+              'selector': '[expr107]',
 
               'expressions': [{
                 'type': expressionTypes.TEXT,
@@ -4536,8 +4587,8 @@
             }]
           ),
 
-          'redundantAttribute': 'expr177',
-          'selector': '[expr177]',
+          'redundantAttribute': 'expr106',
+          'selector': '[expr106]',
           'itemName': 'lang',
           'indexName': null,
 
@@ -4550,7 +4601,7 @@
           'condition': null,
 
           'template': template(
-            '<jaddon expr180 placement="left"></jaddon><input expr181 autocomplete="on"/><textarea expr182></textarea><div expr183 class="h-100 input-group-append"></div><jaddon expr185 placement="right"></jaddon>',
+            '<jaddon expr109 placement="left"></jaddon><input expr110 autocomplete="on"/><textarea expr111></textarea><div expr112 class="h-100 input-group-append"></div><jaddon expr114 placement="right"></jaddon>',
             [{
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -4589,8 +4640,8 @@
                 }
               }],
 
-              'redundantAttribute': 'expr180',
-              'selector': '[expr180]'
+              'redundantAttribute': 'expr109',
+              'selector': '[expr109]'
             }, {
               'type': bindingTypes.IF,
 
@@ -4598,8 +4649,8 @@
                 return scope.props.field.type!='textarea';
               },
 
-              'redundantAttribute': 'expr181',
-              'selector': '[expr181]',
+              'redundantAttribute': 'expr110',
+              'selector': '[expr110]',
 
               'template': template(null, [{
                 'expressions': [{
@@ -4681,8 +4732,8 @@
                 return scope.props.field.type=='textarea';
               },
 
-              'redundantAttribute': 'expr182',
-              'selector': '[expr182]',
+              'redundantAttribute': 'expr111',
+              'selector': '[expr111]',
 
               'template': template('<!---->', [{
                 'expressions': [{
@@ -4764,14 +4815,14 @@
                 return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
               },
 
-              'redundantAttribute': 'expr183',
-              'selector': '[expr183]',
+              'redundantAttribute': 'expr112',
+              'selector': '[expr112]',
 
               'template': template(
-                '<button expr184 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                '<button expr113 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                 [{
-                  'redundantAttribute': 'expr184',
-                  'selector': '[expr184]',
+                  'redundantAttribute': 'expr113',
+                  'selector': '[expr113]',
 
                   'expressions': [{
                     'type': expressionTypes.EVENT,
@@ -4809,13 +4860,13 @@
                 }
               }],
 
-              'redundantAttribute': 'expr185',
-              'selector': '[expr185]'
+              'redundantAttribute': 'expr114',
+              'selector': '[expr114]'
             }]
           ),
 
-          'redundantAttribute': 'expr179',
-          'selector': '[expr179]',
+          'redundantAttribute': 'expr108',
+          'selector': '[expr108]',
           'itemName': 'lang',
           'indexName': null,
 
@@ -4841,8 +4892,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr186',
-          'selector': '[expr186]'
+          'redundantAttribute': 'expr115',
+          'selector': '[expr115]'
         }]
       );
     },
@@ -4905,7 +4956,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<jlabel expr85></jlabel><jtooltip expr86></jtooltip><template expr87></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr89></div><jhelp expr94></jhelp>',
+        '<jlabel expr79></jlabel><jtooltip expr80></jtooltip><template expr81></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr83></div><jhelp expr88></jhelp>',
         [{
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4925,8 +4976,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr85',
-          'selector': '[expr85]'
+          'redundantAttribute': 'expr79',
+          'selector': '[expr79]'
         }, {
           'type': bindingTypes.TAG,
           'getComponent': getComponent,
@@ -4946,8 +4997,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr86',
-          'selector': '[expr86]'
+          'redundantAttribute': 'expr80',
+          'selector': '[expr80]'
         }, {
           'type': bindingTypes.EACH,
           'getKey': null,
@@ -4957,10 +5008,10 @@
           },
 
           'template': template(
-            '<button expr88 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+            '<button expr82 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
             [{
-              'redundantAttribute': 'expr88',
-              'selector': '[expr88]',
+              'redundantAttribute': 'expr82',
+              'selector': '[expr82]',
 
               'expressions': [{
                 'type': expressionTypes.TEXT,
@@ -4994,8 +5045,8 @@
             }]
           ),
 
-          'redundantAttribute': 'expr87',
-          'selector': '[expr87]',
+          'redundantAttribute': 'expr81',
+          'selector': '[expr81]',
           'itemName': 'lang',
           'indexName': null,
 
@@ -5008,7 +5059,7 @@
           'condition': null,
 
           'template': template(
-            '<div class="texteditor"></div><input expr90 type="hidden" class="form-control"/><input id="x" value="Editor content goes here" type="hidden" name="content"/><trix-editor expr91 input="x"></trix-editor><div expr92 class="h-100 input-group-append"></div>',
+            '<div class="texteditor"></div><input expr84 type="hidden" class="form-control"/><input id="x" value="Editor content goes here" type="hidden" name="content"/><trix-editor expr85 input="x"></trix-editor><div expr86 class="h-100 input-group-append"></div>',
             [{
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -5022,8 +5073,8 @@
                 }
               }]
             }, {
-              'redundantAttribute': 'expr90',
-              'selector': '[expr90]',
+              'redundantAttribute': 'expr84',
+              'selector': '[expr84]',
 
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -5079,8 +5130,8 @@
                 }
               }],
 
-              'redundantAttribute': 'expr91',
-              'selector': '[expr91]'
+              'redundantAttribute': 'expr85',
+              'selector': '[expr85]'
             }, {
               'type': bindingTypes.IF,
 
@@ -5088,14 +5139,14 @@
                 return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
               },
 
-              'redundantAttribute': 'expr92',
-              'selector': '[expr92]',
+              'redundantAttribute': 'expr86',
+              'selector': '[expr86]',
 
               'template': template(
-                '<button expr93 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                '<button expr87 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                 [{
-                  'redundantAttribute': 'expr93',
-                  'selector': '[expr93]',
+                  'redundantAttribute': 'expr87',
+                  'selector': '[expr87]',
 
                   'expressions': [{
                     'type': expressionTypes.EVENT,
@@ -5110,8 +5161,8 @@
             }]
           ),
 
-          'redundantAttribute': 'expr89',
-          'selector': '[expr89]',
+          'redundantAttribute': 'expr83',
+          'selector': '[expr83]',
           'itemName': 'lang',
           'indexName': null,
 
@@ -5137,8 +5188,8 @@
             }
           }],
 
-          'redundantAttribute': 'expr94',
-          'selector': '[expr94]'
+          'redundantAttribute': 'expr88',
+          'selector': '[expr88]'
         }]
       );
     },
@@ -5152,7 +5203,7 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<div expr99 class="h-100 input-group-prepend"></div><div expr101 class="h-100 input-group-append"></div>',
+        '<div expr67 class="h-100 input-group-prepend"></div><div expr69 class="h-100 input-group-append"></div>',
         [{
           'type': bindingTypes.IF,
 
@@ -5160,11 +5211,11 @@
             return scope.props.placement=='left' && scope.props.field.icon!='none';
           },
 
-          'redundantAttribute': 'expr99',
-          'selector': '[expr99]',
+          'redundantAttribute': 'expr67',
+          'selector': '[expr67]',
 
           'template': template(
-            '<span class="input-group-text" id="basic-addon1"><jicon expr100></jicon></span>',
+            '<span class="input-group-text" id="basic-addon1"><jicon expr68></jicon></span>',
             [{
               'type': bindingTypes.TAG,
               'getComponent': getComponent,
@@ -5184,8 +5235,8 @@
                 }
               }],
 
-              'redundantAttribute': 'expr100',
-              'selector': '[expr100]'
+              'redundantAttribute': 'expr68',
+              'selector': '[expr68]'
             }]
           )
         }, {
@@ -5195,10 +5246,10 @@
             return scope.props.placement=='right' && scope.props.field.buttons;
           },
 
-          'redundantAttribute': 'expr101',
-          'selector': '[expr101]',
+          'redundantAttribute': 'expr69',
+          'selector': '[expr69]',
 
-          'template': template('<ibutton expr102></ibutton>', [{
+          'template': template('<ibutton expr70></ibutton>', [{
             'type': bindingTypes.EACH,
             'getKey': null,
             'condition': null,
@@ -5223,8 +5274,8 @@
               }]
             }]),
 
-            'redundantAttribute': 'expr102',
-            'selector': '[expr102]',
+            'redundantAttribute': 'expr70',
+            'selector': '[expr70]',
             'itemName': 'button',
             'indexName': null,
 
@@ -5244,15 +5295,15 @@
     'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<small expr103 class="text-muted mb-1 mr-1"></small>', [{
+      return template('<small expr93 class="text-muted mb-1 mr-1"></small>', [{
         'type': bindingTypes.IF,
 
         'evaluate': function(scope) {
           return scope.props.help;
         },
 
-        'redundantAttribute': 'expr103',
-        'selector': '[expr103]',
+        'redundantAttribute': 'expr93',
+        'selector': '[expr93]',
 
         'template': template('<!---->', [{
           'expressions': [{
@@ -5275,9 +5326,9 @@
     'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<i expr104></i>', [{
-        'redundantAttribute': 'expr104',
-        'selector': '[expr104]',
+      return template('<i expr116></i>', [{
+        'redundantAttribute': 'expr116',
+        'selector': '[expr116]',
 
         'expressions': [{
           'type': expressionTypes.ATTRIBUTE,
@@ -5299,10 +5350,10 @@
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
       return template(
-        '<label expr105 class="label fucfirst"><!----></label><span expr106 class="inputRequired mx-1"></span>',
+        '<label expr89 class="label fucfirst"><!----></label><span expr90 class="inputRequired mx-1"></span>',
         [{
-          'redundantAttribute': 'expr105',
-          'selector': '[expr105]',
+          'redundantAttribute': 'expr89',
+          'selector': '[expr89]',
 
           'expressions': [{
             'type': expressionTypes.TEXT,
@@ -5326,8 +5377,8 @@
             return scope.props.field.required;
           },
 
-          'redundantAttribute': 'expr106',
-          'selector': '[expr106]',
+          'redundantAttribute': 'expr90',
+          'selector': '[expr90]',
           'template': template('<i class="fas fa-asterisk fa-fw" aria-hidden="true"></i>', [])
         }]
       );
@@ -5341,21 +5392,21 @@
     'exports': null,
 
     'template': function(template, expressionTypes, bindingTypes, getComponent) {
-      return template('<div expr107 class="ftooltip"></div>', [{
+      return template('<div expr91 class="ftooltip"></div>', [{
         'type': bindingTypes.IF,
 
         'evaluate': function(scope) {
           return scope.props.tip;
         },
 
-        'redundantAttribute': 'expr107',
-        'selector': '[expr107]',
+        'redundantAttribute': 'expr91',
+        'selector': '[expr91]',
 
         'template': template(
-          '<i class="far fa-question-circle mx-1"></i><div expr108 class="ftooltipText"><!----></div>',
+          '<i class="far fa-question-circle mx-1"></i><div expr92 class="ftooltipText"><!----></div>',
           [{
-            'redundantAttribute': 'expr108',
-            'selector': '[expr108]',
+            'redundantAttribute': 'expr92',
+            'selector': '[expr92]',
 
             'expressions': [{
               'type': expressionTypes.TEXT,
@@ -5538,6 +5589,7 @@
   register('iradio', iradio);
   register('irange', irange);
   register('irow', irow);
+  register('imultiselect',imultiselect);
   register('iselect', iselect);
   register('itext', itext);
   register('itexteditor', itexteditor);
@@ -5556,45 +5608,45 @@
   Object.entries(exports$1).forEach(([name, exported]) => window[name] = exported);
 
 
-   
-          window.data = {
-              checboxTransport: {
-                  car: false,
-                  bus: true
-              },
-              emailInrRow: "emailInrRow changed",
-              fallDescription: {
-                  fr: "fallDescription fr",
-                  en: "fallDescription en"
-              },
-              mayrange: 10,
-              flyDescription: {
-                  fr: "flyDescriptionf fr",
-                  en: "flyDescription en"
-              },
-              genre: "boy",
-              music: ["piano"],
-              mycolor: "blue",
-              mydate: "date changed",
-              mypassword: "mypassword changrd",
-              mytextarea: {
-                  fr: "mytextarea fr",
-                  en: "mytextarea en"
-              },
-              mytextedit: {
-                  fr: "mytextedit fr",
-                  en: "mytextedit en"
-              },
-              mytextwithbuttons: "mytextwithbuttons changed",
-              passwordInRow: "passwordInRow changed",
-              radioAnimal: "cat",
-              switchTest: {
-                  bird: "fall",
-                  snake: false,
-                  elephant: true
-              },
-              switchTestAlone: "fall_alone"
-          };
+
+  window.data = {
+      checboxTransport: {
+          car: false,
+          bus: true
+      },
+      emailInrRow: "emailInrRow changed",
+      fallDescription: {
+          fr: "fallDescription fr",
+          en: "fallDescription en"
+      },
+      mayrange: 10,
+      flyDescription: {
+          fr: "flyDescriptionf fr",
+          en: "flyDescription en"
+      },
+      genre: "boy",
+      music: ["piano"],
+      mycolor: "blue",
+      mydate: "date changed",
+      mypassword: "mypassword changrd",
+      mytextarea: {
+          fr: "mytextarea fr",
+          en: "mytextarea en"
+      },
+      mytextedit: {
+          fr: "mytextedit fr",
+          en: "mytextedit en"
+      },
+      mytextwithbuttons: "mytextwithbuttons changed",
+      passwordInRow: "passwordInRow changed",
+      radioAnimal: "cat",
+      switchTest: {
+          bird: "fall",
+          snake: false,
+          elephant: true
+      },
+      switchTestAlone: "fall_alone"
+  };
 
 
 
@@ -5603,376 +5655,376 @@
 
 
 
-          window.fields = {
-              form1: {
-                  attr: {
-                      lang: 'fr',
-                      langs: ['fr', 'en'],
-                      proposeTranslate: true
-                  },
+  window.fields = {
+      form1: {
+          attr: {
+              lang: 'fr',
+              langs: ['fr', 'en'],
+              proposeTranslate: true
+          },
+          desc: [{
+                  type: 'title',
+                  title: 'Hello',
+                  icon: 'fas fa-skull-crossbones',
+                  help: 'Help Please verify your info before',
+                      },
+              {
+                  type: 'alert',
+                  color: 'danger',
+                  message: "Ceci est un message d'alerte",
+                  icon: 'fas fa-exclamation-triangle',
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                      },
+              {
+                  id: 'genre',
+                  type: 'select',
+                  label: 'Genre',
+                  value: 'girl',
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                  options: [{
+                          label: 'Garcon',
+                          value: 'boy'
+                              },
+                      {
+                          label: 'Fille',
+                          value: 'girl'
+                              }
+                          ]
+                      },
+              {
+                  id: 'music',
+                  type: 'select',
+                  multiple: true,
+                  label: 'Musique',
+                  required: true,
+                  value: ['guitar'],
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                  options: [{
+                          label: 'Piano',
+                          value: 'piano'
+                              },
+                      {
+                          label: 'Guitare',
+                          value: 'guitar',
+                          aaaselected: true
+                              }
+                          ]
+                      },
+              {
+                  id: 'mycolor',
+                  label: 'Couleur principale',
+                  type: 'colorpicker',
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                  value: 'red'
+                      },
+              {
+                  id: 'mytextedit',
+                  label: 'Texte principal',
+                  type: 'texteditor',
+                  multilang: true,
+                  proposeTranslate: true,
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                  value: 'Mon premier text'
+                      },
+              {
+                  id: 'mytextarea',
+                  type: 'textarea',
+                  rows: 8,
+                  value: 'Eheh l\'ami quoi de neuf c\'est long tout ce tete sinon <h2>ca va? la fa</h2>mille? les amis? la santé? bonsoir enfin au revoir anticonstitutionnelement ;) bisous',
+                  label: 'Lettre pour chirac',
+                  multilang: true,
+                  required: true,
+                  icon: 'fas fa-running',
+                  tip: 'Il faut bien écrire vous avez affaire avec un président',
+                  help: 'Help Please verify your info before'
+                      },
+              {
+                  id: 'mayrange',
+                  icon: 'fas fa-running',
+                  type: 'range',
+                  label: 'Zoom',
+                  tip: 'select the right zoom',
+                  help: 'select the right zoom',
+                  onchange: 'alert("zoom")',
+                  oninput: 'alert("zoom")',
+                      },
+
+              {
+                  id: 'mytextwithbuttons',
+                  type: 'text',
+                  required: true,
+                  size: 10,
+                  value: 'First item',
+                  label: 'Id de l\'ambulance',
+                  icon: 'fas fa-ambulance',
+                  minlength: 4,
+                  buttons: [{
+                      icon: 'fas fa-running',
+                      onclick: 'dosomething'
+                          }, {
+                      title: 'do it',
+                      onclick: 'dosomething'
+                          }],
+                  tip: 'Il faut bien écrire vous avez affaire avec un président',
+                  help: 'Help Please verify your info before',
+                      },
+              {
+                  id: 'row0',
+                  type: 'row',
                   desc: [{
-                          type: 'title',
-                          title: 'Hello',
-                          icon: 'fas fa-skull-crossbones',
-                          help: 'Help Please verify your info before',
-                      },
-                      {
-                          type: 'alert',
-                          color: 'danger',
-                          message: "Ceci est un message d'alerte",
-                          icon: 'fas fa-exclamation-triangle',
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                      },
-                      {
-                          id: 'genre',
-                          type: 'select',
-                          label: 'Genre',
-                          value: 'girl',
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                          options: [{
-                                  label: 'Garcon',
-                                  value: 'boy'
-                              },
-                              {
-                                  label: 'Fille',
-                                  value: 'girl'
-                              }
-                          ]
-                      },
-                      {
-                          id: 'music',
-                          type: 'select',
-                          multiple: true,
-                          label: 'Musique',
-                          required: true,
-                          value: ['guitar'],
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                          options: [{
-                                  label: 'Piano',
-                                  value: 'piano'
-                              },
-                              {
-                                  label: 'Guitare',
-                                  value: 'guitar',
-                                  aaaselected: true
-                              }
-                          ]
-                      },
-                      {
-                          id: 'mycolor',
-                          label: 'Couleur principale',
-                          type: 'colorpicker',
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                          value: 'red'
-                      },
-                      {
-                          id: 'mytextedit',
-                          label: 'Texte principal',
-                          type: 'texteditor',
-                          multilang: true,
-                          proposeTranslate: true,
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                          value: 'Mon premier text'
-                      },
-                      {
-                          id: 'mytextarea',
-                          type: 'textarea',
-                          rows: 8,
-                          value: 'Eheh l\'ami quoi de neuf c\'est long tout ce tete sinon <h2>ca va? la fa</h2>mille? les amis? la santé? bonsoir enfin au revoir anticonstitutionnelement ;) bisous',
-                          label: 'Lettre pour chirac',
-                          multilang: true,
-                          required: true,
-                          icon: 'fas fa-running',
-                          tip: 'Il faut bien écrire vous avez affaire avec un président',
-                          help: 'Help Please verify your info before'
-                      },
-                      {
-                          id: 'mayrange',
-                          icon: 'fas fa-running',
-                          type: 'range',
-                          label: 'Zoom',
-                          tip: 'select the right zoom',
-                          help: 'select the right zoom',
-                          onchange: 'alert("zoom")',
-                          oninput: 'alert("zoom")',
-                      },
-
-                      {
-                          id: 'mytextwithbuttons',
-                          type: 'text',
-                          required: true,
+                          id: 'emailInrRow',
+                          type: 'email',
                           size: 10,
                           value: 'First item',
                           label: 'Id de l\'ambulance',
-                          icon: 'fas fa-ambulance',
-                          minlength: 4,
                           buttons: [{
                               icon: 'fas fa-running',
                               onclick: 'dosomething'
-                          }, {
-                              title: 'do it',
-                              onclick: 'dosomething'
-                          }],
-                          tip: 'Il faut bien écrire vous avez affaire avec un président',
-                          help: 'Help Please verify your info before',
-                      },
-                      {
-                          id: 'row0',
-                          type: 'row',
-                          desc: [{
-                                  id: 'emailInrRow',
-                                  type: 'email',
-                                  size: 10,
-                                  value: 'First item',
-                                  label: 'Id de l\'ambulance',
-                                  buttons: [{
-                                      icon: 'fas fa-running',
-                                      onclick: 'dosomething'
                                   }, {
-                                      title: 'test',
-                                      onclick: 'dosomething'
+                              title: 'test',
+                              onclick: 'dosomething'
                                   }]
                               },
-                              {
-                                  id: 'passwordInRow',
-                                  type: 'password',
-                                  //pattern:'(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}',
-                                  //required:true,
-                                  value: 'Second item',
-                                  label: 'Mot de passe'
-                              },
-                          ]
-                      },
                       {
-                          id: 'mypassword',
+                          id: 'passwordInRow',
                           type: 'password',
-                          pattern: '(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}',
-                          patternInfo: '8 characters, 1 upper, 1 number',
+                          //pattern:'(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}',
                           //required:true,
                           value: 'Second item',
-                          label: 'Mot de passe secure',
-                          buttons: [{
-                              icon: 'fas fa-running',
-                              onclick: 'dosomething'
-                          }, {
-                              title: 'Do it',
-                              onclick: 'dosomething'
-                          }],
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                      },
-                      {
-                          id: 'mydate',
-                          type: 'datetime',
-                          size: 10,
-                          value: 'Third item',
-                          label: 'date',
-                          buttons: [{
-                              icon: 'fas fa-running',
-                              onclick: 'dosomething'
-                          }, {
-                              title: 'Do it',
-                              onclick: 'dosomething'
-                          }],
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
-                      },
-                      {
-                          id: 'radioAnimal',
-                          type: 'radio',
-                          label: 'Choix animal',
-                          value: 'dog',
-                          options: [{
-                                  label: 'chien',
-                                  id: 'dog',
-                                  tip: 'Il faut bien écrire vous avez affaire avec un président'
+                          label: 'Mot de passe'
                               },
-                              {
-                                  label: 'chat',
-                                  achecked: true,
-                                  id: 'cat',
-                                  help: 'Help Please verify your info before'
+                          ]
+                      },
+              {
+                  id: 'mypassword',
+                  type: 'password',
+                  pattern: '(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}',
+                  patternInfo: '8 characters, 1 upper, 1 number',
+                  //required:true,
+                  value: 'Second item',
+                  label: 'Mot de passe secure',
+                  buttons: [{
+                      icon: 'fas fa-running',
+                      onclick: 'dosomething'
+                          }, {
+                      title: 'Do it',
+                      onclick: 'dosomething'
+                          }],
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                      },
+              {
+                  id: 'mydate',
+                  type: 'datetime',
+                  size: 10,
+                  value: 'Third item',
+                  label: 'date',
+                  buttons: [{
+                      icon: 'fas fa-running',
+                      onclick: 'dosomething'
+                          }, {
+                      title: 'Do it',
+                      onclick: 'dosomething'
+                          }],
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
+                      },
+              {
+                  id: 'radioAnimal',
+                  type: 'radio',
+                  label: 'Choix animal',
+                  value: 'dog',
+                  options: [{
+                          label: 'chien',
+                          id: 'dog',
+                          tip: 'Il faut bien écrire vous avez affaire avec un président'
+                              },
+                      {
+                          label: 'chat',
+                          achecked: true,
+                          id: 'cat',
+                          help: 'Help Please verify your info before'
                               }
                           ]
                       },
-                      {
-                          id: 'checboxTransport',
-                          type: 'checkbox',
-                          label: 'Choix transport',
-                          options: [{
-                                  label: 'Voiture',
-                                  id: 'car',
-                                  help: 'Il faut bien écrire vous avez affaire avec un président'
+              {
+                  id: 'checboxTransport',
+                  type: 'checkbox',
+                  label: 'Choix transport',
+                  options: [{
+                          label: 'Voiture',
+                          id: 'car',
+                          help: 'Il faut bien écrire vous avez affaire avec un président'
                               },
-                              {
-                                  label: 'Bus',
-                                  id: 'bus',
-                                  tip: 'ça pique',
-                                  value: true
+                      {
+                          label: 'Bus',
+                          id: 'bus',
+                          tip: 'ça pique',
+                          value: true
                               }
                           ]
                       },
+              {
+                  id: 'switchTest',
+                  type: 'switch',
+                  label: 'Choix animal',
+                  options: [{
+                          checkedLabel: 'vole',
+                          uncheckedLabel: 'tombe',
+                          checkedValue: 'fly',
+                          uncheckedValue: 'fall',
+                          value: 'fly',
+                          label: 'Oiseau',
+                          id: 'bird',
+                          help: 'Il faut bien écrire vous avez affaire avec un président',
+                          ctrl: {
+                              checked: ["flyDescription"],
+                              unchecked: ["fallDescription"]
+                          }
+                              },
                       {
-                          id: 'switchTest',
-                          type: 'switch',
-                          label: 'Choix animal',
-                          options: [{
-                                  checkedLabel: 'vole',
-                                  uncheckedLabel: 'tombe',
-                                  checkedValue: 'fly',
-                                  uncheckedValue: 'fall',
-                                  value: 'fly',
-                                  label: 'Oiseau',
-                                  id: 'bird',
-                                  help: 'Il faut bien écrire vous avez affaire avec un président',
-                                  ctrl: {
-                                      checked: ["flyDescription"],
-                                      unchecked: ["fallDescription"]
-                                  }
+                          label: 'Serpent',
+                          id: 'snake',
+                          tip: 'ça pique',
+                          checked: true,
                               },
-                              {
-                                  label: 'Serpent',
-                                  id: 'snake',
-                                  tip: 'ça pique',
-                                  checked: true,
-                              },
-                              {
-                                  label: 'Elephant',
-                                  id: 'elephant',
-                                  tip: 'ça pique',
-                                  value: 'yes'
+                      {
+                          label: 'Elephant',
+                          id: 'elephant',
+                          tip: 'ça pique',
+                          value: 'yes'
                               }
 
                           ]
                       },
-                      {
-                          id: 'switchTestAlone',
-                          type: 'switch',
-                          label: 'Choix animal alone',
-                          options: [{
-                              checkedLabel: 'vole alone',
-                              uncheckedLabel: 'tombe alone',
-                              checkedValue: 'fly_alone',
-                              uncheckedValue: 'fall_alone',
-                              value: 'fly_alone',
-                              label: 'Oiseau alone',
-                              help: 'Il faut bien écrire vous avez affaire avec un président',
-                              ctrl: {
-                                  checked: ["flyDescription"],
-                                  unchecked: ["fallDescription"]
-                              }
+              {
+                  id: 'switchTestAlone',
+                  type: 'switch',
+                  label: 'Choix animal alone',
+                  options: [{
+                      checkedLabel: 'vole alone',
+                      uncheckedLabel: 'tombe alone',
+                      checkedValue: 'fly_alone',
+                      uncheckedValue: 'fall_alone',
+                      value: 'fly_alone',
+                      label: 'Oiseau alone',
+                      help: 'Il faut bien écrire vous avez affaire avec un président',
+                      ctrl: {
+                          checked: ["flyDescription"],
+                          unchecked: ["fallDescription"]
+                      }
                           }]
                       },
-                      {
-                          type: 'textarea',
-                          id: "flyDescription",
-                          rows: 10,
-                          value: 'Un très beau vol que nous avons la, tout à fait aérodynamique cette chouette!',
-                          label: 'Description du vol',
-                          multilang: true,
-                          required: true,
-                          icon: 'fas fa-kiwi-bird',
-                          tip: 'Précisez l\'oiseau svp',
-                          help: 'Help Please verify your info before',
+              {
+                  type: 'textarea',
+                  id: "flyDescription",
+                  rows: 10,
+                  value: 'Un très beau vol que nous avons la, tout à fait aérodynamique cette chouette!',
+                  label: 'Description du vol',
+                  multilang: true,
+                  required: true,
+                  icon: 'fas fa-kiwi-bird',
+                  tip: 'Précisez l\'oiseau svp',
+                  help: 'Help Please verify your info before',
                       },
-                      {
-                          type: 'textarea',
-                          id: "fallDescription",
-                          rows: 10,
-                          value: 'Quelle chute c\'est fantastique l\'oiseau a littéralement EXPLOSé wow!',
-                          label: 'Description de la chute',
-                          multilang: true,
-                          required: true,
-                          icon: 'fas fa-bomb',
-                          tip: 'Précisez l\'oiseau svp',
-                          help: 'Help Please verify your info before',
+              {
+                  type: 'textarea',
+                  id: "fallDescription",
+                  rows: 10,
+                  value: 'Quelle chute c\'est fantastique l\'oiseau a littéralement EXPLOSé wow!',
+                  label: 'Description de la chute',
+                  multilang: true,
+                  required: true,
+                  icon: 'fas fa-bomb',
+                  tip: 'Précisez l\'oiseau svp',
+                  help: 'Help Please verify your info before',
 
                       },
-                      {
-                          type: 'hr',
-                          icon: 'fas fa-plane',
-                          label: 'Take your plane',
-                          help: 'Please verify your info before'
+              {
+                  type: 'hr',
+                  icon: 'fas fa-plane',
+                  label: 'Take your plane',
+                  help: 'Please verify your info before'
                       },
-                      {
-                          icon: 'fas fa-running',
-                          type: 'button',
-                          color: 'danger',
-                          class: 'btn-block btn-lg',
-                          title: 'GO !',
-                          onclick: 'dosomething',
-                          waitValid: true,
-                          tip: 'Tip Please verify your info before',
-                          help: 'Help Please verify your info before',
+              {
+                  icon: 'fas fa-running',
+                  type: 'button',
+                  color: 'danger',
+                  class: 'btn-block btn-lg',
+                  title: 'GO !',
+                  onclick: 'dosomething',
+                  waitValid: true,
+                  tip: 'Tip Please verify your info before',
+                  help: 'Help Please verify your info before',
                       },
-                      {
-                          id: 'i4',
-                          type: 'button',
-                          size: 23,
-                          title: 'Fourth item',
-                          icon: 'fas fa-restroom',
-                          onclick: 'dosomething'
+              {
+                  id: 'i4',
+                  type: 'button',
+                  size: 23,
+                  title: 'Fourth item',
+                  icon: 'fas fa-restroom',
+                  onclick: 'dosomething'
                       },
                   ]
-              },
-              form2: {
-                  attr: {
-                      lang: 'fr',
-                      langs: ['fr', 'en'],
-                      proposeTranslate: true
-                  },
-                  desc: [{
-                          id: 'switchTestAlone',
-                          type: 'switch',
-                          label: 'Choix animal alone',
-                          options: [{
-                              checkedLabel: 'vole alone',
-                              uncheckedLabel: 'tombe alone',
-                              checkedValue: 'fly_alone',
-                              uncheckedValue: 'fall_alone',
-                              value: 'fly_alone',
-                              label: 'Oiseau alone',
-                              help: 'Il faut bien écrire vous avez affaire avec un président',
-                              ctrl: {
-                                  checked: ["flyDescription"],
-                                  unchecked: ["fallDescription"]
-                              }
+      },
+      form2: {
+          attr: {
+              lang: 'fr',
+              langs: ['fr', 'en'],
+              proposeTranslate: true
+          },
+          desc: [{
+                  id: 'switchTestAlone',
+                  type: 'switch',
+                  label: 'Choix animal alone',
+                  options: [{
+                      checkedLabel: 'vole alone',
+                      uncheckedLabel: 'tombe alone',
+                      checkedValue: 'fly_alone',
+                      uncheckedValue: 'fall_alone',
+                      value: 'fly_alone',
+                      label: 'Oiseau alone',
+                      help: 'Il faut bien écrire vous avez affaire avec un président',
+                      ctrl: {
+                          checked: ["flyDescription"],
+                          unchecked: ["fallDescription"]
+                      }
                           }]
                       },
-                      {
-                          type: 'textarea',
-                          id: "flyDescription",
-                          rows: 10,
-                          value: 'Un très beau vol que nous avons la, tout à fait aérodynamique cette chouette!',
-                          label: 'Description du vol',
-                          multilang: true,
-                          required: true,
-                          icon: 'fas fa-kiwi-bird',
-                          tip: 'Précisez l\'oiseau svp',
-                          help: 'Help Please verify your info before',
+              {
+                  type: 'textarea',
+                  id: "flyDescription",
+                  rows: 10,
+                  value: 'Un très beau vol que nous avons la, tout à fait aérodynamique cette chouette!',
+                  label: 'Description du vol',
+                  multilang: true,
+                  required: true,
+                  icon: 'fas fa-kiwi-bird',
+                  tip: 'Précisez l\'oiseau svp',
+                  help: 'Help Please verify your info before',
                       },
-                      {
-                          type: 'textarea',
-                          id: "fallDescription",
-                          rows: 10,
-                          value: 'Quelle chute c\'est fantastique l\'oiseau a littéralement EXPLOSé wow!',
-                          label: 'Description de la chute',
-                          multilang: true,
-                          required: true,
-                          icon: 'fas fa-bomb',
-                          tip: 'Précisez l\'oiseau svp',
-                          help: 'Help Please verify your info before',
+              {
+                  type: 'textarea',
+                  id: "fallDescription",
+                  rows: 10,
+                  value: 'Quelle chute c\'est fantastique l\'oiseau a littéralement EXPLOSé wow!',
+                  label: 'Description de la chute',
+                  multilang: true,
+                  required: true,
+                  icon: 'fas fa-bomb',
+                  tip: 'Précisez l\'oiseau svp',
+                  help: 'Help Please verify your info before',
                       }
                   ]
-              }
-          };
+      }
+  };
 
-      register('app',App);
-      mount('app');
+  register('app', App);
+  mount('app');
 
 }());
