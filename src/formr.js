@@ -110,14 +110,19 @@ export function setFormValues(formId, data) {
                 input.checked = (input.checkedValue == val && input.uncheckedValue != val) || val
                 break
             case 'select-multiple':
-                Array.prototype.forEach.call(input.options, function (opt) {
-                    opt.selected = (val.indexOf(opt.value) > -1)
+                if (input.tag) {
+                    var setSelectrEvent = new CustomEvent(formId + '_setSelectr_' + input.name, {
+                        detail: {
+                            values: val
+                        }
+                    })
+                    document.dispatchEvent(setSelectrEvent)
+                } else Array.prototype.forEach.call(input.options, function (opt) {
+                    opt.selected = (val && val.indexOf(opt.value) > -1)
                 })
                 break
             default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
                 input.value = val
-
-                //console.log(input.closest(".form-group").querySelector(".pcr-button").setColor(val,true))
                 var setColorEvent = new CustomEvent(formId + '_setColor_' + input.name, {
                     detail: {
                         color: val

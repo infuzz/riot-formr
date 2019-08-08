@@ -3,10 +3,8 @@
     <jtooltip tip={props.field.tip}></jtooltip>
     <span class="inputFeedback"></span>
     <small class="inputFeedbackMsg"></small>
-    <div name={"colorpicker_" + props.field.id}></div>
-    <div name={props.attr.id +"_select_" + props.field.id}></div>
-    <div class="input-group mb-3">
-        <jaddon field={props.field} placement='left'></jaddon>
+    <div class="input-group">
+        <jaddon if={!props.field.tag} field={props.field} placement='left'></jaddon>
         <select { ...props.field } multiple={props.field.multiple} class="form-control {props.field.class}" name={props.field.id} id={}>
             <template each={option in props.field.options}>
                 <option value={option.value} selected={isSelected(option)}>
@@ -14,17 +12,22 @@
                 </option>
             </template>
         </select>
-        <jaddon field={props.field} placement='right'></jaddon>
+        <jaddon if={!props.field.tag} field={props.field} placement='right'></jaddon>
     </div>
     <jhelp help={props.field.help}></jhelp>
     <script>
         export default {
             onMounted() {
-                let formId = this.props.attr.id
-                if (this.props.field.multiple) {
-                    const choices = new Selectr('[name="' + this.props.field.id + '"]', {
-                        taggable: true
-                        
+                if (this.props.field.multiple && this.props.field.tag) {
+                    // https://github.com/Mobius1/Selectr
+                    let elt = document.getElementsByName(this.props.attr.id)[0].querySelector('[name="' + this.props.field.id + '"]')
+                    const selectr = new Selectr(elt, {
+                        taggable: this.props.field.userAddOption
+                    })
+                    document.addEventListener(this.props.attr.id + '_setSelectr_' + this.props.field.id, function(ev) {
+                        //console.log(selectr.getValue(false)) 
+                        selectr.clear()
+                        selectr.setValue(ev.detail.values)                      
                     })
                 }
             },
@@ -35,4 +38,21 @@
         }
 
     </script>
+    <style>
+        .choices__list--multiple .choices__item {
+            border-radius: 20px;
+            background-color: grey;
+            border: 1px solid grey;
+            color: #fff;
+        }
+
+        .choices__button {
+            border-left: 0px !important;
+        }
+
+        .choices {
+            width: 100%;
+        }
+
+    </style>
 </iselect>
