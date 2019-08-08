@@ -1,6 +1,7 @@
 {
-    "name": "@klicat/formr",
+    "name": "@klicat/riot-formr",
     "version": "1.1.0",
+    "private": false,
     "description": "Riot 4 form generator",
     "scripts": {
         "dev": "(start npm run watch && start npm run server) || (npm run watch & npm run server)",
@@ -24,17 +25,18 @@
     },
     "license": "MIT",
     "author": "klicat",
-    "main": "dist/js/formr.js",
+    "main": "dist/js/riot-formr.js",
+    "files": ["dist/*"],
     "keywords": [
         "riot",
         "form"
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/infuzz/formr.git"
+        "url": "git+https://github.com/infuzz/riot-formr.git"
     },
     "bugs": {
-        "url": "https://github.com/infuzz/formr/issues"
+        "url": "https://github.com/infuzz/riot-formr/issues"
     },
-    "homepage": "https://github.com/infuzz/formr#readme"
+    "homepage": "https://github.com/infuzz/riot-formr#readme"
 }

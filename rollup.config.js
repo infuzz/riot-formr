@@ -6,7 +6,7 @@ import copy from 'rollup-plugin-copy'
 export default {
     input: 'src/main.js',
     output: {
-        file: 'dist/js/formr.js',
+        file: 'dist/js/riot-formr.js',
         format: 'iife',
         sourcemap:true
     },
