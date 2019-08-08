@@ -12,7 +12,8 @@
   "dependencies": {
     "marked": "^0.6.3",
     "npm": "^6.10.3",
-    "riot": "^4.3.8"
+    "riot": "^4.3.8",
+    "rollup-plugin-copy": "^3.1.0"
   },
   "devDependencies": {
     "@riotjs/compiler": "^4.3.9",
