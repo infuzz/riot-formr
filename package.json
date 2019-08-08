@@ -2,7 +2,6 @@
     "name": "@klicat/formr",
     "version": "1.1.0",
     "description": "Riot 4 form generator",
-    "private": true,
     "scripts": {
         "dev": "(start npm run watch && start npm run server) || (npm run watch & npm run server)",
         "build": "rollup -c",
