@@ -1,4 +1,4 @@
-import * as riot from 'riot'
+/*import * as riot from 'riot'*/
 import App from './app.riot'
 
 import * as exports from './formr.js'

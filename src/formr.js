@@ -1,4 +1,4 @@
-import * as riot from 'riot'
+/*import * as riot from 'riot'*/
 
 riot.install(function (component) {
     window.addEventListener('updateAll', () => {
@@ -76,9 +76,9 @@ riot.install(function (component) {
 })
 
 
-export function getFormValues(formId) {
+export function getFormValues(formName) {
     var data = {}
-    let inputs = document.getElementsByName(formId)[0].querySelectorAll('.form-control')
+    let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control')
     inputs.forEach(function (input) {
         let type = input.type
         switch (type) {
@@ -100,8 +100,8 @@ export function getFormValues(formId) {
     return data
 }
 
-export function setFormValues(formId, data) {
-    let inputs = document.getElementsByName(formId)[0].querySelectorAll('.form-control')
+export function setFormValues(formName, data) {
+    let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control')
     inputs.forEach(function (input) {
         let type = input.type
         let val = field(data, input.name)
@@ -110,8 +110,8 @@ export function setFormValues(formId, data) {
                 input.checked = (input.checkedValue == val && input.uncheckedValue != val) || val
                 break
             case 'select-multiple':
-                if (input.tag) {
-                    var setSelectrEvent = new CustomEvent(formId + '_setSelectr_' + input.name, {
+                if (input.selectr) {//selectr tag
+                    var setSelectrEvent = new CustomEvent(formName + '_setSelectr_' + input.name, {
                         detail: {
                             values: val
                         }
@@ -123,16 +123,32 @@ export function setFormValues(formId, data) {
                 break
             default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
                 input.value = val
-                var setColorEvent = new CustomEvent(formId + '_setColor_' + input.name, {
-                    detail: {
-                        color: val
-                    }
-                })
-                document.dispatchEvent(setColorEvent)
+                if (input.colorpicker) {//colorpickertag
+                    var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
+                        detail: {
+                            color: val
+                        }
+                    })
+                    document.dispatchEvent(setColorEvent)
+                }
                 //+color, editor, image
         }
     })
     return data
+}
+
+function setSelectOptions(formName, selectName, values) {
+    let select = document.getElementsByName(formName)[0].querySelectorAll('[name="' + selectName + '"]')
+
+
+    $('#' + id).children('option').remove();
+    /*if(values) for ( var i = 0; i < values.length; i++ ) {
+    	$('#'+id).append(new Option(values[i].label, values[i].id, false, false));
+    }*/
+    $.each(values, function (key, value) {
+        $('#' + id).append(new Option(value, key, false, false));
+    })
+    $('#' + id).trigger('change');
 }
 
 export function field(obj, fieldPath, value) {
@@ -194,7 +210,7 @@ riot.register('ipassword', ipassword)
 riot.register('iradio', iradio)
 riot.register('irange', irange)
 riot.register('irow', irow)
-riot.register('imultiselect',imultiselect)
+riot.register('imultiselect', imultiselect)
 riot.register('iselect', iselect)
 riot.register('itext', itext)
 riot.register('itexteditor', itexteditor)

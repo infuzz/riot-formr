@@ -6,7 +6,7 @@ import copy from 'rollup-plugin-copy'
 export default {
     input: 'src/main.js',
     output: {
-        file: 'dist/js/bundle.js',
+        file: 'dist/js/riot-form-klicat.js',
         format: 'iife'
     },
     plugins: [
