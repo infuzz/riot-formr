@@ -197,7 +197,6 @@ import idatetimepicker from './idatetimepicker.riot'
 import iimagepicker from './iimagepicker.riot'
 import ihidden from './ihidden.riot'
 import ihr from './ihr.riot'
-import imultiselect from './imultiselect.riot'
 import ipassword from './ipassword.riot'
 import iradio from './iradio.riot'
 import irange from './irange.riot'
@@ -226,7 +225,6 @@ riot.register('ipassword', ipassword)
 riot.register('iradio', iradio)
 riot.register('irange', irange)
 riot.register('irow', irow)
-riot.register('imultiselect', imultiselect)
 riot.register('iselect', iselect)
 riot.register('itext', itext)
 riot.register('itexteditor', itexteditor)

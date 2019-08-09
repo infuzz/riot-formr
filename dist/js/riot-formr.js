@@ -1130,7 +1130,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr172></jlabel><jtooltip expr173></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr174 placement="left"></jaddon><input expr175 type="text" datetimepicker="true"/><jaddon expr176 placement="right"></jaddon></div><jhelp expr177></jhelp>',
+          '<jlabel expr190></jlabel><jtooltip expr191></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr192 placement="left"></jaddon><input expr193 type="text" datetimepicker="true"/><jaddon expr194 placement="right"></jaddon></div><jhelp expr195></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1150,8 +1150,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr172',
-            'selector': '[expr172]'
+            'redundantAttribute': 'expr190',
+            'selector': '[expr190]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1171,8 +1171,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr173',
-            'selector': '[expr173]'
+            'redundantAttribute': 'expr191',
+            'selector': '[expr191]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1199,11 +1199,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr174',
-            'selector': '[expr174]'
+            'redundantAttribute': 'expr192',
+            'selector': '[expr192]'
           }, {
-            'redundantAttribute': 'expr175',
-            'selector': '[expr175]',
+            'redundantAttribute': 'expr193',
+            'selector': '[expr193]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1266,8 +1266,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr176',
-            'selector': '[expr176]'
+            'redundantAttribute': 'expr194',
+            'selector': '[expr194]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1287,8 +1287,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr177',
-            'selector': '[expr177]'
+            'redundantAttribute': 'expr195',
+            'selector': '[expr195]'
           }]
         );
       },
@@ -1624,132 +1624,6 @@
       },
 
       'name': 'ihr'
-    };
-
-    var imultiselect = {
-      'css': null,
-      'exports': null,
-
-      'template': function(template, expressionTypes, bindingTypes, getComponent) {
-        return template(
-          '<select expr49 multiple class="hide"><template expr50></template></select><jlabel expr52></jlabel><jtooltip expr53></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small>',
-          [{
-            'redundantAttribute': 'expr49',
-            'selector': '[expr49]',
-
-            'expressions': [{
-              'type': expressionTypes.ATTRIBUTE,
-              'name': null,
-
-              'evaluate': function(scope) {
-                return scope.props.field;
-              }
-            }, {
-              'type': expressionTypes.ATTRIBUTE,
-              'name': 'name',
-
-              'evaluate': function(scope) {
-                return scope.props.field.id;
-              }
-            }, {
-              'type': expressionTypes.ATTRIBUTE,
-              'name': 'id',
-
-              'evaluate': function(scope) {
-                return [].join('');
-              }
-            }]
-          }, {
-            'type': bindingTypes.EACH,
-            'getKey': null,
-            'condition': null,
-
-            'template': template('<option expr51><!----></option>', [{
-              'redundantAttribute': 'expr51',
-              'selector': '[expr51]',
-
-              'expressions': [{
-                'type': expressionTypes.TEXT,
-                'childNodeIndex': 0,
-
-                'evaluate': function(scope) {
-                  return [
-                    '\r\n                    ',
-                    scope.i18n(scope.option.label),
-                    '\r\n                '
-                  ].join('');
-                }
-              }, {
-                'type': expressionTypes.VALUE,
-
-                'evaluate': function(scope) {
-                  return scope.option.value;
-                }
-              }, {
-                'type': expressionTypes.ATTRIBUTE,
-                'name': 'selected',
-
-                'evaluate': function(scope) {
-                  return scope.isSelected(scope.option);
-                }
-              }]
-            }]),
-
-            'redundantAttribute': 'expr50',
-            'selector': '[expr50]',
-            'itemName': 'option',
-            'indexName': null,
-
-            'evaluate': function(scope) {
-              return scope.props.field.options;
-            }
-          }, {
-            'type': bindingTypes.TAG,
-            'getComponent': getComponent,
-
-            'evaluate': function(scope) {
-              return 'jlabel';
-            },
-
-            'slots': [],
-
-            'attributes': [{
-              'type': expressionTypes.ATTRIBUTE,
-              'name': 'field',
-
-              'evaluate': function(scope) {
-                return scope.props.field;
-              }
-            }],
-
-            'redundantAttribute': 'expr52',
-            'selector': '[expr52]'
-          }, {
-            'type': bindingTypes.TAG,
-            'getComponent': getComponent,
-
-            'evaluate': function(scope) {
-              return 'jtooltip';
-            },
-
-            'slots': [],
-
-            'attributes': [{
-              'type': expressionTypes.ATTRIBUTE,
-              'name': 'tip',
-
-              'evaluate': function(scope) {
-                return scope.props.field.tip;
-              }
-            }],
-
-            'redundantAttribute': 'expr53',
-            'selector': '[expr53]'
-          }]
-        );
-      },
-
-      'name': 'imultiselect'
     };
 
     var ipassword = {
@@ -3046,26 +2920,43 @@
             } else {
                 this.state.langs = [''];
             }
-            if (this.props.type == 'datetime') this.state.type = 'datetime-local';
-            else this.state.type = this.props.field.type;
         },
 
         onMounted() {
             //https://quilljs.com/
-            const self=this;
+            //see https://codepen.io/viT-1/pen/GQVaoB for html fill
+            const self = this;
+            let formId = this.props.attr.id;
             this.state.langs.forEach(function(lang) {
-                var container = '#'+ self.buildId(lang,'_');
+                let container = document.getElementsByName(formId)[0].querySelector('[name="' + self.buildId(lang, '_') + '"]');
+                let input = document.getElementsByName(formId)[0].querySelector('[name="' + self.buildId(lang) + '"]');
                 var editor = new Quill(container, {
                     modules: {
                         toolbar: [
-                            [{
-                                header: [1, 2, false]
-                            }],
-                            ['bold', 'italic', 'underline'],
-                            ['image', 'code-block']
+                            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                            //[{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+                            //[{ 'header': 1 }, { 'header': 2 }],               // custom button values
+                            ['bold', 'italic', 'underline', 'strike', 'link'],        // toggled buttons
+                            [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+                            [{ 'align': [] }],                                
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            ['video', 'image'],
+                            ['blockquote', 'code-block'],
+                            [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+                            [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+                            [{ 'direction': 'rtl' }],                       // text direction
+                            [{ 'font': [] }],
+                            ['clean'],
+                            ['translate']
                         ]
                     },
                     theme: 'snow'
+                });
+                editor.on('text-change', function() {
+                    var delta = editor.getContents();
+                    var text = editor.getText();
+                    var html = editor.root.innerHTML;
+                    input.value=editor.root.innerHTML;
                 });
             });
         },
@@ -3074,7 +2965,7 @@
             return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
         },
 
-        buildId(lang,separator) {
+        buildId(lang, separator) {
             return this.props.field.multilang ? this.props.field.id + (separator || '.') + lang : this.props.field.id
         },
 
@@ -3091,7 +2982,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr100></jlabel><jtooltip expr101></jtooltip><template expr102></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr104></div><jhelp expr109></jhelp>',
+          '<jlabel expr414></jlabel><jtooltip expr415></jtooltip><template expr416></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr418></div><jhelp expr423></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3111,8 +3002,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr100',
-            'selector': '[expr100]'
+            'redundantAttribute': 'expr414',
+            'selector': '[expr414]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3132,8 +3023,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr101',
-            'selector': '[expr101]'
+            'redundantAttribute': 'expr415',
+            'selector': '[expr415]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
@@ -3143,10 +3034,10 @@
             },
 
             'template': template(
-              '<button expr103 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+              '<button expr417 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
               [{
-                'redundantAttribute': 'expr103',
-                'selector': '[expr103]',
+                'redundantAttribute': 'expr417',
+                'selector': '[expr417]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -3180,8 +3071,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr102',
-            'selector': '[expr102]',
+            'redundantAttribute': 'expr416',
+            'selector': '[expr416]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3194,7 +3085,7 @@
             'condition': null,
 
             'template': template(
-              '<div expr105></div><input expr106 type="hidden" class="form-control"/><div expr107 class="h-100 input-group-append"></div>',
+              '<span expr419 class="h-100 input-group-append"></span><div expr421></div><input expr422 type="hidden" class="form-control"/>',
               [{
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3208,20 +3099,46 @@
                   }
                 }]
               }, {
-                'redundantAttribute': 'expr105',
-                'selector': '[expr105]',
+                'type': bindingTypes.IF,
+
+                'evaluate': function(scope) {
+                  return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
+                },
+
+                'redundantAttribute': 'expr419',
+                'selector': '[expr419]',
+
+                'template': template(
+                  '<button expr420 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                  [{
+                    'redundantAttribute': 'expr420',
+                    'selector': '[expr420]',
+
+                    'expressions': [{
+                      'type': expressionTypes.EVENT,
+                      'name': 'onclick',
+
+                      'evaluate': function(scope) {
+                        return scope.translate;
+                      }
+                    }]
+                  }]
+                )
+              }, {
+                'redundantAttribute': 'expr421',
+                'selector': '[expr421]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
-                  'name': 'id',
+                  'name': 'name',
 
                   'evaluate': function(scope) {
                     return scope.buildId(scope.lang,'_');
                   }
                 }]
               }, {
-                'redundantAttribute': 'expr106',
-                'selector': '[expr106]',
+                'redundantAttribute': 'expr422',
+                'selector': '[expr422]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3258,37 +3175,11 @@
                     return scope.props.field.value;
                   }
                 }]
-              }, {
-                'type': bindingTypes.IF,
-
-                'evaluate': function(scope) {
-                  return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
-                },
-
-                'redundantAttribute': 'expr107',
-                'selector': '[expr107]',
-
-                'template': template(
-                  '<button expr108 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
-                  [{
-                    'redundantAttribute': 'expr108',
-                    'selector': '[expr108]',
-
-                    'expressions': [{
-                      'type': expressionTypes.EVENT,
-                      'name': 'onclick',
-
-                      'evaluate': function(scope) {
-                        return scope.translate;
-                      }
-                    }]
-                  }]
-                )
               }]
             ),
 
-            'redundantAttribute': 'expr104',
-            'selector': '[expr104]',
+            'redundantAttribute': 'expr418',
+            'selector': '[expr418]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3314,8 +3205,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr109',
-            'selector': '[expr109]'
+            'redundantAttribute': 'expr423',
+            'selector': '[expr423]'
           }]
         );
       },
@@ -3736,7 +3627,6 @@
     riot.register('iradio', iradio);
     riot.register('irange', irange);
     riot.register('irow', irow);
-    riot.register('imultiselect', imultiselect);
     riot.register('iselect', iselect);
     riot.register('itext', itext);
     riot.register('itexteditor', itexteditor);

@@ -8,14 +8,11 @@
     <small class="inputFeedbackMsg"></small>
 
     <div each={lang in state.langs} class="ianput-group {lang==state.currentLang || !lang?'':'hide'}">
-        <div id={buildId(lang,'_')}></div>
-        <input type="hidden" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} class="form-control">
-        
-
-
-        <div if={props.field.multilang && props.attr.proposeTranslate && state.defaultLang !=lang } class="h-100 input-group-append">
+        <span if={props.field.multilang && props.attr.proposeTranslate && state.defaultLang !=lang } class="h-100 input-group-append">
             <button type="button" class="btn btn-info" onclick={translate}><i class="fas fa-language"></i></button>
-        </div>
+        </span>
+        <div name={buildId(lang,'_')}></div>
+        <input type="hidden" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} class="form-control">
     </div>
     <jhelp help={props.field.help}></jhelp>
 
@@ -29,32 +26,49 @@
                 } else {
                     this.state.langs = ['']
                 }
-                if (this.props.type == 'datetime') this.state.type = 'datetime-local'
-                else this.state.type = this.props.field.type
             },
             onMounted() {
                 //https://quilljs.com/
-                const self=this
+                //see https://codepen.io/viT-1/pen/GQVaoB for html fill
+                const self = this
+                let formId = this.props.attr.id
                 this.state.langs.forEach(function(lang) {
-                    var container = '#'+ self.buildId(lang,'_')
+                    let container = document.getElementsByName(formId)[0].querySelector('[name="' + self.buildId(lang, '_') + '"]')
+                    let input = document.getElementsByName(formId)[0].querySelector('[name="' + self.buildId(lang) + '"]')
                     var editor = new Quill(container, {
                         modules: {
                             toolbar: [
-                                [{
-                                    header: [1, 2, false]
-                                }],
-                                ['bold', 'italic', 'underline'],
-                                ['image', 'code-block']
+                                [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+                                //[{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+                                //[{ 'header': 1 }, { 'header': 2 }],               // custom button values
+                                ['bold', 'italic', 'underline', 'strike', 'link'],        // toggled buttons
+                                [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+                                [{ 'align': [] }],                                
+                                [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                                ['video', 'image'],
+                                ['blockquote', 'code-block'],
+                                [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+                                [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+                                [{ 'direction': 'rtl' }],                       // text direction
+                                [{ 'font': [] }],
+                                ['clean'],
+                                ['translate']
                             ]
                         },
                         theme: 'snow'
+                    })
+                    editor.on('text-change', function() {
+                        var delta = editor.getContents()
+                        var text = editor.getText()
+                        var html = editor.root.innerHTML
+                        input.value=editor.root.innerHTML
                     })
                 })
             },
             btnLangColor(lang) {
                 return lang == this.state.currentLang ? 'btn-secondary' : 'btn-light'
             },
-            buildId(lang,separator) {
+            buildId(lang, separator) {
                 return this.props.field.multilang ? this.props.field.id + (separator || '.') + lang : this.props.field.id
             },
             defaultValue() {
