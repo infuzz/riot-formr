@@ -1,0 +1,34 @@
+<idatetimepicker>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+    <div class="input-group">
+        <jaddon field={props.field} placement='left'></jaddon>
+        <input { ...props.field } type="text" class="form-control {props.field.class}" name={props.field.id} value={props.field.value} id={}>
+        <jaddon field={props.field} placement='right'></jaddon>
+    </div>
+    <jhelp help={props.field.help}></jhelp>
+
+
+    <script>
+        export default {
+            onMounted() {
+                
+                let elt = document.getElementsByName(this.props.attr.id)[0].querySelector('[name="' + this.props.field.id + '"]')
+                elt.flatpickr({
+                    allowInput:true,
+                    enableTime: this.props.field.enableTime,
+                    dateFormat: "U",
+                    altInput : true,
+                    altFormat: "l j F Y  H:i",
+                    defaultDate : "2345678",//this.props.field.value,
+                    locale : this.props.attr.lang
+                })
+console.log(elt)
+            }
+        }
+
+    </script>
+
+</idatetimepicker>

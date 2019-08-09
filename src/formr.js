@@ -181,6 +181,8 @@ import ialert from './ialert.riot'
 import ibutton from './ibutton.riot'
 import icheckbox from './icheckbox.riot'
 import icolorpicker from './icolorpicker.riot'
+import idatetimepicker from './idatetimepicker.riot'
+import iimagepicker from './iimagepicker.riot'
 import ihidden from './ihidden.riot'
 import ihr from './ihr.riot'
 import imultiselect from './imultiselect.riot'
@@ -204,6 +206,8 @@ riot.register('ialert', ialert)
 riot.register('ibutton', ibutton)
 riot.register('icheckbox', icheckbox)
 riot.register('icolorpicker', icolorpicker)
+riot.register('idatetimepicker', idatetimepicker)
+riot.register('iimagepicker', iimagepicker)
 riot.register('ihidden', ihidden)
 riot.register('ihr', ihr)
 riot.register('ipassword', ipassword)
