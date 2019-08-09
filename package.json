@@ -1,27 +1,42 @@
 {
-  "name": "formr",
-  "version": "1.1.0",
-  "description": "Formr with riot 4",
-  "private": true,
-  "scripts": {
-    "dev": "(start npm run watch && start npm run server) || (npm run watch & npm run server)",
-    "build": "rollup -c",
-    "watch": "rollup -c -w 'src/*'",
-    "server": "browser-sync start --files 'dist/*, index.html' --server"
-  },
-  "dependencies": {
-    "marked": "^0.6.3",
-    "npm": "^6.10.3",
-    "riot": "^4.3.8",
-    "rollup-plugin-copy": "^3.1.0"
-  },
-  "devDependencies": {
-    "@riotjs/compiler": "^4.3.9",
-    "browser-sync": "^2.26.7",
-    "rollup": "^1.19.4",
-    "rollup-plugin-commonjs": "^10.0.2",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-riot": "^4.0.0"
-  },
-  "license": "MIT"
+    "name": "@klicat/riot-formr",
+    "version": "1.1.0",
+    "private": false,
+    "description": "Riot 4 form generator",
+    "scripts": {
+        "dev": "(start npm run watch && start npm run server) || (npm run watch & npm run server)",
+        "build": "rollup -c",
+        "watch": "rollup -c -w 'src/*'",
+        "server": "browser-sync start --files 'dist/*, index.html' --server",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "npm": "^6.10.3",
+        "riot": "^4.3.8"
+    },
+    "devDependencies": {
+        "@riotjs/compiler": "^4.3.9",
+        "browser-sync": "^2.26.7",
+        "rollup": "^1.19.4",
+        "rollup-plugin-commonjs": "^10.0.2",
+        "rollup-plugin-node-resolve": "^5.2.0",
+        "rollup-plugin-riot": "^4.0.0",
+        "rollup-plugin-copy": "^3.1.0"
+    },
+    "license": "MIT",
+    "author": "klicat",
+    "main": "dist/js/riot-formr.js",
+    "files": ["dist/*"],
+    "keywords": [
+        "riot",
+        "form"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/infuzz/riot-formr.git"
+    },
+    "bugs": {
+        "url": "https://github.com/infuzz/riot-formr/issues"
+    },
+    "homepage": "https://github.com/infuzz/riot-formr#readme"
 }

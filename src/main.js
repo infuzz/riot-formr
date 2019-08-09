@@ -1,4 +1,4 @@
-import * as riot from 'riot'
+/*import * as riot from 'riot'*/
 import App from './app.riot'
 
 import * as exports from './formr.js'
@@ -7,11 +7,11 @@ Object.entries(exports).forEach(([name, exported]) => window[name] = exported)
 
 
 window.data = {
+    mydatetimepicker: 1488136398547,
     checboxTransport: {
         car: false,
         bus: true
     },
-    mydatepickr: 1488136398547,
     emailInrRow: "emailInrRow changed",
     fallDescription: {
         fr: "fallDescription fr",
@@ -50,9 +50,6 @@ window.data = {
 
 
 
-
-
-
 window.fields = {
     form1: {
         attr: {
@@ -62,20 +59,11 @@ window.fields = {
         },
         desc: [
             {
-                type: 'datepicker',
-                id: 'mydatepickr',
-                label: 'Date de naissance',
-                tip: 'Tip Please verify your info before',
-                help: 'Help Please verify your info before',
-                locale: "fr"
-
-                },
-            {
                 type: 'title',
                 title: 'Hello',
                 icon: 'fas fa-skull-crossbones',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 type: 'alert',
                 color: 'danger',
@@ -83,7 +71,16 @@ window.fields = {
                 icon: 'fas fa-exclamation-triangle',
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                    },
+            },
+            {
+                type: 'datetimepicker',
+                id: 'mydatetimepicker',
+                label: 'Date de naissance',
+                enableTime:true,
+                tip: 'Tip Please verify your info before',
+                help: 'Help Please verify your info before',
+                value:56564415
+            },
             {
                 id: 'genre',
                 type: 'select',
@@ -91,16 +88,17 @@ window.fields = {
                 value: 'girl',
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                options: [{
+                options: [
+                    {
                         label: 'Garcon',
                         value: 'boy'
-                            },
+                    },
                     {
                         label: 'Fille',
                         value: 'girl'
-                            }
-                        ]
-                    },
+                    }
+                ]
+            },
             {
                 id: 'music',
                 type: 'select',
@@ -112,17 +110,18 @@ window.fields = {
                 value: ['guitar'],
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                options: [{
+                options: [
+                    {
                         label: 'Piano',
                         value: 'piano'
-                            },
+                    },
                     {
                         label: 'Guitare',
                         value: 'guitar',
                         aaaselected: true
-                            }
-                        ]
-                    },
+                    }
+                ]
+            },
             {
                 id: 'mycolor',
                 label: 'Couleur principale',
@@ -130,7 +129,7 @@ window.fields = {
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
                 value: 'red'
-                    },
+            },
             {
                 id: 'mytextedit',
                 label: 'Texte principal',
@@ -140,7 +139,7 @@ window.fields = {
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
                 value: 'Mon premier text'
-                    },
+            },
             {
                 id: 'mytextarea',
                 type: 'textarea',
@@ -152,7 +151,7 @@ window.fields = {
                 icon: 'fas fa-running',
                 tip: 'Il faut bien écrire vous avez affaire avec un président',
                 help: 'Help Please verify your info before'
-                    },
+            },
             {
                 id: 'mayrange',
                 icon: 'fas fa-running',
@@ -162,8 +161,7 @@ window.fields = {
                 help: 'select the right zoom',
                 onchange: 'alert("zoom")',
                 oninput: 'alert("zoom")',
-                    },
-
+            },
             {
                 id: 'mytextwithbuttons',
                 type: 'text',
@@ -173,33 +171,40 @@ window.fields = {
                 label: 'Id de l\'ambulance',
                 icon: 'fas fa-ambulance',
                 minlength: 4,
-                buttons: [{
-                    icon: 'fas fa-running',
-                    onclick: 'dosomething'
-                        }, {
-                    title: 'do it',
-                    onclick: 'dosomething'
-                        }],
+                buttons: [
+                    {
+                        icon: 'fas fa-running',
+                        onclick: 'dosomething'
+                    },
+                    {
+                        title: 'do it',
+                        onclick: 'dosomething'
+                    }
+                ],
                 tip: 'Il faut bien écrire vous avez affaire avec un président',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 id: 'row0',
                 type: 'row',
-                desc: [{
+                desc: [
+                    {
                         id: 'emailInrRow',
                         type: 'email',
                         size: 10,
                         value: 'First item',
                         label: 'Id de l\'ambulance',
-                        buttons: [{
-                            icon: 'fas fa-running',
-                            onclick: 'dosomething'
-                                }, {
-                            title: 'test',
-                            onclick: 'dosomething'
-                                }]
+                        buttons: [
+                            {
+                                icon: 'fas fa-running',
+                                onclick: 'dosomething'
                             },
+                            {
+                                title: 'test',
+                                onclick: 'dosomething'
+                            }
+                        ]
+                    },
                     {
                         id: 'passwordInRow',
                         type: 'password',
@@ -207,9 +212,9 @@ window.fields = {
                         //required:true,
                         value: 'Second item',
                         label: 'Mot de passe'
-                            },
-                        ]
                     },
+                ]
+            },
             {
                 id: 'mypassword',
                 type: 'password',
@@ -218,72 +223,81 @@ window.fields = {
                 //required:true,
                 value: 'Second item',
                 label: 'Mot de passe secure',
-                buttons: [{
-                    icon: 'fas fa-running',
-                    onclick: 'dosomething'
-                        }, {
-                    title: 'Do it',
-                    onclick: 'dosomething'
-                        }],
+                buttons: [
+                    {
+                        icon: 'fas fa-running',
+                        onclick: 'dosomething'
+                    },
+                    {
+                        title: 'Do it',
+                        onclick: 'dosomething'
+                    }
+                ],
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 id: 'mydate',
                 type: 'datetime',
                 size: 10,
                 value: 'Third item',
                 label: 'date',
-                buttons: [{
-                    icon: 'fas fa-running',
-                    onclick: 'dosomething'
-                        }, {
-                    title: 'Do it',
-                    onclick: 'dosomething'
-                        }],
+                buttons: [
+                    {
+                        icon: 'fas fa-running',
+                        onclick: 'dosomething'
+                    },
+                    {
+                        title: 'Do it',
+                        onclick: 'dosomething'
+                    }
+                ],
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 id: 'radioAnimal',
                 type: 'radio',
                 label: 'Choix animal',
                 value: 'dog',
-                options: [{
+                options: [
+                    {
                         label: 'chien',
                         id: 'dog',
                         tip: 'Il faut bien écrire vous avez affaire avec un président'
-                            },
+                    },
                     {
                         label: 'chat',
                         achecked: true,
                         id: 'cat',
                         help: 'Help Please verify your info before'
-                            }
-                        ]
-                    },
+                    }
+                ]
+            },
             {
                 id: 'checboxTransport',
                 type: 'checkbox',
                 label: 'Choix transport',
-                options: [{
+                options: [
+                    {
                         label: 'Voiture',
                         id: 'car',
                         help: 'Il faut bien écrire vous avez affaire avec un président'
-                            },
+                    },
                     {
                         label: 'Bus',
                         id: 'bus',
                         tip: 'ça pique',
                         value: true
-                            }
-                        ]
-                    },
+                    }
+                ]
+            },
             {
                 id: 'switchTest',
                 type: 'switch',
                 label: 'Choix animal',
-                options: [{
+                options: [
+                    {
                         checkedLabel: 'vole',
                         uncheckedLabel: 'tombe',
                         checkedValue: 'fly',
@@ -296,40 +310,41 @@ window.fields = {
                             checked: ["flyDescription"],
                             unchecked: ["fallDescription"]
                         }
-                            },
+                    },
                     {
                         label: 'Serpent',
                         id: 'snake',
                         tip: 'ça pique',
-                        checked: true,
-                            },
+                        checked: true
+                    },
                     {
                         label: 'Elephant',
                         id: 'elephant',
                         tip: 'ça pique',
                         value: 'yes'
-                            }
-
-                        ]
-                    },
+                    }
+                ]
+            },
             {
                 id: 'switchTestAlone',
                 type: 'switch',
                 label: 'Choix animal alone',
-                options: [{
-                    checkedLabel: 'vole alone',
-                    uncheckedLabel: 'tombe alone',
-                    checkedValue: 'fly_alone',
-                    uncheckedValue: 'fall_alone',
-                    value: 'fly_alone',
-                    label: 'Oiseau alone',
-                    help: 'Il faut bien écrire vous avez affaire avec un président',
-                    ctrl: {
-                        checked: ["flyDescription"],
-                        unchecked: ["fallDescription"]
+                options: [
+                    {
+                        checkedLabel: 'vole alone',
+                        uncheckedLabel: 'tombe alone',
+                        checkedValue: 'fly_alone',
+                        uncheckedValue: 'fall_alone',
+                        value: 'fly_alone',
+                        label: 'Oiseau alone',
+                        help: 'Il faut bien écrire vous avez affaire avec un président',
+                        ctrl: {
+                            checked: ["flyDescription"],
+                            unchecked: ["fallDescription"]
+                        }
                     }
-                        }]
-                    },
+                ]
+            },
             {
                 type: 'textarea',
                 id: "flyDescription",
@@ -341,7 +356,7 @@ window.fields = {
                 icon: 'fas fa-kiwi-bird',
                 tip: 'Précisez l\'oiseau svp',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 type: 'textarea',
                 id: "fallDescription",
@@ -353,14 +368,13 @@ window.fields = {
                 icon: 'fas fa-bomb',
                 tip: 'Précisez l\'oiseau svp',
                 help: 'Help Please verify your info before',
-
-                    },
+            },
             {
                 type: 'hr',
                 icon: 'fas fa-plane',
                 label: 'Take your plane',
                 help: 'Please verify your info before'
-                    },
+            },
             {
                 icon: 'fas fa-running',
                 type: 'button',
@@ -371,7 +385,7 @@ window.fields = {
                 waitValid: true,
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 id: 'i4',
                 type: 'button',
@@ -379,8 +393,8 @@ window.fields = {
                 title: 'Fourth item',
                 icon: 'fas fa-restroom',
                 onclick: 'dosomething'
-                    },
-                ]
+            },
+        ]
     },
     form2: {
         attr: {
@@ -388,24 +402,27 @@ window.fields = {
             langs: ['fr', 'en'],
             proposeTranslate: true
         },
-        desc: [{
+        desc: [
+            {
                 id: 'switchTestAlone',
                 type: 'switch',
                 label: 'Choix animal alone',
-                options: [{
-                    checkedLabel: 'vole alone',
-                    uncheckedLabel: 'tombe alone',
-                    checkedValue: 'fly_alone',
-                    uncheckedValue: 'fall_alone',
-                    value: 'fly_alone',
-                    label: 'Oiseau alone',
-                    help: 'Il faut bien écrire vous avez affaire avec un président',
-                    ctrl: {
-                        checked: ["flyDescription"],
-                        unchecked: ["fallDescription"]
+                options: [
+                    {
+                        checkedLabel: 'vole alone',
+                        uncheckedLabel: 'tombe alone',
+                        checkedValue: 'fly_alone',
+                        uncheckedValue: 'fall_alone',
+                        value: 'fly_alone',
+                        label: 'Oiseau alone',
+                        help: 'Il faut bien écrire vous avez affaire avec un président',
+                        ctrl: {
+                            checked: ["flyDescription"],
+                            unchecked: ["fallDescription"]
+                        }
                     }
-                        }]
-                    },
+                ]
+            },
             {
                 type: 'textarea',
                 id: "flyDescription",
@@ -417,7 +434,7 @@ window.fields = {
                 icon: 'fas fa-kiwi-bird',
                 tip: 'Précisez l\'oiseau svp',
                 help: 'Help Please verify your info before',
-                    },
+            },
             {
                 type: 'textarea',
                 id: "fallDescription",
@@ -429,8 +446,8 @@ window.fields = {
                 icon: 'fas fa-bomb',
                 tip: 'Précisez l\'oiseau svp',
                 help: 'Help Please verify your info before',
-                    }
-                ]
+            }
+        ]
     }
 }
 

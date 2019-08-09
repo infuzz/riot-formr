@@ -1,4 +1,4 @@
-import * as riot from 'riot'
+/*import * as riot from 'riot'*/
 
 riot.install(function (component) {
     window.addEventListener('updateAll', () => {
@@ -76,32 +76,34 @@ riot.install(function (component) {
 })
 
 
-export function getFormValues(formId) {
+export function getFormValues(formName) {
     var data = {}
-    let inputs = document.getElementsByName(formId)[0].querySelectorAll('.form-control')
+    let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control')
     inputs.forEach(function (input) {
-        let type = input.type
-        switch (type) {
-            case 'checkbox':
-                if (input.checked) field(data, input.name, input.getAttribute('checkedValue') || true)
-                else field(data, input.name, input.getAttribute('uncheckedValue') || false)
-                break
-            case 'select-multiple': //this is a special type property of dom  : https://www.w3schools.com/jsref/prop_select_type.asp
-                field(data, input.name, [...input.options].filter((x) => x.selected).map((x) => x.value))
-                break
-            case 'radio':
-                if (input.checked) field(data, input.name, input.value)
-                if (!field(data, input.name)) field(data, input.name, null)
-                break
-            default: //text, select-one, password, hidden, email, tel, textarea...... all others
-                field(data, input.name, input.value)
+        if (input.name) {
+            let type = input.type
+            switch (type) {
+                case 'checkbox':
+                    if (input.checked) field(data, input.name, input.getAttribute('checkedValue') || true)
+                    else field(data, input.name, input.getAttribute('uncheckedValue') || false)
+                    break
+                case 'select-multiple': //this is a special type property of dom  : https://www.w3schools.com/jsref/prop_select_type.asp
+                    field(data, input.name, [...input.options].filter((x) => x.selected).map((x) => x.value))
+                    break
+                case 'radio':
+                    if (input.checked) field(data, input.name, input.value)
+                    if (!field(data, input.name)) field(data, input.name, null)
+                    break
+                default: //text, select-one, password, hidden, email, tel, textarea...... all others
+                    field(data, input.name, input.value)
+            }
         }
     })
     return data
 }
 
-export function setFormValues(formId, data) {
-    let inputs = document.getElementsByName(formId)[0].querySelectorAll('.form-control')
+export function setFormValues(formName, data) {
+    let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control')
     inputs.forEach(function (input) {
         let type = input.type
         let val = field(data, input.name)
@@ -110,8 +112,8 @@ export function setFormValues(formId, data) {
                 input.checked = (input.checkedValue == val && input.uncheckedValue != val) || val
                 break
             case 'select-multiple':
-                if (input.tag) {
-                    var setSelectrEvent = new CustomEvent(formId + '_setSelectr_' + input.name, {
+                if (input.selectr) { //selectr tag
+                    var setSelectrEvent = new CustomEvent(formName + '_setSelectr_' + input.name, {
                         detail: {
                             values: val
                         }
@@ -122,17 +124,43 @@ export function setFormValues(formId, data) {
                 })
                 break
             default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
-                input.value = val
-                var setColorEvent = new CustomEvent(formId + '_setColor_' + input.name, {
-                    detail: {
-                        color: val
-                    }
-                })
-                document.dispatchEvent(setColorEvent)
+                //input.value = val
+                if (input.getAttribute('colorpicker')) { //colorpickertag
+                    var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
+                        detail: {
+                            color: val
+                        }
+                    })
+                    document.dispatchEvent(setColorEvent)
+                }
+                if (input.getAttribute('datetimepicker')) { //datetimepicker
+                    var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
+                        detail: {
+                            epoch: val
+                        }
+                    })
+                    document.dispatchEvent(setDatetimeEvent)
+                }
+                
+                
                 //+color, editor, image
         }
     })
     return data
+}
+
+function setSelectOptions(formName, selectName, values) {
+    let select = document.getElementsByName(formName)[0].querySelectorAll('[name="' + selectName + '"]')
+
+
+    $('#' + id).children('option').remove();
+    /*if(values) for ( var i = 0; i < values.length; i++ ) {
+    	$('#'+id).append(new Option(values[i].label, values[i].id, false, false));
+    }*/
+    $.each(values, function (key, value) {
+        $('#' + id).append(new Option(value, key, false, false));
+    })
+    $('#' + id).trigger('change');
 }
 
 export function field(obj, fieldPath, value) {
@@ -165,10 +193,10 @@ import ialert from './ialert.riot'
 import ibutton from './ibutton.riot'
 import icheckbox from './icheckbox.riot'
 import icolorpicker from './icolorpicker.riot'
-import idatepicker from './idatepicker.riot'
+import idatetimepicker from './idatetimepicker.riot'
+import iimagepicker from './iimagepicker.riot'
 import ihidden from './ihidden.riot'
 import ihr from './ihr.riot'
-import imultiselect from './imultiselect.riot'
 import ipassword from './ipassword.riot'
 import iradio from './iradio.riot'
 import irange from './irange.riot'
@@ -189,14 +217,14 @@ riot.register('ialert', ialert)
 riot.register('ibutton', ibutton)
 riot.register('icheckbox', icheckbox)
 riot.register('icolorpicker', icolorpicker)
-riot.register('idatepicker', idatepicker)
+riot.register('idatetimepicker', idatetimepicker)
+riot.register('iimagepicker', iimagepicker)
 riot.register('ihidden', ihidden)
 riot.register('ihr', ihr)
 riot.register('ipassword', ipassword)
 riot.register('iradio', iradio)
 riot.register('irange', irange)
 riot.register('irow', irow)
-riot.register('imultiselect',imultiselect)
 riot.register('iselect', iselect)
 riot.register('itext', itext)
 riot.register('itexteditor', itexteditor)

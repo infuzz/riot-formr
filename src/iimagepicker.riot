@@ -1,0 +1,13 @@
+<iimagepicker>
+    <jlabel field={props.field}></jlabel>
+    <jtooltip tip={props.field.tip}></jtooltip>
+    <span class="inputFeedback"></span>
+    <small class="inputFeedbackMsg"></small>
+    IIMAGEPICKER TODO
+    <div class="input-group">
+        <jaddon field={props.field} placement='left'></jaddon>
+        <input { ...props.field } type="text" class="form-control {props.field.class}" name={props.field.id} value={props.field.value} autocomplete="on" id={}>
+        <jaddon field={props.field} placement='right'></jaddon>
+    </div>
+    <jhelp help={props.field.help}></jhelp>
+</iimagepicker>
