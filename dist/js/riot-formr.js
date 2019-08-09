@@ -2952,11 +2952,17 @@
                     },
                     theme: 'snow'
                 });
+
+                editor.clipboard.dangerouslyPasteHTML(self.props.field.value);
+                
                 editor.on('text-change', function() {
                     var delta = editor.getContents();
                     var text = editor.getText();
                     var html = editor.root.innerHTML;
                     input.value=editor.root.innerHTML;
+                });
+                document.addEventListener(formId + '_setTexteditor_' + self.buildId(lang), function(ev) {
+                    editor.clipboard.dangerouslyPasteHTML(ev.detail.content);
                 });
             });
         },
@@ -2982,7 +2988,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr414></jlabel><jtooltip expr415></jtooltip><template expr416></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr418></div><jhelp expr423></jhelp>',
+          '<jlabel expr634></jlabel><jtooltip expr635></jtooltip><template expr636></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr638></div><jhelp expr643></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3002,8 +3008,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr414',
-            'selector': '[expr414]'
+            'redundantAttribute': 'expr634',
+            'selector': '[expr634]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3023,8 +3029,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr415',
-            'selector': '[expr415]'
+            'redundantAttribute': 'expr635',
+            'selector': '[expr635]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
@@ -3034,10 +3040,10 @@
             },
 
             'template': template(
-              '<button expr417 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+              '<button expr637 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
               [{
-                'redundantAttribute': 'expr417',
-                'selector': '[expr417]',
+                'redundantAttribute': 'expr637',
+                'selector': '[expr637]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -3071,8 +3077,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr416',
-            'selector': '[expr416]',
+            'redundantAttribute': 'expr636',
+            'selector': '[expr636]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3085,7 +3091,7 @@
             'condition': null,
 
             'template': template(
-              '<span expr419 class="h-100 input-group-append"></span><div expr421></div><input expr422 type="hidden" class="form-control"/>',
+              '<span expr639 class="h-100 input-group-append"></span><div expr641></div><input expr642 type="hidden" class="form-control" texteditor="true"/>',
               [{
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3105,14 +3111,14 @@
                   return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
                 },
 
-                'redundantAttribute': 'expr419',
-                'selector': '[expr419]',
+                'redundantAttribute': 'expr639',
+                'selector': '[expr639]',
 
                 'template': template(
-                  '<button expr420 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                  '<button expr640 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                   [{
-                    'redundantAttribute': 'expr420',
-                    'selector': '[expr420]',
+                    'redundantAttribute': 'expr640',
+                    'selector': '[expr640]',
 
                     'expressions': [{
                       'type': expressionTypes.EVENT,
@@ -3125,8 +3131,8 @@
                   }]
                 )
               }, {
-                'redundantAttribute': 'expr421',
-                'selector': '[expr421]',
+                'redundantAttribute': 'expr641',
+                'selector': '[expr641]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3137,8 +3143,8 @@
                   }
                 }]
               }, {
-                'redundantAttribute': 'expr422',
-                'selector': '[expr422]',
+                'redundantAttribute': 'expr642',
+                'selector': '[expr642]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3174,12 +3180,19 @@
                   'evaluate': function(scope) {
                     return scope.props.field.value;
                   }
+                }, {
+                  'type': expressionTypes.ATTRIBUTE,
+                  'name': 'id',
+
+                  'evaluate': function(scope) {
+                    return [].join('');
+                  }
                 }]
               }]
             ),
 
-            'redundantAttribute': 'expr418',
-            'selector': '[expr418]',
+            'redundantAttribute': 'expr638',
+            'selector': '[expr638]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3205,8 +3218,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr423',
-            'selector': '[expr423]'
+            'redundantAttribute': 'expr643',
+            'selector': '[expr643]'
           }]
         );
       },
@@ -3580,9 +3593,17 @@
                         });
                         document.dispatchEvent(setDatetimeEvent);
                     }
+                    if (input.getAttribute('texteditor')) { //texteditor
+                        var setTexteditorEvent = new CustomEvent(formName + '_setTexteditor_' + input.name, {
+                            detail: {
+                                content: val
+                            }
+                        });
+                        document.dispatchEvent(setTexteditorEvent);
+                    }
                     
                     
-                    //+color, editor, image
+                    //image
             }
         });
         return data
@@ -3779,7 +3800,7 @@
                     proposeTranslate: true,
                     tip: 'Tip Please verify your info before',
                     help: 'Help Please verify your info before',
-                    value: 'Mon premier text'
+                    value: '<p><strong><s><u>Mon premier text    </u></s></strong><strong style="color: rgb(240, 102, 102);"><s><u>hkgkghkghkgh</u></s></strong><sup style="color: rgb(240, 102, 102);"><strong><s><u>ghkghkghk</u></s><em><u>kghkghkg</u></em></strong></sup></p>'
                 },
                 {
                     id: 'mytextarea',

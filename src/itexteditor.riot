@@ -12,7 +12,7 @@
             <button type="button" class="btn btn-info" onclick={translate}><i class="fas fa-language"></i></button>
         </span>
         <div name={buildId(lang,'_')}></div>
-        <input type="hidden" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} class="form-control">
+        <input type="hidden" defaultLang={state.defaultLang} lang={lang} baseId={props.field.id} name={buildId(lang)} value={props.field.value} class="form-control" id={} texteditor=true>
     </div>
     <jhelp help={props.field.help}></jhelp>
 
@@ -57,11 +57,17 @@
                         },
                         theme: 'snow'
                     })
+
+                    editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
+                    
                     editor.on('text-change', function() {
                         var delta = editor.getContents()
                         var text = editor.getText()
                         var html = editor.root.innerHTML
                         input.value=editor.root.innerHTML
+                    })
+                    document.addEventListener(formId + '_setTexteditor_' + self.buildId(lang), function(ev) {
+                        editor.clipboard.dangerouslyPasteHTML(ev.detail.content)
                     })
                 })
             },
