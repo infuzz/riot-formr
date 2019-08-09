@@ -138,7 +138,7 @@ window.fields = {
                 proposeTranslate: true,
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                value: 'Mon premier text'
+                value: '<p><strong><s><u>Mon premier text    </u></s></strong><strong style="color: rgb(240, 102, 102);"><s><u>hkgkghkghkgh</u></s></strong><sup style="color: rgb(240, 102, 102);"><strong><s><u>ghkghkghk</u></s><em><u>kghkghkg</u></em></strong></sup></p>'
             },
             {
                 id: 'mytextarea',

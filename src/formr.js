@@ -141,9 +141,17 @@ export function setFormValues(formName, data) {
                     })
                     document.dispatchEvent(setDatetimeEvent)
                 }
+                if (input.getAttribute('texteditor')) { //texteditor
+                    var setTexteditorEvent = new CustomEvent(formName + '_setTexteditor_' + input.name, {
+                        detail: {
+                            content: val
+                        }
+                    })
+                    document.dispatchEvent(setTexteditorEvent)
+                }
                 
                 
-                //+color, editor, image
+                //image
         }
     })
     return data
