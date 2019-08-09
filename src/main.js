@@ -11,6 +11,7 @@ window.data = {
         car: false,
         bus: true
     },
+    mydatepickr: 1488136398547,
     emailInrRow: "emailInrRow changed",
     fallDescription: {
         fr: "fallDescription fr",
@@ -66,6 +67,7 @@ window.fields = {
                 label: 'Date de naissance',
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
+                locale: "fr"
 
                 },
             {

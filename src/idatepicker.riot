@@ -10,20 +10,26 @@
         <jaddon field={props.field} placement='right'></jaddon>
     </div>
     <jhelp help={props.field.help}></jhelp>
-</idatepicker>
 
-<script>
-    export default {
-        onMounted() {
-            console.log('ok')
-            let elt = document.getElementsByName(this.props.attr.id)[0].querySelector('[name="' + this.props.field.id + '"]')
-            console.log(elt)
-            elt.flatpickr({
-                enableTime: this.props.field.enableTime,
-                dateFormat: "F, d Y H:i"
-            })
 
+    <script>
+        export default {
+            onMounted() {
+                console.log('ok')
+                let elt = document.getElementsByName(this.props.attr.id)[0].querySelector('[name="' + this.props.field.id + '"]')
+                console.log(elt)
+                elt.flatpickr({
+                    enableTime: this.props.field.enableTime,
+                    dateFormat: "U",
+                    altInput : true,
+                    altFormat: "j F Y  H:i",
+                    defaultDate : "2345678",
+                    locale : this.props.field.locale
+                })
+
+            }
         }
-    }
 
-</script>
+    </script>
+
+</idatepicker>
