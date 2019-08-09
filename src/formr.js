@@ -80,21 +80,23 @@ export function getFormValues(formName) {
     var data = {}
     let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control')
     inputs.forEach(function (input) {
-        let type = input.type
-        switch (type) {
-            case 'checkbox':
-                if (input.checked) field(data, input.name, input.getAttribute('checkedValue') || true)
-                else field(data, input.name, input.getAttribute('uncheckedValue') || false)
-                break
-            case 'select-multiple': //this is a special type property of dom  : https://www.w3schools.com/jsref/prop_select_type.asp
-                field(data, input.name, [...input.options].filter((x) => x.selected).map((x) => x.value))
-                break
-            case 'radio':
-                if (input.checked) field(data, input.name, input.value)
-                if (!field(data, input.name)) field(data, input.name, null)
-                break
-            default: //text, select-one, password, hidden, email, tel, textarea...... all others
-                field(data, input.name, input.value)
+        if (input.name) {
+            let type = input.type
+            switch (type) {
+                case 'checkbox':
+                    if (input.checked) field(data, input.name, input.getAttribute('checkedValue') || true)
+                    else field(data, input.name, input.getAttribute('uncheckedValue') || false)
+                    break
+                case 'select-multiple': //this is a special type property of dom  : https://www.w3schools.com/jsref/prop_select_type.asp
+                    field(data, input.name, [...input.options].filter((x) => x.selected).map((x) => x.value))
+                    break
+                case 'radio':
+                    if (input.checked) field(data, input.name, input.value)
+                    if (!field(data, input.name)) field(data, input.name, null)
+                    break
+                default: //text, select-one, password, hidden, email, tel, textarea...... all others
+                    field(data, input.name, input.value)
+            }
         }
     })
     return data
@@ -110,7 +112,7 @@ export function setFormValues(formName, data) {
                 input.checked = (input.checkedValue == val && input.uncheckedValue != val) || val
                 break
             case 'select-multiple':
-                if (input.selectr) {//selectr tag
+                if (input.selectr) { //selectr tag
                     var setSelectrEvent = new CustomEvent(formName + '_setSelectr_' + input.name, {
                         detail: {
                             values: val
@@ -122,8 +124,8 @@ export function setFormValues(formName, data) {
                 })
                 break
             default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
-                input.value = val
-                if (input.colorpicker) {//colorpickertag
+                //input.value = val
+                if (input.getAttribute('colorpicker')) { //colorpickertag
                     var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
                         detail: {
                             color: val
@@ -131,6 +133,16 @@ export function setFormValues(formName, data) {
                     })
                     document.dispatchEvent(setColorEvent)
                 }
+                if (input.getAttribute('datetimepicker')) { //datetimepicker
+                    var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
+                        detail: {
+                            epoch: val
+                        }
+                    })
+                    document.dispatchEvent(setDatetimeEvent)
+                }
+                
+                
                 //+color, editor, image
         }
     })

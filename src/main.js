@@ -76,6 +76,7 @@ window.fields = {
                 type: 'datetimepicker',
                 id: 'mydatetimepicker',
                 label: 'Date de naissance',
+                enableTime:true,
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
                 value:56564415

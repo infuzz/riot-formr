@@ -1111,24 +1111,26 @@
 
       'exports': {
         onMounted() {
-            
-            let elt = document.getElementsByName(this.props.attr.id)[0].querySelector('[name="' + this.props.field.id + '"]');
-            elt.flatpickr({
+            let formId = this.props.attr.id;
+            const elt = document.getElementsByName(formId)[0].querySelector('[name="' + this.props.field.id + '"]');
+            const datetimepicker=flatpickr(elt,{
                 allowInput:true,
                 enableTime: this.props.field.enableTime,
                 dateFormat: "U",
                 altInput : true,
                 altFormat: "l j F Y  H:i",
-                defaultDate : "2345678",//this.props.field.value,
+                defaultDate : this.props.field.value,
                 locale : this.props.attr.lang
             });
-    console.log(elt);
+            document.addEventListener(this.props.attr.id + '_setDatetime_' + this.props.field.id, function(ev) {
+                datetimepicker.setDate(ev.detail.epoch);
+            });
         }
       },
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr27></jlabel><jtooltip expr28></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr29 placement="left"></jaddon><input expr30 type="text"/><jaddon expr31 placement="right"></jaddon></div><jhelp expr32></jhelp>',
+          '<jlabel expr172></jlabel><jtooltip expr173></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr174 placement="left"></jaddon><input expr175 type="text" datetimepicker="true"/><jaddon expr176 placement="right"></jaddon></div><jhelp expr177></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1148,8 +1150,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr27',
-            'selector': '[expr27]'
+            'redundantAttribute': 'expr172',
+            'selector': '[expr172]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1169,8 +1171,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr28',
-            'selector': '[expr28]'
+            'redundantAttribute': 'expr173',
+            'selector': '[expr173]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1197,11 +1199,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr29',
-            'selector': '[expr29]'
+            'redundantAttribute': 'expr174',
+            'selector': '[expr174]'
           }, {
-            'redundantAttribute': 'expr30',
-            'selector': '[expr30]',
+            'redundantAttribute': 'expr175',
+            'selector': '[expr175]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1264,8 +1266,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr31',
-            'selector': '[expr31]'
+            'redundantAttribute': 'expr176',
+            'selector': '[expr176]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1285,8 +1287,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr32',
-            'selector': '[expr32]'
+            'redundantAttribute': 'expr177',
+            'selector': '[expr177]'
           }]
         );
       },
@@ -3626,21 +3628,23 @@
         var data = {};
         let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control');
         inputs.forEach(function (input) {
-            let type = input.type;
-            switch (type) {
-                case 'checkbox':
-                    if (input.checked) field(data, input.name, input.getAttribute('checkedValue') || true);
-                    else field(data, input.name, input.getAttribute('uncheckedValue') || false);
-                    break
-                case 'select-multiple': //this is a special type property of dom  : https://www.w3schools.com/jsref/prop_select_type.asp
-                    field(data, input.name, [...input.options].filter((x) => x.selected).map((x) => x.value));
-                    break
-                case 'radio':
-                    if (input.checked) field(data, input.name, input.value);
-                    if (!field(data, input.name)) field(data, input.name, null);
-                    break
-                default: //text, select-one, password, hidden, email, tel, textarea...... all others
-                    field(data, input.name, input.value);
+            if (input.name) {
+                let type = input.type;
+                switch (type) {
+                    case 'checkbox':
+                        if (input.checked) field(data, input.name, input.getAttribute('checkedValue') || true);
+                        else field(data, input.name, input.getAttribute('uncheckedValue') || false);
+                        break
+                    case 'select-multiple': //this is a special type property of dom  : https://www.w3schools.com/jsref/prop_select_type.asp
+                        field(data, input.name, [...input.options].filter((x) => x.selected).map((x) => x.value));
+                        break
+                    case 'radio':
+                        if (input.checked) field(data, input.name, input.value);
+                        if (!field(data, input.name)) field(data, input.name, null);
+                        break
+                    default: //text, select-one, password, hidden, email, tel, textarea...... all others
+                        field(data, input.name, input.value);
+                }
             }
         });
         return data
@@ -3656,7 +3660,7 @@
                     input.checked = (input.checkedValue == val && input.uncheckedValue != val) || val;
                     break
                 case 'select-multiple':
-                    if (input.selectr) {//selectr tag
+                    if (input.selectr) { //selectr tag
                         var setSelectrEvent = new CustomEvent(formName + '_setSelectr_' + input.name, {
                             detail: {
                                 values: val
@@ -3668,8 +3672,8 @@
                     });
                     break
                 default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
-                    input.value = val;
-                    if (input.colorpicker) {//colorpickertag
+                    //input.value = val
+                    if (input.getAttribute('colorpicker')) { //colorpickertag
                         var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
                             detail: {
                                 color: val
@@ -3677,6 +3681,16 @@
                         });
                         document.dispatchEvent(setColorEvent);
                     }
+                    if (input.getAttribute('datetimepicker')) { //datetimepicker
+                        var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
+                            detail: {
+                                epoch: val
+                            }
+                        });
+                        document.dispatchEvent(setDatetimeEvent);
+                    }
+                    
+                    
                     //+color, editor, image
             }
         });
@@ -3813,6 +3827,7 @@
                     type: 'datetimepicker',
                     id: 'mydatetimepicker',
                     label: 'Date de naissance',
+                    enableTime:true,
                     tip: 'Tip Please verify your info before',
                     help: 'Help Please verify your info before',
                     value:56564415
