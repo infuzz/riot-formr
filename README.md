@@ -7,7 +7,7 @@ Use with riot.js 4
 Then run these commands:
 
 ```bash
-$ npm install @klicat/formr
+$ npm install @klicat/riot-formr
 ```
 
 ## Create a form
