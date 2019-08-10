@@ -2952,8 +2952,8 @@
                     },
                     theme: 'snow'
                 });
-
-                editor.clipboard.dangerouslyPasteHTML(self.props.field.value);
+                editor.root.innerHTML=self.props.field.value;
+                //editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
                 
                 editor.on('text-change', function() {
                     var delta = editor.getContents();
@@ -2962,7 +2962,8 @@
                     input.value=editor.root.innerHTML;
                 });
                 document.addEventListener(formId + '_setTexteditor_' + self.buildId(lang), function(ev) {
-                    editor.clipboard.dangerouslyPasteHTML(ev.detail.content);
+                    //editor.clipboard.dangerouslyPasteHTML(ev.detail.content)
+                    editor.root.innerHTML=ev.detail.content;
                 });
             });
         },
@@ -2988,7 +2989,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr634></jlabel><jtooltip expr635></jtooltip><template expr636></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr638></div><jhelp expr643></jhelp>',
+          '<jlabel expr654></jlabel><jtooltip expr655></jtooltip><template expr656></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr658></div><jhelp expr663></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3008,8 +3009,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr634',
-            'selector': '[expr634]'
+            'redundantAttribute': 'expr654',
+            'selector': '[expr654]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3029,8 +3030,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr635',
-            'selector': '[expr635]'
+            'redundantAttribute': 'expr655',
+            'selector': '[expr655]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
@@ -3040,10 +3041,10 @@
             },
 
             'template': template(
-              '<button expr637 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+              '<button expr657 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
               [{
-                'redundantAttribute': 'expr637',
-                'selector': '[expr637]',
+                'redundantAttribute': 'expr657',
+                'selector': '[expr657]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -3077,8 +3078,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr636',
-            'selector': '[expr636]',
+            'redundantAttribute': 'expr656',
+            'selector': '[expr656]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3091,7 +3092,7 @@
             'condition': null,
 
             'template': template(
-              '<span expr639 class="h-100 input-group-append"></span><div expr641></div><input expr642 type="hidden" class="form-control" texteditor="true"/>',
+              '<span expr659 class="h-100 input-group-append"></span><div expr661></div><input expr662 type="hidden" class="form-control" texteditor="true"/>',
               [{
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3111,14 +3112,14 @@
                   return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
                 },
 
-                'redundantAttribute': 'expr639',
-                'selector': '[expr639]',
+                'redundantAttribute': 'expr659',
+                'selector': '[expr659]',
 
                 'template': template(
-                  '<button expr640 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                  '<button expr660 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                   [{
-                    'redundantAttribute': 'expr640',
-                    'selector': '[expr640]',
+                    'redundantAttribute': 'expr660',
+                    'selector': '[expr660]',
 
                     'expressions': [{
                       'type': expressionTypes.EVENT,
@@ -3131,8 +3132,8 @@
                   }]
                 )
               }, {
-                'redundantAttribute': 'expr641',
-                'selector': '[expr641]',
+                'redundantAttribute': 'expr661',
+                'selector': '[expr661]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3143,8 +3144,8 @@
                   }
                 }]
               }, {
-                'redundantAttribute': 'expr642',
-                'selector': '[expr642]',
+                'redundantAttribute': 'expr662',
+                'selector': '[expr662]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3191,8 +3192,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr638',
-            'selector': '[expr638]',
+            'redundantAttribute': 'expr658',
+            'selector': '[expr658]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3218,8 +3219,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr643',
-            'selector': '[expr643]'
+            'redundantAttribute': 'expr663',
+            'selector': '[expr663]'
           }]
         );
       },

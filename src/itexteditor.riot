@@ -57,8 +57,8 @@
                         },
                         theme: 'snow'
                     })
-
-                    editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
+                    editor.root.innerHTML=self.props.field.value
+                    //editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
                     
                     editor.on('text-change', function() {
                         var delta = editor.getContents()
@@ -67,7 +67,8 @@
                         input.value=editor.root.innerHTML
                     })
                     document.addEventListener(formId + '_setTexteditor_' + self.buildId(lang), function(ev) {
-                        editor.clipboard.dangerouslyPasteHTML(ev.detail.content)
+                        //editor.clipboard.dangerouslyPasteHTML(ev.detail.content)
+                        editor.root.innerHTML=ev.detail.content
                     })
                 })
             },
