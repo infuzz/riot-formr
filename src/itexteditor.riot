@@ -67,7 +67,8 @@
                         input.value=editor.root.innerHTML
                     })
                     document.addEventListener(formId + '_setTexteditor_' + self.buildId(lang), function(ev) {
-                        editor.clipboard.dangerouslyPasteHTML(ev.detail.content)
+                        //editor.clipboard.dangerouslyPasteHTML(ev.detail.content)
+                        editor.root.innerHTML=ev.detail.content
                     })
                 })
             },
