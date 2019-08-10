@@ -57,8 +57,8 @@
                         },
                         theme: 'snow'
                     })
-
-                    editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
+                    editor.root.innerHTML=self.props.field.value
+                    //editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
                     
                     editor.on('text-change', function() {
                         var delta = editor.getContents()

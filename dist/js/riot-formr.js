@@ -2952,8 +2952,8 @@
                     },
                     theme: 'snow'
                 });
-
-                editor.clipboard.dangerouslyPasteHTML(self.props.field.value);
+                editor.root.innerHTML=self.props.field.value;
+                //editor.clipboard.dangerouslyPasteHTML(self.props.field.value)
                 
                 editor.on('text-change', function() {
                     var delta = editor.getContents();
@@ -2989,7 +2989,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr644></jlabel><jtooltip expr645></jtooltip><template expr646></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr648></div><jhelp expr653></jhelp>',
+          '<jlabel expr654></jlabel><jtooltip expr655></jtooltip><template expr656></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr658></div><jhelp expr663></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3009,8 +3009,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr644',
-            'selector': '[expr644]'
+            'redundantAttribute': 'expr654',
+            'selector': '[expr654]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3030,8 +3030,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr645',
-            'selector': '[expr645]'
+            'redundantAttribute': 'expr655',
+            'selector': '[expr655]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
@@ -3041,10 +3041,10 @@
             },
 
             'template': template(
-              '<button expr647 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+              '<button expr657 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
               [{
-                'redundantAttribute': 'expr647',
-                'selector': '[expr647]',
+                'redundantAttribute': 'expr657',
+                'selector': '[expr657]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -3078,8 +3078,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr646',
-            'selector': '[expr646]',
+            'redundantAttribute': 'expr656',
+            'selector': '[expr656]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3092,7 +3092,7 @@
             'condition': null,
 
             'template': template(
-              '<span expr649 class="h-100 input-group-append"></span><div expr651></div><input expr652 type="hidden" class="form-control" texteditor="true"/>',
+              '<span expr659 class="h-100 input-group-append"></span><div expr661></div><input expr662 type="hidden" class="form-control" texteditor="true"/>',
               [{
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3112,14 +3112,14 @@
                   return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
                 },
 
-                'redundantAttribute': 'expr649',
-                'selector': '[expr649]',
+                'redundantAttribute': 'expr659',
+                'selector': '[expr659]',
 
                 'template': template(
-                  '<button expr650 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                  '<button expr660 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                   [{
-                    'redundantAttribute': 'expr650',
-                    'selector': '[expr650]',
+                    'redundantAttribute': 'expr660',
+                    'selector': '[expr660]',
 
                     'expressions': [{
                       'type': expressionTypes.EVENT,
@@ -3132,8 +3132,8 @@
                   }]
                 )
               }, {
-                'redundantAttribute': 'expr651',
-                'selector': '[expr651]',
+                'redundantAttribute': 'expr661',
+                'selector': '[expr661]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3144,8 +3144,8 @@
                   }
                 }]
               }, {
-                'redundantAttribute': 'expr652',
-                'selector': '[expr652]',
+                'redundantAttribute': 'expr662',
+                'selector': '[expr662]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3192,8 +3192,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr648',
-            'selector': '[expr648]',
+            'redundantAttribute': 'expr658',
+            'selector': '[expr658]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3219,8 +3219,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr653',
-            'selector': '[expr653]'
+            'redundantAttribute': 'expr663',
+            'selector': '[expr663]'
           }]
         );
       },
