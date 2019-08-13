@@ -40,6 +40,7 @@ To add a text input just add a field with "text" as type in your *desc* array. Y
 ```javascript
 desc: [
                 {
+                    id: 'myText1'
                     type: 'text',
                     label: 'Name'
                 }
@@ -50,6 +51,7 @@ You can also add any HTML's attributes in your field.
 ```javascript
 desc: [
                 {
+                    id: myText
                     type: 'text',
                     label: 'Name',
                     placeHolder: 'Smith',
@@ -65,6 +67,7 @@ Text area works just the same as a text input except that the *type* is *'textar
 ```javascript
 desc: [
                 {
+                    id: myTextArea
                     type: 'textarea',
                     label: 'Review',
                     placeHolder: 'Type your review here...',
@@ -80,6 +83,7 @@ Here, you need to set the type as *password* :
 ```javascript
 desc: [
                 {
+                    id: 'myPassword'           
                     type: 'password',
                     label: 'Please type your password :'
                 }
@@ -99,6 +103,27 @@ This text editor is from [quill.js](https://quilljs.com/). It works the same as 
 },
 ```
 
+#### Check box
+
+To add check boxes, you have to specify the different options givens by your check boxes. You can also specify the values of each checkbox by adding the *value* attribute :
+```javascript
+{
+                    id: 'checboxTransport',
+                    type: 'checkbox',
+                    label: 'Transport choices',
+                    options: [
+                        {
+                            label: 'Car',
+                            id: 'car'
+                    },
+                        {
+                            label: 'Bus',
+                            id: 'bus',
+                            value: true
+                    }
+                ]
+            }
+            ```
 
 
 
