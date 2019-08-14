@@ -122,9 +122,136 @@ To add check boxes, you have to specify the different options givens by your che
                             value: true
                     }
                 ]
+ }
+ ```
+
+#### Switch
+
+A switch button is a checkbox who retuen a value when it is checked and when it is not. Furthermore it can control other items by showing or hiding them. To do this you have to specify the id of the element that you want to be controlled by the switch button in the checked or the unchecked array.
+
+```javascript
+{
+                    id: 'switchTest',
+                    type: 'switch',
+                    label: 'Animal',
+                    options: [
+                        {
+                            checkedLabel: 'He fly',
+                            uncheckedLabel: 'He fall',
+                            checkedValue: 'fly',
+                            uncheckedValue: 'fall',
+                            value: 'fly',
+                            ctrl: {
+                                checked: ["flyDescription"],
+                                unchecked: ["fallDescription"]
+                            }
+}
+```
+
+### radio
+
+Check  boxes and radios are really similar. The only diference is that you can check only one radio.
+
+```javascript
+{
+                    id: 'radioAnimal',
+                    type: 'radio',
+                    label: 'Choix animal',
+                    value: 'dog',
+                    options: [
+                        {
+                            label: 'chien',
+                            id: 'dog',
+                            tip: 'Il faut bien écrire vous avez affaire avec un président'
+                    },
+                        {
+                            label: 'chat',
+                            achecked: true,
+                            id: 'cat',
+                            help: 'Help Please verify your info before'
+                    }
+                ]
+},
+```
+### Select input
+
+```javascript
+
+{
+                    id: 'genre',
+                    type: 'select',
+                    label: 'Genre',
+                    value: 'girl',
+                    options: [
+                        {
+                            label: 'I'm a boy',
+                            value: 'boy'
+                    },
+                        {
+                            label: 'I'm a girl',
+                            value: 'girl'
+                    }
+                ]
             }
-            ```
 
+```
+- If you want to turn it into a __multiselect input__ just change the _type_ as _multiselect_.
 
+### Tag selector
 
+We are using the [Mobius1 selector](https://github.com/Mobius1/Selectr) which is very complete for the tag selection. To incorporate it in your form you need to set the _type_ as _multiselect_ and set _tag_ as _true_. In order to add a tag that wasn't in _options_ you need to set the attribute _userAddOption_ as _true_.
+
+```javascript
+{
+                    id: 'music',
+                    type: 'select',
+                    multiple: true,
+                    tag: true,
+                    userAddOption: true,
+                    label: 'Music',
+                    value: ['guitar'],
+                    options: [
+                        {
+                            label: 'Piano',
+                            value: 'piano'
+                    },
+                        {
+                            label: 'Guitar',
+                            value: 'guitar',
+                    }
+                ]
+},
+```
+
+### Date / time picker
+
+ For the date time picker we are using [Flatpickr](https://github.com/Mobius1/Selectr).
+ 
+ By default this picker allow you to choose the date if you want to add time, just set _enableTime_ as _true_.
+ 
+ ```javascript
+ {
+                    type: 'datetimepicker',
+                    id: 'mydatetimepicker',
+                    label: 'Date de naissance',
+                    enableTime: true,
+                    tip: 'Tip Please verify your info before',
+                    help: 'Help Please verify your info before',
+                    value: 56564415
+ },
+ ```
+- __Note__ : The format of the returned value is Unix timestamp.
+
+### Color picker
+
+For the color picker we are using [Simonwep/pickr](https://github.com/Simonwep/pickr) wich is a color and opacity picker.
+
+```javascript
+{
+                    id: 'mycolor',
+                    label: 'First color',
+                    type: 'colorpicker',
+                    value: 'red'
+},
+```
 
