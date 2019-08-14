@@ -255,3 +255,9 @@ For the color picker we are using [Simonwep/pickr](https://github.com/Simonwep/p
 },
 ```
 
+### image picker 
+
+à compléter
+
+### Range input
+
