@@ -34,7 +34,9 @@ form2: {
 ```
 ## Add fields
 
-### Text input
+### Input fields
+
+#### Text input
 To add a text input just add a field with "text" as type in your *desc* array. You can add a label like that :
 
 ```javascript
@@ -60,7 +62,7 @@ desc: [
       ]
 ```
 
-### Text area
+#### Text area
 
 Text area works just the same as a text input except that the *type* is *'textarea'* and you need to add the *rows* attribute :
 
@@ -76,7 +78,7 @@ desc: [
       ]
 ```
 
-### Password
+#### Password
 
 Here, you need to set the type as *password* :
 
@@ -90,7 +92,7 @@ desc: [
       ]
 ```
 
-### Text editor
+#### Text editor
 
 This text editor is from [quill.js](https://quilljs.com/). It works the same as text area except that it handle html input.
 
@@ -148,7 +150,7 @@ A switch button is a checkbox who retuen a value when it is checked and when it 
 }
 ```
 
-### radio
+#### radio
 
 Check  boxes and radios are really similar. The only diference is that you can check only one radio.
 
@@ -173,7 +175,7 @@ Check  boxes and radios are really similar. The only diference is that you can c
                 ]
 },
 ```
-### Select input
+#### Select input
 
 ```javascript
 
@@ -197,7 +199,7 @@ Check  boxes and radios are really similar. The only diference is that you can c
 ```
 - If you want to turn it into a __multiselect input__ just change the _type_ as _multiselect_.
 
-### Tag selector
+#### Tag selector
 
 We are using the [Mobius1 selector](https://github.com/Mobius1/Selectr) which is very complete for the tag selection. To incorporate it in your form you need to set the _type_ as _multiselect_ and set _tag_ as _true_. In order to add a tag that wasn't in _options_ you need to set the attribute _userAddOption_ as _true_.
 
@@ -223,7 +225,7 @@ We are using the [Mobius1 selector](https://github.com/Mobius1/Selectr) which is
 },
 ```
 
-### Date / time picker
+#### Date / time picker
 
  For the date time picker we are using [Flatpickr](https://github.com/Mobius1/Selectr).
  
@@ -242,7 +244,7 @@ We are using the [Mobius1 selector](https://github.com/Mobius1/Selectr) which is
  ```
 - __Note__ : The format of the returned value is Unix timestamp.
 
-### Color picker
+#### Color picker
 
 For the color picker we are using [Simonwep/pickr](https://github.com/Simonwep/pickr) wich is a color and opacity picker.
 
@@ -255,9 +257,93 @@ For the color picker we are using [Simonwep/pickr](https://github.com/Simonwep/p
 },
 ```
 
-### image picker 
+#### image picker 
 
 à compléter
 
-### Range input
+#### Range input
 
+à compléter
+
+### Non-input fields
+
+#### Title 
+
+```javascript
+{
+                    type: 'title',
+                    title: 'Hello'
+},
+```
+
+#### Hr
+
+```javascript
+{
+                    type: 'hr',
+                    label: 'Fly information',
+},
+```
+
+#### Alert
+
+```javascript
+{
+                    type: 'alert',
+                    color: 'danger',
+                    message: "This is an alert message"
+},
+```
+
+## Display fields inline 
+
+```javascript
+{
+                    id: 'row1',
+                    type: 'row',
+                    desc: [
+                        {
+                            id: 'emailInrRow',
+                            type: 'email',
+                            label: 'E-mail adress',
+                           
+                         },
+                         {
+                            id: 'passwordInRow',
+                            type: 'password',
+                            label: 'Password'
+                          },
+                     ]
+}
+```
+
+## Customize fields
+
+You can custom fields by adding :
+
+### - Help :
+Add the _help_ attribute in your field :
+```javascript
+{
+            id: 'myText',
+            type: 'text',
+            help: 'Here you need to type your text'
+}
+```
+
+### - Symbol addon
+
+ à compléter
+ 
+### - Tool tip
+
+Add the _tip_ attribute here :
+
+```javascript
+{
+                    type: 'text',
+                    id: "flyDescription",
+                    label: 'Fly description',
+                    tip: 'Précisez l\'oiseau svp'
+}
+```
