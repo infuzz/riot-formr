@@ -267,6 +267,10 @@ For the color picker we are using [Simonwep/pickr](https://github.com/Simonwep/p
 
 ### Non-input fields
 
+#### Button
+
+à compléter
+
 #### Title 
 
 ```javascript
@@ -296,6 +300,8 @@ For the color picker we are using [Simonwep/pickr](https://github.com/Simonwep/p
 ```
 
 ## Display fields inline 
+
+If you want to display fields inline :
 
 ```javascript
 {
@@ -347,3 +353,63 @@ Add the _tip_ attribute here :
                     tip: 'Précisez l\'oiseau svp'
 }
 ```
+
+## Multilang form
+
+This form generator allows multilang forms :
+
+```javascript
+form2: {
+            attr: {
+                lang: 'fr',
+                langs: ['fr', 'en'],
+                proposeTranslate: true
+            },
+            desc: [
+
+                {
+                    type: 'title',
+                    title: 'Hello',
+                },
+                {
+                    type: 'textarea',
+                    label: 'Write a message here',
+                    multilang: true,
+                    proposeTranslate: 'true
+                }
+            ]
+        }
+```
+
+In _attr_ : 
+- _lang_ is your default language
+- _langs_ contains all the languages your form allows
+- _proposeTranslate_ permit the user to auto-translate the inputs wich are multilang
+
+In _desc_ :
+- set _multilang_ as true if your input is a multilang input. 
+
+## Set your form 
+
+Use the _setFormValues()_ function to set your form. The function needs 2 attributes : _formName_ and _data_.
+
+```javascript
+data = {
+                mydatetimepicker: 1488136398547,
+                checboxTransport: {
+                    car: false,
+                    bus: true
+                },
+                emailInrRow: "emailInrRow changed",
+                fallDescription: {
+                    fr: "fallDescription fr",
+                    en: "fallDescription en"
+                }
+ }
+ 
+ setFormValues(myForm,data)
+```
+
+## Get your form's values
+
+Use the _getFormValues()_ function to get your form's values. The function needs 1 attribute : _formName_. The function will return an object similar to the data object that we have created for the _setFormValues()_ function.
