@@ -5,7 +5,7 @@
     <small class="inputFeedbackMsg"></small>
     <jhelp help={props.field.help}></jhelp>
     <div class="aaad-inline">
-        <template each={ option in props.field.options }>
+        <template each={ option in props.field.opts }>
             <label class="fradio">{i18n(option.label)}
                 <jtooltip tip={option.tip}></jtooltip>
                 <jhelp help={option.help}></jhelp>
@@ -96,7 +96,7 @@
 <!--iradio>
     <jlabel field={props.field}></jlabel>
     <jtooltip help={props.field.help}></jtooltip>
-    <template each={ option in props.field.options }>
+    <template each={ option in props.field.opts }>
         <div class="custom-control custom-radio">
             <input type="radio" id={option.id} value={option.id} name={props.field.name} class="custom-control-input">
             <label class="custom-control-label" for={option.id}>{i18n(option.label)}</label>

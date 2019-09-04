@@ -88,7 +88,7 @@ window.fields = {
                 value: 'girl',
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                options: [
+                opts: [
                     {
                         label: 'Garcon',
                         value: 'boy'
@@ -110,7 +110,7 @@ window.fields = {
                 value: ['guitar'],
                 tip: 'Tip Please verify your info before',
                 help: 'Help Please verify your info before',
-                options: [
+                opts: [
                     {
                         label: 'Piano',
                         value: 'piano'
@@ -260,7 +260,7 @@ window.fields = {
                 type: 'radio',
                 label: 'Choix animal',
                 value: 'dog',
-                options: [
+                opts: [
                     {
                         label: 'chien',
                         id: 'dog',
@@ -278,7 +278,7 @@ window.fields = {
                 id: 'checboxTransport',
                 type: 'checkbox',
                 label: 'Choix transport',
-                options: [
+                opts: [
                     {
                         label: 'Voiture',
                         id: 'car',
@@ -296,7 +296,7 @@ window.fields = {
                 id: 'switchTest',
                 type: 'switch',
                 label: 'Choix animal',
-                options: [
+                opts: [
                     {
                         checkedLabel: 'vole',
                         uncheckedLabel: 'tombe',
@@ -329,7 +329,7 @@ window.fields = {
                 id: 'switchTestAlone',
                 type: 'switch',
                 label: 'Choix animal alone',
-                options: [
+                opts: [
                     {
                         checkedLabel: 'vole alone',
                         uncheckedLabel: 'tombe alone',
@@ -407,7 +407,7 @@ window.fields = {
                 id: 'switchTestAlone',
                 type: 'switch',
                 label: 'Choix animal alone',
-                options: [
+                opts: [
                     {
                         checkedLabel: 'vole alone',
                         uncheckedLabel: 'tombe alone',

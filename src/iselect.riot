@@ -6,7 +6,7 @@
     <div class="input-group">
         <jaddon if={!props.field.tag} field={props.field} placement='left'></jaddon>
         <select { ...props.field } multiple={props.field.multiple} class="form-control {props.field.class}" selectr=true name={props.field.id} id={}>
-            <template each={option in props.field.options}>
+            <template each={option in props.field.opts}>
                 <option value={option.value} selected={isSelected(option)}>
                     {i18n(option.label)}
                 </option>
