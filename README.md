@@ -113,7 +113,7 @@ To add check boxes, you have to specify the different options givens by your che
                     id: 'checboxTransport',
                     type: 'checkbox',
                     label: 'Transport choices',
-                    options: [
+                    opts: [
                         {
                             label: 'Car',
                             id: 'car'
@@ -136,7 +136,7 @@ A switch button is a checkbox who retuen a value when it is checked and when it 
                     id: 'switchTest',
                     type: 'switch',
                     label: 'Animal',
-                    options: [
+                    opts: [
                         {
                             checkedLabel: 'He fly',
                             uncheckedLabel: 'He fall',
@@ -160,7 +160,7 @@ Check  boxes and radios are really similar. The only diference is that you can c
                     type: 'radio',
                     label: 'Choix animal',
                     value: 'dog',
-                    options: [
+                    opts: [
                         {
                             label: 'chien',
                             id: 'dog',
@@ -184,7 +184,7 @@ Check  boxes and radios are really similar. The only diference is that you can c
                     type: 'select',
                     label: 'Genre',
                     value: 'girl',
-                    options: [
+                    opts: [
                         {
                             label: 'I'm a boy',
                             value: 'boy'
@@ -212,7 +212,7 @@ We are using the [Mobius1 selector](https://github.com/Mobius1/Selectr) which is
                     userAddOption: true,
                     label: 'Music',
                     value: ['guitar'],
-                    options: [
+                    opts: [
                         {
                             label: 'Piano',
                             value: 'piano'
