@@ -75,6 +75,7 @@
 
                 //enable buttons with attributes 'waitValid' if all fields in the form is valid
                 let nbInvalidFields = targetForm.querySelectorAll('.form-control:invalid')
+                console.log(nbInvalidFields)
                 let nwaitValid = targetForm.querySelectorAll('[waitvalid]')
                 nwaitValid.forEach(function(e) {
                     e.disabled = nbInvalidFields.length
