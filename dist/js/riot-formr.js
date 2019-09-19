@@ -168,10 +168,10 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<form expr153 novalidate><button expr154 type="button">Go</button><button expr155 type="button">set</button><div expr156></div></form>',
+          '<form expr104 novalidate><button expr105 type="button">Go</button><button expr106 type="button">set</button><div expr107></div></form>',
           [{
-            'redundantAttribute': 'expr153',
-            'selector': '[expr153]',
+            'redundantAttribute': 'expr104',
+            'selector': '[expr104]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -196,8 +196,8 @@
               }
             }]
           }, {
-            'redundantAttribute': 'expr154',
-            'selector': '[expr154]',
+            'redundantAttribute': 'expr105',
+            'selector': '[expr105]',
 
             'expressions': [{
               'type': expressionTypes.EVENT,
@@ -208,8 +208,8 @@
               }
             }]
           }, {
-            'redundantAttribute': 'expr155',
-            'selector': '[expr155]',
+            'redundantAttribute': 'expr106',
+            'selector': '[expr106]',
 
             'expressions': [{
               'type': expressionTypes.EVENT,
@@ -224,9 +224,9 @@
             'getKey': null,
             'condition': null,
 
-            'template': template('<div expr157 class="form-group"><div expr158></div></div>', [{
-              'redundantAttribute': 'expr157',
-              'selector': '[expr157]',
+            'template': template('<div expr108 class="form-group"><div expr109></div></div>', [{
+              'redundantAttribute': 'expr108',
+              'selector': '[expr108]',
 
               'expressions': [{
                 'type': expressionTypes.ATTRIBUTE,
@@ -269,12 +269,12 @@
                 }
               }],
 
-              'redundantAttribute': 'expr158',
-              'selector': '[expr158]'
+              'redundantAttribute': 'expr109',
+              'selector': '[expr109]'
             }]),
 
-            'redundantAttribute': 'expr156',
-            'selector': '[expr156]',
+            'redundantAttribute': 'expr107',
+            'selector': '[expr107]',
             'itemName': 'field',
             'indexName': 'i',
 
@@ -294,10 +294,10 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<div expr2 role="alert"><div expr3><jicon expr4></jicon><!----><jtooltip expr5></jtooltip></div><jhelp expr6></jhelp></div>',
+          '<div expr21 role="alert"><div expr22><jicon expr23></jicon><!----><jtooltip expr24></jtooltip></div><jhelp expr25></jhelp></div>',
           [{
-            'redundantAttribute': 'expr2',
-            'selector': '[expr2]',
+            'redundantAttribute': 'expr21',
+            'selector': '[expr21]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -313,8 +313,8 @@
               }
             }]
           }, {
-            'redundantAttribute': 'expr3',
-            'selector': '[expr3]',
+            'redundantAttribute': 'expr22',
+            'selector': '[expr22]',
 
             'expressions': [{
               'type': expressionTypes.TEXT,
@@ -343,8 +343,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr4',
-            'selector': '[expr4]'
+            'redundantAttribute': 'expr23',
+            'selector': '[expr23]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -364,8 +364,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr5',
-            'selector': '[expr5]'
+            'redundantAttribute': 'expr24',
+            'selector': '[expr24]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -385,8 +385,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr6',
-            'selector': '[expr6]'
+            'redundantAttribute': 'expr25',
+            'selector': '[expr25]'
           }]
         );
       },
@@ -414,10 +414,10 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<button expr21 type="button" style="text-transform: capitalize;"><jicon expr22></jicon><!----><jtooltip expr23></jtooltip></button><jhelp expr24></jhelp>',
+          '<button expr50 type="button" style="text-transform: capitalize;"><jicon expr51></jicon><!----><jtooltip expr52></jtooltip></button><jhelp expr53></jhelp>',
           [{
-            'redundantAttribute': 'expr21',
-            'selector': '[expr21]',
+            'redundantAttribute': 'expr50',
+            'selector': '[expr50]',
 
             'expressions': [{
               'type': expressionTypes.TEXT,
@@ -493,8 +493,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr22',
-            'selector': '[expr22]'
+            'redundantAttribute': 'expr51',
+            'selector': '[expr51]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -514,8 +514,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr23',
-            'selector': '[expr23]'
+            'redundantAttribute': 'expr52',
+            'selector': '[expr52]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -535,8 +535,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr24',
-            'selector': '[expr24]'
+            'redundantAttribute': 'expr53',
+            'selector': '[expr53]'
           }]
         );
       },
@@ -1006,7 +1006,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr43></jlabel><jtooltip expr44></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr45></jhelp><div expr46></div><input expr47 type="hidden" class="form-control" colorpicker="true"/>',
+          '<jlabel expr2></jlabel><jtooltip expr3></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr4></jhelp><div expr5></div><input expr6 type="hidden" class="form-control" colorpicker="true"/>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1026,8 +1026,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr43',
-            'selector': '[expr43]'
+            'redundantAttribute': 'expr2',
+            'selector': '[expr2]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1047,8 +1047,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr44',
-            'selector': '[expr44]'
+            'redundantAttribute': 'expr3',
+            'selector': '[expr3]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1068,11 +1068,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr45',
-            'selector': '[expr45]'
+            'redundantAttribute': 'expr4',
+            'selector': '[expr4]'
           }, {
-            'redundantAttribute': 'expr46',
-            'selector': '[expr46]',
+            'redundantAttribute': 'expr5',
+            'selector': '[expr5]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1083,8 +1083,8 @@
               }
             }]
           }, {
-            'redundantAttribute': 'expr47',
-            'selector': '[expr47]',
+            'redundantAttribute': 'expr6',
+            'selector': '[expr6]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1131,7 +1131,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr37></jlabel><jtooltip expr38></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr39 placement="left"></jaddon><input expr40 type="text" datetimepicker="true"/><jaddon expr41 placement="right"></jaddon></div><jhelp expr42></jhelp>',
+          '<jlabel expr33></jlabel><jtooltip expr34></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr35 placement="left"></jaddon><input expr36 type="text" datetimepicker="true"/><jaddon expr37 placement="right"></jaddon></div><jhelp expr38></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1151,8 +1151,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr37',
-            'selector': '[expr37]'
+            'redundantAttribute': 'expr33',
+            'selector': '[expr33]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1172,8 +1172,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr38',
-            'selector': '[expr38]'
+            'redundantAttribute': 'expr34',
+            'selector': '[expr34]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1200,11 +1200,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr39',
-            'selector': '[expr39]'
+            'redundantAttribute': 'expr35',
+            'selector': '[expr35]'
           }, {
-            'redundantAttribute': 'expr40',
-            'selector': '[expr40]',
+            'redundantAttribute': 'expr36',
+            'selector': '[expr36]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1267,8 +1267,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr41',
-            'selector': '[expr41]'
+            'redundantAttribute': 'expr37',
+            'selector': '[expr37]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1288,8 +1288,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr42',
-            'selector': '[expr42]'
+            'redundantAttribute': 'expr38',
+            'selector': '[expr38]'
           }]
         );
       },
@@ -1303,7 +1303,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr25></jlabel><jtooltip expr26></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small>\r\n    IIMAGEPICKER TODO\r\n    <div class="input-group"><jaddon expr27 placement="left"></jaddon><input expr28 type="text" autocomplete="on"/><jaddon expr29 placement="right"></jaddon></div><jhelp expr30></jhelp>',
+          '<jlabel expr26></jlabel><jtooltip expr27></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small>\r\n    IIMAGEPICKER TODO\r\n    <div class="input-group"><jaddon expr28 placement="left"></jaddon><input expr29 type="text" autocomplete="on"/><jaddon expr30 placement="right"></jaddon></div><jhelp expr31></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1323,8 +1323,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr25',
-            'selector': '[expr25]'
+            'redundantAttribute': 'expr26',
+            'selector': '[expr26]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1344,8 +1344,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr26',
-            'selector': '[expr26]'
+            'redundantAttribute': 'expr27',
+            'selector': '[expr27]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1372,11 +1372,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr27',
-            'selector': '[expr27]'
-          }, {
             'redundantAttribute': 'expr28',
-            'selector': '[expr28]',
+            'selector': '[expr28]'
+          }, {
+            'redundantAttribute': 'expr29',
+            'selector': '[expr29]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1439,8 +1439,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr29',
-            'selector': '[expr29]'
+            'redundantAttribute': 'expr30',
+            'selector': '[expr30]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1460,8 +1460,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr30',
-            'selector': '[expr30]'
+            'redundantAttribute': 'expr31',
+            'selector': '[expr31]'
           }]
         );
       },
@@ -1474,9 +1474,9 @@
       'exports': null,
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
-        return template('<input expr54 type="hidden"/>', [{
-          'redundantAttribute': 'expr54',
-          'selector': '[expr54]',
+        return template('<input expr32 type="hidden"/>', [{
+          'redundantAttribute': 'expr32',
+          'selector': '[expr32]',
 
           'expressions': [{
             'type': expressionTypes.ATTRIBUTE,
@@ -1525,10 +1525,10 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<div expr55><jicon expr56></jicon><span expr57><!----></span><jtooltip expr58></jtooltip><hr/><jhelp expr59></jhelp></div>',
+          '<div expr39><jicon expr40></jicon><span expr41><!----></span><jtooltip expr42></jtooltip><hr/><jhelp expr43></jhelp></div>',
           [{
-            'redundantAttribute': 'expr55',
-            'selector': '[expr55]',
+            'redundantAttribute': 'expr39',
+            'selector': '[expr39]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1557,11 +1557,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr56',
-            'selector': '[expr56]'
+            'redundantAttribute': 'expr40',
+            'selector': '[expr40]'
           }, {
-            'redundantAttribute': 'expr57',
-            'selector': '[expr57]',
+            'redundantAttribute': 'expr41',
+            'selector': '[expr41]',
 
             'expressions': [{
               'type': expressionTypes.TEXT,
@@ -1597,8 +1597,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr58',
-            'selector': '[expr58]'
+            'redundantAttribute': 'expr42',
+            'selector': '[expr42]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1618,8 +1618,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr59',
-            'selector': '[expr59]'
+            'redundantAttribute': 'expr43',
+            'selector': '[expr43]'
           }]
         );
       },
@@ -1633,7 +1633,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr48></jlabel><jtooltip expr49></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr50 placement="left"></jaddon><input expr51 type="password" autocomplete="on"/><jaddon expr52 placement="right"></jaddon></div><jhelp expr53></jhelp>',
+          '<jlabel expr44></jlabel><jtooltip expr45></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr46 placement="left"></jaddon><input expr47 type="password" autocomplete="on"/><jaddon expr48 placement="right"></jaddon></div><jhelp expr49></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1653,8 +1653,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr48',
-            'selector': '[expr48]'
+            'redundantAttribute': 'expr44',
+            'selector': '[expr44]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1674,8 +1674,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr49',
-            'selector': '[expr49]'
+            'redundantAttribute': 'expr45',
+            'selector': '[expr45]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1702,11 +1702,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr50',
-            'selector': '[expr50]'
+            'redundantAttribute': 'expr46',
+            'selector': '[expr46]'
           }, {
-            'redundantAttribute': 'expr51',
-            'selector': '[expr51]',
+            'redundantAttribute': 'expr47',
+            'selector': '[expr47]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -1769,8 +1769,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr52',
-            'selector': '[expr52]'
+            'redundantAttribute': 'expr48',
+            'selector': '[expr48]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1790,8 +1790,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr53',
-            'selector': '[expr53]'
+            'redundantAttribute': 'expr49',
+            'selector': '[expr49]'
           }]
         );
       },
@@ -1810,7 +1810,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr60></jlabel><jtooltip expr61></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr62></jhelp><div class="aaad-inline"><template expr63></template></div>',
+          '<jlabel expr54></jlabel><jtooltip expr55></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><jhelp expr56></jhelp><div class="aaad-inline"><template expr57></template></div>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1830,8 +1830,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr60',
-            'selector': '[expr60]'
+            'redundantAttribute': 'expr54',
+            'selector': '[expr54]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1851,8 +1851,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr61',
-            'selector': '[expr61]'
+            'redundantAttribute': 'expr55',
+            'selector': '[expr55]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -1872,18 +1872,18 @@
               }
             }],
 
-            'redundantAttribute': 'expr62',
-            'selector': '[expr62]'
+            'redundantAttribute': 'expr56',
+            'selector': '[expr56]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
             'condition': null,
 
             'template': template(
-              '<label expr64 class="fradio"><!----><jtooltip expr65></jtooltip><jhelp expr66></jhelp><input expr67 type="radio" class="form-control"/><span class="fradiomark"></span></label>',
+              '<label expr58 class="fradio"><!----><jtooltip expr59></jtooltip><jhelp expr60></jhelp><input expr61 type="radio" class="form-control"/><span class="fradiomark"></span></label>',
               [{
-                'redundantAttribute': 'expr64',
-                'selector': '[expr64]',
+                'redundantAttribute': 'expr58',
+                'selector': '[expr58]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -1912,8 +1912,8 @@
                   }
                 }],
 
-                'redundantAttribute': 'expr65',
-                'selector': '[expr65]'
+                'redundantAttribute': 'expr59',
+                'selector': '[expr59]'
               }, {
                 'type': bindingTypes.TAG,
                 'getComponent': getComponent,
@@ -1933,11 +1933,11 @@
                   }
                 }],
 
-                'redundantAttribute': 'expr66',
-                'selector': '[expr66]'
+                'redundantAttribute': 'expr60',
+                'selector': '[expr60]'
               }, {
-                'redundantAttribute': 'expr67',
-                'selector': '[expr67]',
+                'redundantAttribute': 'expr61',
+                'selector': '[expr61]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -1977,8 +1977,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr63',
-            'selector': '[expr63]',
+            'redundantAttribute': 'expr57',
+            'selector': '[expr57]',
             'itemName': 'option',
             'indexName': null,
 
@@ -1998,7 +1998,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr71></jlabel><jtooltip expr72></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><input expr73 type="range"/></div><jhelp expr74></jhelp>',
+          '<jlabel expr62></jlabel><jtooltip expr63></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><input expr64 type="range"/></div><jhelp expr65></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -2018,8 +2018,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr71',
-            'selector': '[expr71]'
+            'redundantAttribute': 'expr62',
+            'selector': '[expr62]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -2039,11 +2039,11 @@
               }
             }],
 
-            'redundantAttribute': 'expr72',
-            'selector': '[expr72]'
+            'redundantAttribute': 'expr63',
+            'selector': '[expr63]'
           }, {
-            'redundantAttribute': 'expr73',
-            'selector': '[expr73]',
+            'redundantAttribute': 'expr64',
+            'selector': '[expr64]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -2120,8 +2120,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr74',
-            'selector': '[expr74]'
+            'redundantAttribute': 'expr65',
+            'selector': '[expr65]'
           }]
         );
       },
@@ -2140,14 +2140,14 @@
       },
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
-        return template('<div class="row"><template expr68></template></div>', [{
+        return template('<div class="row"><template expr74></template></div>', [{
           'type': bindingTypes.EACH,
           'getKey': null,
           'condition': null,
 
-          'template': template('<div expr69><div expr70></div></div>', [{
-            'redundantAttribute': 'expr69',
-            'selector': '[expr69]',
+          'template': template('<div expr75><div expr76></div></div>', [{
+            'redundantAttribute': 'expr75',
+            'selector': '[expr75]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -2197,12 +2197,12 @@
               }
             }],
 
-            'redundantAttribute': 'expr70',
-            'selector': '[expr70]'
+            'redundantAttribute': 'expr76',
+            'selector': '[expr76]'
           }]),
 
-          'redundantAttribute': 'expr68',
-          'selector': '[expr68]',
+          'redundantAttribute': 'expr74',
+          'selector': '[expr74]',
           'itemName': 'field',
           'indexName': 'i',
 
@@ -2242,7 +2242,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr75></jlabel><jtooltip expr76></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr77 placement="left"></jaddon><select expr78 selectr="true"><template expr79></template></select><jaddon expr81 placement="right"></jaddon></div><jhelp expr82></jhelp>',
+          '<jlabel expr66></jlabel><jtooltip expr67></jtooltip><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div class="input-group"><jaddon expr68 placement="left"></jaddon><select expr69 selectr="true"><template expr70></template></select><jaddon expr72 placement="right"></jaddon></div><jhelp expr73></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -2262,8 +2262,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr75',
-            'selector': '[expr75]'
+            'redundantAttribute': 'expr66',
+            'selector': '[expr66]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -2283,8 +2283,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr76',
-            'selector': '[expr76]'
+            'redundantAttribute': 'expr67',
+            'selector': '[expr67]'
           }, {
             'type': bindingTypes.IF,
 
@@ -2292,8 +2292,8 @@
               return !scope.props.field.tag;
             },
 
-            'redundantAttribute': 'expr77',
-            'selector': '[expr77]',
+            'redundantAttribute': 'expr68',
+            'selector': '[expr68]',
 
             'template': template(null, [{
               'type': bindingTypes.TAG,
@@ -2322,8 +2322,8 @@
               }]
             }])
           }, {
-            'redundantAttribute': 'expr78',
-            'selector': '[expr78]',
+            'redundantAttribute': 'expr69',
+            'selector': '[expr69]',
 
             'expressions': [{
               'type': expressionTypes.ATTRIBUTE,
@@ -2366,9 +2366,9 @@
             'getKey': null,
             'condition': null,
 
-            'template': template('<option expr80><!----></option>', [{
-              'redundantAttribute': 'expr80',
-              'selector': '[expr80]',
+            'template': template('<option expr71><!----></option>', [{
+              'redundantAttribute': 'expr71',
+              'selector': '[expr71]',
 
               'expressions': [{
                 'type': expressionTypes.TEXT,
@@ -2397,8 +2397,8 @@
               }]
             }]),
 
-            'redundantAttribute': 'expr79',
-            'selector': '[expr79]',
+            'redundantAttribute': 'expr70',
+            'selector': '[expr70]',
             'itemName': 'option',
             'indexName': null,
 
@@ -2412,8 +2412,8 @@
               return !scope.props.field.tag;
             },
 
-            'redundantAttribute': 'expr81',
-            'selector': '[expr81]',
+            'redundantAttribute': 'expr72',
+            'selector': '[expr72]',
 
             'template': template(null, [{
               'type': bindingTypes.TAG,
@@ -2460,8 +2460,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr82',
-            'selector': '[expr82]'
+            'redundantAttribute': 'expr73',
+            'selector': '[expr73]'
           }]
         );
       },
@@ -2506,7 +2506,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr83></jlabel><jtooltip expr84></jtooltip><template expr85></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr87></div><jhelp expr94></jhelp>',
+          '<jlabel expr77></jlabel><jtooltip expr78></jtooltip><template expr79></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr81></div><jhelp expr88></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -2526,8 +2526,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr83',
-            'selector': '[expr83]'
+            'redundantAttribute': 'expr77',
+            'selector': '[expr77]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -2547,8 +2547,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr84',
-            'selector': '[expr84]'
+            'redundantAttribute': 'expr78',
+            'selector': '[expr78]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
@@ -2558,10 +2558,10 @@
             },
 
             'template': template(
-              '<button expr86 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+              '<button expr80 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
               [{
-                'redundantAttribute': 'expr86',
-                'selector': '[expr86]',
+                'redundantAttribute': 'expr80',
+                'selector': '[expr80]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -2595,8 +2595,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr85',
-            'selector': '[expr85]',
+            'redundantAttribute': 'expr79',
+            'selector': '[expr79]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -2609,7 +2609,7 @@
             'condition': null,
 
             'template': template(
-              '<jaddon expr88 placement="left"></jaddon><input expr89 autocomplete="on"/><textarea expr90></textarea><div expr91 class="h-100 input-group-append"></div><jaddon expr93 placement="right"></jaddon>',
+              '<jaddon expr82 placement="left"></jaddon><input expr83 autocomplete="on"/><textarea expr84></textarea><div expr85 class="h-100 input-group-append"></div><jaddon expr87 placement="right"></jaddon>',
               [{
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -2648,8 +2648,8 @@
                   }
                 }],
 
-                'redundantAttribute': 'expr88',
-                'selector': '[expr88]'
+                'redundantAttribute': 'expr82',
+                'selector': '[expr82]'
               }, {
                 'type': bindingTypes.IF,
 
@@ -2657,8 +2657,8 @@
                   return scope.props.field.type!='textarea';
                 },
 
-                'redundantAttribute': 'expr89',
-                'selector': '[expr89]',
+                'redundantAttribute': 'expr83',
+                'selector': '[expr83]',
 
                 'template': template(null, [{
                   'expressions': [{
@@ -2740,8 +2740,8 @@
                   return scope.props.field.type=='textarea';
                 },
 
-                'redundantAttribute': 'expr90',
-                'selector': '[expr90]',
+                'redundantAttribute': 'expr84',
+                'selector': '[expr84]',
 
                 'template': template('<!---->', [{
                   'expressions': [{
@@ -2823,14 +2823,14 @@
                   return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
                 },
 
-                'redundantAttribute': 'expr91',
-                'selector': '[expr91]',
+                'redundantAttribute': 'expr85',
+                'selector': '[expr85]',
 
                 'template': template(
-                  '<button expr92 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                  '<button expr86 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                   [{
-                    'redundantAttribute': 'expr92',
-                    'selector': '[expr92]',
+                    'redundantAttribute': 'expr86',
+                    'selector': '[expr86]',
 
                     'expressions': [{
                       'type': expressionTypes.EVENT,
@@ -2868,13 +2868,13 @@
                   }
                 }],
 
-                'redundantAttribute': 'expr93',
-                'selector': '[expr93]'
+                'redundantAttribute': 'expr87',
+                'selector': '[expr87]'
               }]
             ),
 
-            'redundantAttribute': 'expr87',
-            'selector': '[expr87]',
+            'redundantAttribute': 'expr81',
+            'selector': '[expr81]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -2900,8 +2900,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr94',
-            'selector': '[expr94]'
+            'redundantAttribute': 'expr88',
+            'selector': '[expr88]'
           }]
         );
       },
@@ -2990,7 +2990,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<jlabel expr95></jlabel><jtooltip expr96></jtooltip><template expr97></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr99></div><jhelp expr104></jhelp>',
+          '<jlabel expr93></jlabel><jtooltip expr94></jtooltip><template expr95></template><span class="inputFeedback"></span><small class="inputFeedbackMsg"></small><div expr97></div><jhelp expr102></jhelp>',
           [{
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3010,8 +3010,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr95',
-            'selector': '[expr95]'
+            'redundantAttribute': 'expr93',
+            'selector': '[expr93]'
           }, {
             'type': bindingTypes.TAG,
             'getComponent': getComponent,
@@ -3031,8 +3031,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr96',
-            'selector': '[expr96]'
+            'redundantAttribute': 'expr94',
+            'selector': '[expr94]'
           }, {
             'type': bindingTypes.EACH,
             'getKey': null,
@@ -3042,10 +3042,10 @@
             },
 
             'template': template(
-              '<button expr98 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
+              '<button expr96 type="button" style="text-transform: capitalize;"><!----><span class="aaainputFeedback"></span></button>',
               [{
-                'redundantAttribute': 'expr98',
-                'selector': '[expr98]',
+                'redundantAttribute': 'expr96',
+                'selector': '[expr96]',
 
                 'expressions': [{
                   'type': expressionTypes.TEXT,
@@ -3079,8 +3079,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr97',
-            'selector': '[expr97]',
+            'redundantAttribute': 'expr95',
+            'selector': '[expr95]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3093,7 +3093,7 @@
             'condition': null,
 
             'template': template(
-              '<span expr100 class="h-100 input-group-append"></span><div expr102></div><input expr103 type="hidden" class="form-control" texteditor="true"/>',
+              '<span expr98 class="h-100 input-group-append"></span><div expr100></div><input expr101 type="hidden" class="form-control" texteditor="true"/>',
               [{
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3113,14 +3113,14 @@
                   return scope.props.field.multilang && scope.props.attr.proposeTranslate && scope.state.defaultLang !=scope.lang;
                 },
 
-                'redundantAttribute': 'expr100',
-                'selector': '[expr100]',
+                'redundantAttribute': 'expr98',
+                'selector': '[expr98]',
 
                 'template': template(
-                  '<button expr101 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
+                  '<button expr99 type="button" class="btn btn-info"><i class="fas fa-language"></i></button>',
                   [{
-                    'redundantAttribute': 'expr101',
-                    'selector': '[expr101]',
+                    'redundantAttribute': 'expr99',
+                    'selector': '[expr99]',
 
                     'expressions': [{
                       'type': expressionTypes.EVENT,
@@ -3133,8 +3133,8 @@
                   }]
                 )
               }, {
-                'redundantAttribute': 'expr102',
-                'selector': '[expr102]',
+                'redundantAttribute': 'expr100',
+                'selector': '[expr100]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3145,8 +3145,8 @@
                   }
                 }]
               }, {
-                'redundantAttribute': 'expr103',
-                'selector': '[expr103]',
+                'redundantAttribute': 'expr101',
+                'selector': '[expr101]',
 
                 'expressions': [{
                   'type': expressionTypes.ATTRIBUTE,
@@ -3193,8 +3193,8 @@
               }]
             ),
 
-            'redundantAttribute': 'expr99',
-            'selector': '[expr99]',
+            'redundantAttribute': 'expr97',
+            'selector': '[expr97]',
             'itemName': 'lang',
             'indexName': null,
 
@@ -3220,8 +3220,8 @@
               }
             }],
 
-            'redundantAttribute': 'expr104',
-            'selector': '[expr104]'
+            'redundantAttribute': 'expr102',
+            'selector': '[expr102]'
           }]
         );
       },
@@ -3235,7 +3235,7 @@
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
         return template(
-          '<div expr131 class="h-100 input-group-prepend"></div><div expr133 class="h-100 input-group-append"></div>',
+          '<div expr111 class="h-100 input-group-prepend"></div><div expr113 class="h-100 input-group-append"></div>',
           [{
             'type': bindingTypes.IF,
 
@@ -3243,10 +3243,10 @@
               return scope.props.placement=='left' && scope.props.field.icon!='none';
             },
 
-            'redundantAttribute': 'expr131',
-            'selector': '[expr131]',
+            'redundantAttribute': 'expr111',
+            'selector': '[expr111]',
 
-            'template': template('<span class="input-group-text"><jicon expr132></jicon></span>', [{
+            'template': template('<span class="input-group-text"><jicon expr112></jicon></span>', [{
               'type': bindingTypes.TAG,
               'getComponent': getComponent,
 
@@ -3265,8 +3265,8 @@
                 }
               }],
 
-              'redundantAttribute': 'expr132',
-              'selector': '[expr132]'
+              'redundantAttribute': 'expr112',
+              'selector': '[expr112]'
             }])
           }, {
             'type': bindingTypes.IF,
@@ -3275,10 +3275,10 @@
               return scope.props.placement=='right' && scope.props.field.buttons;
             },
 
-            'redundantAttribute': 'expr133',
-            'selector': '[expr133]',
+            'redundantAttribute': 'expr113',
+            'selector': '[expr113]',
 
-            'template': template('<ibutton expr134></ibutton>', [{
+            'template': template('<ibutton expr114></ibutton>', [{
               'type': bindingTypes.EACH,
               'getKey': null,
               'condition': null,
@@ -3303,8 +3303,8 @@
                 }]
               }]),
 
-              'redundantAttribute': 'expr134',
-              'selector': '[expr134]',
+              'redundantAttribute': 'expr114',
+              'selector': '[expr114]',
               'itemName': 'button',
               'indexName': null,
 
@@ -3324,15 +3324,15 @@
       'exports': null,
 
       'template': function(template, expressionTypes, bindingTypes, getComponent) {
-        return template('<small expr109 class="text-muted mb-1 mr-1"></small>', [{
+        return template('<small expr103 class="text-muted mb-1 mr-1"></small>', [{
           'type': bindingTypes.IF,
 
           'evaluate': function(scope) {
             return scope.props.help;
           },
 
-          'redundantAttribute': 'expr109',
-          'selector': '[expr109]',
+          'redundantAttribute': 'expr103',
+          'selector': '[expr103]',
 
           'template': template('<!---->', [{
             'expressions': [{
@@ -3557,9 +3557,14 @@
     }
 
     function setFormValues$1(formName, data) {
-        let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control');
+        let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control[name]'); //find all form-control with a name
         inputs.forEach(function (input) {
             let type = input.type;
+
+            if (input.getAttribute('colorpicker')) type = 'colorpicker';
+            if (input.getAttribute('datetimepicker')) type = 'datetimepicker';
+            if (input.getAttribute('texteditor')) type = 'texteditor';
+
             let val = field(data, input.name);
             switch (type) {
                 case 'checkbox':
@@ -3577,34 +3582,34 @@
                         opt.selected = (val && val.indexOf(opt.value) > -1);
                     });
                     break
+                case 'colorpicker':
+                    var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
+                        detail: {
+                            color: val
+                        }
+                    });
+                    document.dispatchEvent(setColorEvent);
+                    break
+                case 'datetimepicker':
+                console.log('typeA',type,input.name);
+                    var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
+                        detail: {
+                            epoch: val
+                        }
+                    });
+                    document.dispatchEvent(setDatetimeEvent);
+                    break
+                case 'texteditor':
+                    var setTexteditorEvent = new CustomEvent(formName + '_setTexteditor_' + input.name, {
+                        detail: {
+                            content: val
+                        }
+                    });
+                    document.dispatchEvent(setTexteditorEvent);
+                    break
                 default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
-                    //input.value = val
-                    if (input.getAttribute('colorpicker')) { //colorpickertag
-                        var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
-                            detail: {
-                                color: val
-                            }
-                        });
-                        document.dispatchEvent(setColorEvent);
-                    }
-                    if (input.getAttribute('datetimepicker')) { //datetimepicker
-                        var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
-                            detail: {
-                                epoch: val
-                            }
-                        });
-                        document.dispatchEvent(setDatetimeEvent);
-                    }
-                    if (input.getAttribute('texteditor')) { //texteditor
-                        var setTexteditorEvent = new CustomEvent(formName + '_setTexteditor_' + input.name, {
-                            detail: {
-                                content: val
-                            }
-                        });
-                        document.dispatchEvent(setTexteditorEvent);
-                    }
-                    
-                    
+                console.log('type',type,input.name,input);
+                    input.value = val;
                     //image
             }
         });

@@ -103,9 +103,14 @@ export function getFormValues(formName) {
 }
 
 export function setFormValues(formName, data) {
-    let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control')
+    let inputs = document.getElementsByName(formName)[0].querySelectorAll('.form-control[name]') //find all form-control with a name
     inputs.forEach(function (input) {
         let type = input.type
+
+        if (input.getAttribute('colorpicker')) type = 'colorpicker'
+        if (input.getAttribute('datetimepicker')) type = 'datetimepicker'
+        if (input.getAttribute('texteditor')) type = 'texteditor'
+
         let val = field(data, input.name)
         switch (type) {
             case 'checkbox':
@@ -123,34 +128,34 @@ export function setFormValues(formName, data) {
                     opt.selected = (val && val.indexOf(opt.value) > -1)
                 })
                 break
+            case 'colorpicker':
+                var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
+                    detail: {
+                        color: val
+                    }
+                })
+                document.dispatchEvent(setColorEvent)
+                break
+            case 'datetimepicker':
+            console.log('typeA',type,input.name)
+                var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
+                    detail: {
+                        epoch: val
+                    }
+                })
+                document.dispatchEvent(setDatetimeEvent)
+                break
+            case 'texteditor':
+                var setTexteditorEvent = new CustomEvent(formName + '_setTexteditor_' + input.name, {
+                    detail: {
+                        content: val
+                    }
+                })
+                document.dispatchEvent(setTexteditorEvent)
+                break
             default: //radio, select-one' text, password, hidden, email, tel, textarea...... all others
-                //input.value = val
-                if (input.getAttribute('colorpicker')) { //colorpickertag
-                    var setColorEvent = new CustomEvent(formName + '_setColor_' + input.name, {
-                        detail: {
-                            color: val
-                        }
-                    })
-                    document.dispatchEvent(setColorEvent)
-                }
-                if (input.getAttribute('datetimepicker')) { //datetimepicker
-                    var setDatetimeEvent = new CustomEvent(formName + '_setDatetime_' + input.name, {
-                        detail: {
-                            epoch: val
-                        }
-                    })
-                    document.dispatchEvent(setDatetimeEvent)
-                }
-                if (input.getAttribute('texteditor')) { //texteditor
-                    var setTexteditorEvent = new CustomEvent(formName + '_setTexteditor_' + input.name, {
-                        detail: {
-                            content: val
-                        }
-                    })
-                    document.dispatchEvent(setTexteditorEvent)
-                }
-                
-                
+            console.log('type',type,input.name,input)
+                input.value = val
                 //image
         }
     })
