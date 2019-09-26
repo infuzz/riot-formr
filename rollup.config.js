@@ -6,7 +6,7 @@ import copy from 'rollup-plugin-copy'
 export default {
     input: 'src/main.js',
     output: {
-        file: 'dist/js/riot-formr.js',
+        file: 'dist/riot-formr.js',
         format: 'iife',
         sourcemap:true
     },
@@ -14,17 +14,13 @@ export default {
         riot(),
         nodeResolve(),
         commonjs(),
-        copy({
-            targets: [
-                {
-                    src: 'src/index.html',
-                    dest: 'dist/'
-                },
-                {
-                    src: 'assets/images/*',
-                    dest: 'dist/images'
-                }
-            ]
-        })
+	    copy({
+			targets: [
+				{
+					src: 'src/test.html',
+					dest: 'dist/'
+				}
+			]
+		})
     ]
 }

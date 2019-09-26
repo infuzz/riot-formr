@@ -6,8 +6,8 @@
     "scripts": {
         "dev": "(start npm run watch && start npm run server) || (npm run watch & npm run server)",
         "build": "rollup -c",
-        "watch": "rollup -c -w 'src/*'",
-        "server": "browser-sync start --files 'dist/*, index.html' --server",
+		"watch": "rollup -c --watch",
+        "server": "browser-sync dist -w --index test.html",		
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {
