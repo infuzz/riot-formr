@@ -3,6 +3,9 @@ Use with riot.js 4
 
 - Site: https://riot.js.org/
 
+## Demo
+https://infuzz.github.io/riot-formr
+
 ## Install 
 Then run these commands:
 
