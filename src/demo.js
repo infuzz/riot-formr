@@ -1,9 +1,7 @@
-//import App from './app.riot'
-
 import * as exports from './formr.js'
 Object.entries(exports).forEach(([name, exported]) => window[name] = exported)
+import App from './app.riot'
 
-/*
 
 window.data = {
     mydatetimepicker: 1488136398547,
@@ -452,4 +450,3 @@ window.fields = {
 
 riot.register('app', App)
 riot.mount('app')
-*/
