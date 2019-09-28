@@ -10,7 +10,8 @@ https://infuzz.github.io/riot-formr
 Then run these commands:
 
 ```bash
-$ npm install @klicat/riot-formr
+$ npm install infuzz/riot-formr
+//$ npm install @klicat/riot-formr
 ```
 
 ## Create a form
