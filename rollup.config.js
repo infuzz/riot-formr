@@ -8,7 +8,8 @@ export default [
 		input: 'src/main.js',
 		output: {
 			file: 'dist/riot-formr.js',
-			format: 'iife',
+			//format: 'iife',
+			format: 'umd', //node+script compatible
 			sourcemap:true
 		},
 		plugins: [
@@ -29,7 +30,8 @@ export default [
 		input: 'src/demo.js',
 		output: {
 			file: 'dist/demo-riot-formr.js',
-			format: 'iife',
+			//format: 'iife',
+			format: 'umd',//node+script compatible
 			sourcemap:true
 		},
 		plugins: [
