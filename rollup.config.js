@@ -2,6 +2,7 @@ import riot from 'rollup-plugin-riot'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import copy from 'rollup-plugin-copy'
+import { terser } from 'rollup-plugin-terser';
 
 export default [
 	{
@@ -9,13 +10,13 @@ export default [
 		output: {
 			file: 'dist/riot-formr.js',
 			//format: 'iife',
-			format: 'umd', //node+script compatible
+			format: 'es', //node+script compatible
 			sourcemap:true
 		},
 		plugins: [
 			riot(),
-			nodeResolve(),
-			commonjs(),
+			nodeResolve(),// prise en charge des modules depuis node_modules
+			commonjs(),// prise en charge de require
 			copy({
 				targets: [
 					{
@@ -23,7 +24,8 @@ export default [
 						dest: 'dist/'
 					}
 				]
-			})
+			}),
+			terser() // minification
 		]
 	},
 	{
@@ -31,13 +33,13 @@ export default [
 		output: {
 			file: 'dist/demo-riot-formr.js',
 			//format: 'iife',
-			format: 'umd',//node+script compatible
+			format: 'es',//node+script compatible
 			sourcemap:true
 		},
 		plugins: [
 			riot(),
-			nodeResolve(),
-			commonjs(),
+			nodeResolve(),// prise en charge des modules depuis node_modules
+			commonjs(),// prise en charge de require
 			copy({
 				targets: [
 					{
@@ -45,7 +47,8 @@ export default [
 						dest: 'dist/'
 					}
 				]
-			})
+			}),
+			terser() // minification
 		]
 	},
 	
