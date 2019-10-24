@@ -1,4 +1,4 @@
-/*import * as riot from 'riot'*/
+import * as riot from 'riot'
 
 riot.install(function (component) {
     window.addEventListener('updateAll', () => {

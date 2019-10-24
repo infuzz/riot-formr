@@ -1,3 +1,7 @@
+
+
+import * as riot from 'riot'
+
 import * as exports from './formr.js'
 Object.entries(exports).forEach(([name, exported]) => window[name] = exported)
 import App from './app.riot'
