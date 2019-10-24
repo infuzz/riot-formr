@@ -162,6 +162,12 @@ export function setFormValues(formName, data) {
     return data
 }
 
+export function resetForm(formName)
+{
+	document.getElementsByName(formName)[0].reset()
+}
+
+
 function setSelectOptions(formName, selectName, values) {
     let select = document.getElementsByName(formName)[0].querySelectorAll('[name="' + selectName + '"]')
 
